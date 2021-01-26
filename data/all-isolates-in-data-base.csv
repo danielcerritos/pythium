@@ -1,0 +1,183 @@
+year,source,sample_id,county,isolate_id,isolate_name,plant_organ,species,identification
+2016,soil samples,16PR001,Champaign,16PR001.1,,Root,Pythium ultimum var. sporangiiferum,sequence
+2016,soil samples,16PR007,Champaign,16PR007.1,,Root,Pythium yorkensis,sequence
+2016,soil samples,16PR007,Champaign,16PR007.2,,Root,Pythium yorkensis,sequence
+2016,soil samples,16PR008,Champaign,16PR008B.1,,Root,Pythium torulosum,sequence
+2016,soil samples,16PR010,Champaign,16PR010.1,,Root,Pythium irregulare,sequence
+2016,soil samples,16PR012,Champaign,16PR012.1,,Root,Pythium pleroticum,sequence
+2016,soil samples,16PR013,Kankakee,16PR013C.1,,Root,Pythium ultimum var. ultimum,sequence
+2016,soil samples,16PR014,Kankakee,16PR014C.1,,Root,Pythium vexans,sequence
+2016,soil samples,16PR015,Kankakee,16PR015A.1,,Root,Pythium ultimum var. ultimum,sequence
+2016,soil samples,16PR015,Kankakee,16PR015B.1,,Root,Pythium vexans,sequence
+2016,soil samples,16PR015,Kankakee,16PR015C.2,,Root,Pythium pleroticum,sequence
+2016,soil samples,16PR016,Will,16PR016C.1,,Root,Pythium pleroticum,sequence
+2016,soil samples,16PR017,Kankakee,16PR017B.1,,Root,Pythium yorkensis,sequence
+2016,soil samples,16PR017,Kankakee,16PR017C.1,,Root,Pythium acrogynum,sequence
+2016,soil samples,16PR019,Kankakee,16PR019A.1,,Root,Pythium aphanidermatum,sequence
+2016,soil samples,16PR019,Kankakee,16PR019B.1,,Root,Pythium yorkensis,sequence
+2016,soil samples,16PR021,Kendall,16PR021B.1,,Root,Pythium ultimum var. sporangiiferum,sequence
+2016,soil samples,16PR028,Kane,16PR028A.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR001,Woodford,17PR001L.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR003,Fulton,17PR003K.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR003,Fulton,17PR003K.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR004,Pike,17PR004J.1,,Root,Pythium aphanidermatum,sequence
+2017,soil samples,17PR007,Macon,17PR007K.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR007,Macon,17PR007K.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR007,Macon,17PR007K.3,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR008,Marion,17PR008A.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR008,Marion,17PR008H.2,,Root,Pythium torulosum,sequence
+2017,soil samples,17PR009,Franklin,17PR009B.1,,Root,Pythium acanthophoron,sequence
+2017,soil samples,17PR009,Franklin,17PR009B.2,,Root,Pythium acanthophoron,sequence
+2017,soil samples,17PR009,Franklin,17PR009D.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR010,Jackson,17PR010C.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR010,Jackson,17PR010D.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR010,Jackson,17PR010G.1,,Root,Pythium pleroticum,sequence
+2017,soil samples,17PR010,Jackson,17PR010G.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR010,Jackson,17PR010H.3,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR010,Jackson,17PR010I.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR011,Edgar,17PR011G.1,,Root,Pythium aphanidermatum,sequence
+2017,soil samples,17PR011,Edgar,17PR011H.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR011,Edgar,17PR011J.1,,Root,Pythium aphanidermatum,sequence
+2017,soil samples,17PR012,Clark,17PR012C.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR012,Clark,17PR012K.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR012,Clark,17PR012L.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR013,Crawford,17PR013A.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR013,Crawford,17PR013A.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR013,Crawford,17PR013A.4,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR013,Crawford,17PR013B.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR013,Crawford,17PR013B.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR013,Crawford,17PR013B.3,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR013,Crawford,17PR013D.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR013,Crawford,17PR013G.1,,Root,Pythium torulosum,sequence
+2017,soil samples,17PR015,DeKalb,17PR015I.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR015,DeKalb,17PR015I.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR015,DeKalb,17PR015J.1,,Root,Pythium spp.,sequence
+2017,soil samples,17PR016,McHenry,17PR016B.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR016,McHenry,17PR016C.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR016,McHenry,17PR016C.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR016,McHenry,17PR016E.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR016,McHenry,17PR016G.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR016,McHenry,17PR016G.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR016,McHenry,17PR016G.3,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR016,McHenry,17PR016J.1,,Root,Pythium ultimum var. ultimum,sequence
+2017,soil samples,17PR016,McHenry,17PR016J.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,17SR,17SR,Pike,17PRORR.2,,Root,Pythium ultimum var. ultimum,sequence
+2017,17SR,17SR,Pike,17PRORR.3,,Root,Pythium spp.,sequence
+2017,17SR,17SR,Pike,17PRORR.4,,Root,Pythium ultimum var. ultimum,sequence
+2018,plant clinic,201800334,Livingston,18PY008,201800334,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800337,Vermilion,18PR001,201800337,Root and Stem,Phytophthora sojae,sequence
+2018,Bowen CFAR,18PRCFAR200,Champaign,18Py003,18PRCFAR200_7,Root and Stem,Pythium spp.,morpholgy
+2018,Bowen CFAR,18PRCFAR200,Champaign,18Py004,18PRCFAR200_8,Root and Stem,Pythium spp.,morpholgy
+2018,Bowen CFAR,18PRCFAR200,Champaign,18Py005,18PRCFAR200_1,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800340,Iroquois,18PY029,201800340,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800348,,18PY009,201800348,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800348,,18PY022,201800348,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800352,Douglas,18PY023,201800352,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800361,Champaign,18PY024,201800361,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800385,Champaign,18PY014,201800385,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800391,Iroquois,18PY015,201800391,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800392,Champaign,18PY027,201800392,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800444,Hamilton,18PY021,201800444,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800448,Mclean,18PY018,201800448,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800340,Iroquois,18Py001,201800340_2a,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800343,Iroquois,18Py002,201800343_2b,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800355,Champaign,18PY010,201800355_1,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800355,Champaign,18PY011,201800355_2,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800359,Champaign,18PR003,201800359_1,Root and Stem,Phytophthora sansomeana,sequence
+2018,plant clinic,201800359,Champaign,18PR004,201800359_2,Root and Stem,Phytophthora sansomeana,sequence
+2018,plant clinic,201800363,Champaign,18PY012,201800363_1,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800366,Livingston,18Py006,201800366_1,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800370,Iroquois,18PY019,201800370_2,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800371,Dewitt,18PY025,201800371_2,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800373,Mclean,18PY013,201800373_4,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800377,Cumberland,18PY026,201800377_2,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800392,Champaign,18PY016,201800392_3,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800393,Champaign,18PR005,201800393_1,Root and Stem,Phytophthora sansomeana,sequence
+2018,18SU,18SU,Champaign,18SUPY2,18SU002,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY9_1,18SU009,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY9_2,18SU009,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY10,18SU010,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY11_1,18SU011,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY11_2,18SU011,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY12,18SU012,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY19_1,18SU019,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY19_2,18SU019,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY19_3,18SU019,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY23_2,18SU023,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY23_3,18SU023,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY24,18SU024,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY24_2,18SU024,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY27,18SU027,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY29_1,18SU029,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY29_2,18SU029,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY29_3,18SU029,Dead Seedlings,Pythium spp.,morpholgy
+2018,18SU,18SU,Champaign,18SUPY35,18SU035,Dead Seedlings,Pythium spp.,morpholgy
+2018,syngenta,518-1019-3A P1,Champaign,18PY030,518-1019-3A P1,Root and Stem,Pythium spp.,PCR
+2018,syngenta,518-1019-3A P2,Champaign,18PY031,518-1019-3A P2,Root and Stem,Pythium spp.,PCR
+2018,syngenta,518-1019-3A P4,Champaign,18PY032,518-1019-3A P4,Root and Stem,Pythium spp.,PCR
+2018,syngenta,"522-2021-1C,3A P1",Champaign,18PY033,"522-2021-1C,3A P1",Root and Stem,Pythium spp.,PCR
+2018,syngenta,"522-2021-1C,3A P2",Champaign,18PY034,"522-2021-1C,3A P2",Root and Stem,Pythium spp.,PCR
+2018,syngenta,"522-2021-1C,3A P4",Champaign,18PY035,"522-2021-1C,3A P4",Root and Stem,Pythium spp.,PCR
+2018,syngenta,"522-2021-1C,3A P5",Champaign,18PY036,"522-2021-1C,3A P5",Root and Stem,Pythium spp.,PCR
+2018,syngenta,"536-2025-1A,3A P1",Champaign,18PY037,"536-2025-1A,3A P1",Root and Stem,Pythium spp.,PCR
+2018,syngenta,"536-2025-1A,3A P2",Champaign,18PY038,"536-2025-1A,3A P2",Root and Stem,Pythium spp.,PCR
+2018,syngenta,"536-2025-1A,3A P3",Champaign,18PY039,"536-2025-1A,3A P3",Root and Stem,Pythium spp.,PCR
+2018,syngenta,"536-2025-1A,3A P4",Champaign,18PY040,"536-2025-1A,3A P4",Root and Stem,Pythium spp.,PCR
+2018,syngenta,"536-2025-1A,3A P5",Champaign,18PY041,"536-2025-1A,3A P5",Root and Stem,Pythium spp.,PCR
+2018,syngenta,601-1033-SUSC P1,Champaign,18PY042,601-1033-SUSC P1,Root and Stem,Pythium spp.,PCR
+2018,syngenta,601-1033-SUSC P2,Champaign,18PY043,601-1033-SUSC P2,Root and Stem,Pythium spp.,PCR
+2018,syngenta,601-1033-SUSC P3,Champaign,18PY044,601-1033-SUSC P3,Root and Stem,Pythium spp.,PCR
+2018,syngenta,601-1033-SUSC P4,Champaign,18PY045,601-1033-SUSC P4,Root and Stem,Pythium spp.,PCR
+2018,syngenta,601-1033-SUSC P5,Champaign,18PY046,601-1033-SUSC P5,Root and Stem,Pythium spp.,PCR
+2018,syngenta,601-2019-SUSC P1,Champaign,18PY047,601-2019-SUSC P1,Root and Stem,Pythium spp.,PCR
+2018,syngenta,601-2019-SUSC P2,Champaign,18PY048,601-2019-SUSC P2,Root and Stem,Pythium spp.,PCR
+2018,syngenta,601-2019-SUSC P4,Champaign,18PY049,601-2019-SUSC P4,Root and Stem,Pythium spp.,PCR
+2018,syngenta,635-2020-1K P1,Champaign,18PY050,635-2020-1K P1,Root and Stem,Pythium spp.,PCR
+2018,syngenta,635-2020-1K P2,Champaign,18PY051,635-2020-1K P2,Root and Stem,Pythium spp.,PCR
+2018,syngenta,635-2020-1K P3,Champaign,18PY052,635-2020-1K P3,Root and Stem,Pythium spp.,PCR
+2018,syngenta,635-2020-1K P4,Champaign,18PY053,635-2020-1K P4,Root and Stem,Pythium spp.,PCR
+2018,syngenta,635-2020-1K P6,Champaign,18PY054,635-2020-1K P6,Root and Stem,Pythium spp.,PCR
+2018,syngenta,635-1020-1C P2,Champaign,18PY055,635-1020-1C P2,Root and Stem,Pythium spp.,PCR
+2018,syngenta,635-1020-1C P3,Champaign,18PY056,635-1020-1C P3,Root and Stem,Pythium spp.,PCR
+2018,syngenta,635-1020-1C P4,Champaign,18PY057,635-1020-1C P4,Root and Stem,Pythium spp.,PCR
+2018,syngenta,635-1020-1C P5,Champaign,18PY058,635-1020-1C P5,Root and Stem,Pythium spp.,PCR
+2018,syngenta,"522-1003-1C,3A P1",Champaign,18PY059,"522-1003-1C,3A P1",Root and Stem,Pythium spp.,PCR
+2018,syngenta,"522-1003-1C,3A P2",Champaign,18PY060,"522-1003-1C,3A P2",Root and Stem,Pythium spp.,PCR
+2018,syngenta,"522-1003-1C,3A P3",Champaign,18PY061,"522-1003-1C,3A P3",Root and Stem,Pythium spp.,PCR
+2018,syngenta,"522-1003-1C,3A P4",Champaign,18PY062,"522-1003-1C,3A P4",Root and Stem,Pythium spp.,PCR
+2018,syngenta,"522-1003-1C,3A P5",Champaign,18PY063,"522-1003-1C,3A P5",Root and Stem,Pythium spp.,PCR
+2018,syngenta,"522-1003-1C,3A P6",Champaign,18PY064,"522-1003-1C,3A P6",Root and Stem,Pythium spp.,PCR
+2018,syngenta,518-2009-3A P2,Champaign,18PY065,518-2009-3A P2,Root and Stem,Pythium spp.,PCR
+2018,syngenta,518-2009-3A P5,Champaign,18PY066,518-2009-3A P5,Root and Stem,Pythium spp.,PCR
+2016,soil samples,16PR009,Champaign,16PR009.1,,Root,Phytophthora sojae,sequence
+2016,soil samples,16PR009,Champaign,16PR009.2,,Root,Phytophthora sojae,sequence
+2016,soil samples,16PR018,Kankakee,16PR018B.1,,Root,Phytophthora sansomeana,sequence
+2016,soil samples,16PR024,Grundy,16PR024C.1,,Root,Phytophthora sansomeana,sequence
+2016,soil samples,16PR024,Grundy,16PR024C.2,,Root,Phytophthora sansomeana,sequence
+2016,soil samples,16PR027,Livingston,16PR027C.1,,Root,Phytophthora sojae,sequence
+2016,soil samples,16PR027,Livingston,16PR027C.2,,Root,Phytophthora sojae,sequence
+2017,soil samples,17PR009,Franklin,17PR009A.1,,Root,Phytophthora sojae,sequence
+2017,soil samples,17PR009,Franklin,17PR009A.2,,Root,Phytophthora sojae,sequence
+2017,soil samples,17PR013,Crawford,17PR013G.3,,Root,Phytophthora sojae,sequence
+2017,soil samples,17PR018,Boone,17PR018F.1,,Root,Phytophthora sojae,sequence
+2017,soil samples,17PR018,Boone,17PR018F.2,,Root,Phytophthora sojae,sequence
+2017,soil samples,17PR018,Boone,17PR018H.1,,Root,Phytophthora sojae,sequence
+2017,soil samples,17PR018,Boone,17PR018J.3,,Root,Phytophthora sojae,sequence
+2017,soil samples,17PR006,Macon,17PR006L.1,,Root,Phytophthora sansomeana,sequence
+2018,plant clinic,201800393,Champaign,18PY028,201800393_2,Root and Stem,Pythium spp.,morpholgy
+2018,Bowen CFAR,18PRCFAR200,Champaign,18PR002,18PRCFAR200_2,Root and Stem,Phytophthora spp.,sequence
+2018,plant clinic,201800416,Livingston,18PY017,201800416_2,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800421,Edgar,18Py007,201800421_2,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800443,Jasper,18PY020,201800443_2,Root and Stem,Pythium spp.,morpholgy
+2018,plant clinic,201800454,Massac,18PR007,201800454_1,Root and Stem,Phytophthora sojae,sequence
+2018,plant clinic,201800454,Massac,18PR006,201800454_2,Root and Stem,Phytophthora sojae,sequence
+2018,plant clinic,201800483,Knox,18PR008,PL3.1,Stem,Phytophthora sojae,sequence
+2018,plant clinic,201800483,Knox,18PR010,PL3.2,Stem,Phytophthora sojae,sequence
+2018,plant clinic,201800483,Knox,18PR009,PL5.1,Stem,Phytophthora sojae,sequence
+2018,kurt varland,KV002,Jefferson,18PR011,KV002.1,Stem,Phytophthora sojae,sequence
+2018,kurt varland,KV002,Jefferson,18PR012,KV002.2,Stem,Phytophthora sojae,sequence
+2018,plant clinic,201800483,Knox,18PR016,PL5.2,Stem,Phytophthora sojae,sequence
+2018,kurt varland,KV006,Jefferson,18PR014,KV006,Stem,Phytophthora sojae,sequence
+2018,kurt varland,KV009,Jefferson,18PR015,KV009,Stem,Phytophthora sojae,sequence
+2018,plant clinic,201800483,Knox,18PR013,PL7,Stem,Phytophthora sojae,sequence
+2018,kurt varland,KV002,Jefferson,18PR017,KV002.3,Stem,Phytophthora sojae,sequence
