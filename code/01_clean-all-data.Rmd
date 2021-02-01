@@ -1,0 +1,201 @@
+---
+title: "Data cleaning Pythium"
+author: "Daniel Cerritos"
+date: "2/1/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r library}
+library(readxl)
+library(tidyverse)
+library(here)
+```
+
+Pythium species were incorreclty identified during BLAST search, so the NK lab had wrong species.  
+NK's lab used a plate number id for the assays, so I would combine correct identification with the ids from assays.
+
+```{r pythium ids}
+# our update lab list
+pythium_ids <- read_excel(here("data", "Pythium ID 2016-2017 (1).xlsx"), skip = 2,
+                          col_names = c("sample_id", "county_sample", "gps_N", 
+                                        "gps_W", "isolate_stock", "county_isolate", 
+                                        "database_binomial", "amplified_by", 
+                                        "primers", "trace_file_name", "length_bp", 
+                                        "ncbi_blast_taxonomy", "blast_score", 
+                                        "blast_clade", "philo_species", 
+                                        "philo_accession", "philo_similarity", 
+                                        "philo_note"))
+
+# not updated list nathan's lab had
+isolates_used <- read_excel(here("data", "Final Pythium survey isolate IDs 2018.xlsx"), 
+                            col_names = c("plate_id", "isolate_id", "species",
+                                          "date_sequenced", "notes"), skip = 1) %>% 
+  dplyr::select(plate_id, isolate_id)
+
+# combine both lists
+correct_ids <- pythium_ids %>% 
+  dplyr::select(sample_id, county = county_sample, isolate_id = isolate_stock, 
+                species = philo_species)
+
+prueba <- right_join(correct_ids, isolates_used, by = "isolate_id") %>% 
+  arrange(plate_id)
+```
+
+## Soybean and maize seed aggressiveness 
+
+### Soybean
+
+```{r seed soybean}
+
+seed_soybean <- read_excel(here("data", "Pythium isolate survey 2018 aggressiveness- soybean.xlsx"), 
+                           sheet = 2, skip = 4)
+
+# select what you need
+seed_soybean <- seed_soybean %>% 
+  dplyr::select(Species, plate_id = id, rep, colonized_5 = fuzzy, colonized_10 = ...5, 
+                rotted, germination)
+
+# seperate controls because they are characters
+seed_soybean_controls <- seed_soybean %>% 
+  filter(plate_id %in% c("pda", "pi", "pu")) %>% 
+  mutate(
+    isolate_id = "control",
+    species = case_when(
+    plate_id == "pda" ~ "PDA control", 
+    plate_id == "pi" ~ "Pu control", 
+    plate_id == "pu" ~ "Pi control"
+  ))
+
+seed_soybean_isolates <- seed_soybean %>% 
+  filter(!plate_id %in% c("pda", "pi", "pu"))
+
+# ids and plates 
+add_names <- prueba %>% 
+  dplyr::select(isolate_id, species, plate_id)
+
+# combine
+seed_soybean_isolates$plate_id <- as.numeric(seed_soybean_isolates$plate_id)
+prueba_2 <- right_join(add_names, seed_soybean_isolates, by = "plate_id")
+prueba_2$plate_id <- as.character(prueba_2$plate_id)
+
+# all data
+seed_soybean_clean <- bind_rows(seed_soybean_controls, prueba_2)
+
+# save
+
+```
+
+### Corn
+
+```{r seed corn}
+seed_corn <- read_excel(here("data", "Pythium isolate survey Aggressiveness -corn.xlsx"), 
+                        sheet = 2, skip = 3)
+
+seed_corn <- seed_corn %>% 
+  dplyr::select(Species, plate_id = id, run, rep = Rep, colonized = fuzzy, germination)
+
+# seperate controls and isolate data
+seed_corn_isolates <- seed_corn %>% 
+  filter(!plate_id %in% c("pda", "control"))
+
+seed_corn_isolates$plate_id <- as.numeric(seed_corn_isolates$plate_id)
+prueba_3 <- right_join(add_names, seed_corn_isolates, by = "plate_id")
+
+seed_corn_controls <- seed_corn %>% 
+  filter(plate_id %in% c("pda", "control")) %>% 
+  mutate(isolate_id = "control", 
+         species = case_when(
+           plate_id == "pda" ~ "PDA control", 
+           plate_id == "control" ~ "Pythium control", 
+           plate_id == "control" ~ "Pythium control"
+         ))
+
+# combine both
+prueba_3$plate_id <- as.character(prueba_3$plate_id)
+seed_corn_clean <- bind_rows(seed_corn_controls, prueba_3)
+
+# save
+
+```
+
+
+## Soybean seedling aggressivenes 
+
+### agar and soil inocolum 
+
+```{r plug pot assay }
+soybean_plug <- read_excel(here("data", "pot assay.xlsx"), sheet = 2, skip = 2)
+soybean_plug <- soybean_plug %>% 
+  dplyr::select(plate_id =  `Plate ID`, rep = Rep, isolate_id = `Isolate IDs`,
+                emergence = `Emerged?`, plant_mass_g = `Plant mass`, root_mass_g = `Root mass`, 
+                root_rot_perc = `% root rot`)
+
+# remove g from observation 
+soybean_plug$plant_mass_g <- as.double(gsub('[a-zA-Z]', '', soybean_plug$plant_mass_g))
+soybean_plug$root_mass_g <- as.double(gsub('[a-zA-Z]', '', soybean_plug$root_mass_g))
+
+# combine 
+soybean_plug_clean <- right_join(add_names, soybean_plug)
+
+```
+
+### millet inocolum
+
+```{r millet assay }
+# millet  
+soybean_millet <- read_excel(here("data", "Pythium isolate aggressiveness-pot experiment.xlsx"), 
+                             sheet = 2, skip = 2)
+
+soybean_millet <- soybean_millet %>% 
+  rename(total_plant = `total plants`, germination_per = `germination (%)`, 
+         envelope_g = `envelope mass (g)`, envelope_plant_g = `envelope + plant mass (g)`, 
+         dry_weight = `dry mass (g)`) %>% 
+  dplyr::select(-`dry mass average (g)`)
+
+soybean_millet <- soybean_millet %>% 
+  mutate(
+    millet_ml = case_when(
+      millet %in% c("10 ml sterile (control)", "10 ml Pu", "10 ml Pi", "10 ml Ps") ~ 10, 
+      millet %in% c("20 ml sterile (control)", "20 ml Pu", "20 ml Pi", "20 ml Ps") ~ 20,
+      millet == "None" ~ 0))
+    
+soybean_millet <- soybean_millet %>% 
+  mutate(
+    species = case_when(
+      millet == "None" ~ "control",
+      millet %in% c("10 ml sterile (control)", "20 ml sterile (control)") ~ "millet control", 
+      millet %in% c("10 ml Pu", "20 ml Pu") ~ "Pythium ultimum var. ultimum" , 
+      millet %in% c("10 ml Pi", "20 ml Pi") ~ "Pythium irregulare", 
+      millet %in% c("10 ml Ps", "20 ml Ps") ~ "Pythium sylvaticum"
+      )
+        )
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
