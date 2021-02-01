@@ -13,6 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(readxl)
 library(tidyverse)
 library(here)
+library(naniar)
 ```
 
 Pythium species were incorreclty identified during BLAST search, so the NK lab had wrong species.  
@@ -41,8 +42,11 @@ correct_ids <- pythium_ids %>%
   dplyr::select(sample_id, county = county_sample, isolate_id = isolate_stock, 
                 species = philo_species)
 
-prueba <- right_join(correct_ids, isolates_used, by = "isolate_id") %>% 
+plate_and_correct_ids <- right_join(correct_ids, isolates_used, by = "isolate_id") %>% 
   arrange(plate_id)
+
+# save
+# write_csv(plate_and_correct_ids, path = here("output", "clean_data", "01_list-of-isolates-used_clean-data.csv"))
 ```
 
 ## Soybean and maize seed aggressiveness 
@@ -79,14 +83,17 @@ add_names <- prueba %>%
 
 # combine
 seed_soybean_isolates$plate_id <- as.numeric(seed_soybean_isolates$plate_id)
-prueba_2 <- right_join(add_names, seed_soybean_isolates, by = "plate_id")
-prueba_2$plate_id <- as.character(prueba_2$plate_id)
+seed_soybean_isolates_correct <- right_join(add_names, seed_soybean_isolates, by = "plate_id")
+seed_soybean_isolates_correct$plate_id <- as.character(prueba_2$plate_id)
 
 # all data
-seed_soybean_clean <- bind_rows(seed_soybean_controls, prueba_2)
+seed_soybean_clean <- bind_rows(seed_soybean_controls, seed_soybean_isolates_correct)
+# turn "-" into NAs
+seed_soybean_clean <- seed_soybean_clean %>% 
+    replace_with_na_all(condition = ~.x == "-")
 
 # save
-
+write_csv(seed_soybean_clean, path = here("output", "clean_data", "01_seed-aggressiveness-soybean_clean-data.csv"))
 ```
 
 ### Corn
@@ -96,14 +103,16 @@ seed_corn <- read_excel(here("data", "Pythium isolate survey Aggressiveness -cor
                         sheet = 2, skip = 3)
 
 seed_corn <- seed_corn %>% 
-  dplyr::select(Species, plate_id = id, run, rep = Rep, colonized = fuzzy, germination)
+  dplyr::select(Species, plate_id = id, run, rep = Rep, colonized = fuzzy, germination, 
+                bag_weight_g = `Bag weight`, dry_weight_bag_g =`Dry Mass(w/ bag)`, 
+                )
 
 # seperate controls and isolate data
 seed_corn_isolates <- seed_corn %>% 
   filter(!plate_id %in% c("pda", "control"))
 
 seed_corn_isolates$plate_id <- as.numeric(seed_corn_isolates$plate_id)
-prueba_3 <- right_join(add_names, seed_corn_isolates, by = "plate_id")
+seed_corn_isolates_names <- right_join(add_names, seed_corn_isolates, by = "plate_id")
 
 seed_corn_controls <- seed_corn %>% 
   filter(plate_id %in% c("pda", "control")) %>% 
@@ -115,11 +124,11 @@ seed_corn_controls <- seed_corn %>%
          ))
 
 # combine both
-prueba_3$plate_id <- as.character(prueba_3$plate_id)
-seed_corn_clean <- bind_rows(seed_corn_controls, prueba_3)
+seed_corn_isolates_names$plate_id <- as.character(seed_corn_isolates_names$plate_id)
+seed_corn_clean <- bind_rows(seed_corn_controls, seed_corn_isolates_names)
 
 # save
-
+write_csv(seed_corn_clean, path = here("output", "clean_data", "01_seed-aggressiveness-corn_clean-data.csv"))
 ```
 
 
@@ -140,7 +149,10 @@ soybean_plug$root_mass_g <- as.double(gsub('[a-zA-Z]', '', soybean_plug$root_mas
 
 # combine 
 soybean_plug_clean <- right_join(add_names, soybean_plug)
-
+soybean_plug_clean <- soybean_plug_clean %>% 
+  replace_with_na_all(condition = ~.x == "-")
+# save
+write_csv(soybean_plug_clean, path = here("output", "clean_data", "01_seedling-aggressiveness-soybean-agar_clean-data.csv"))
 ```
 
 ### millet inocolum
@@ -174,26 +186,46 @@ soybean_millet <- soybean_millet %>%
       )
         )
 
+write_csv(soybean_millet, path = here("output", "clean_data", "01_seedling-aggressiveness-soybean-millet_clean-data.csv"))
 ```
 
+## Effect of media on pythium and soybean growth 
 
 
+```{r media soybean}
+media_soybean <- read_excel(here("data", "aggressiveness-media.xlsx"), 
+                             sheet = 2, skip = 4)
 
+media_soybean <- media_soybean %>% 
+  dplyr::select(media = Media, innocolum = Innoculm, run, colonized_5 = fuzzy...5, 
+                germination_5 = germination...6, rotted_5 = rotted...7,
+                colonized_10 = fuzzy...8, germination_10 = germination...9, 
+                rotted_10 = rotted...10)
 
+# replace "-" with NAs
+media_soybean <- media_soybean %>% 
+  replace_with_na_all(condition = ~.x == "-")
+```
 
+## fungicide sensitivity 
 
+```{r fs pythium }
 
+# import files 
+azoxystrobin <- read_excel(here("data", "Pythium_Azoxystrobin.xlsx")) %>% 
+  mutate(fungicide = "Azoxystrobin")
 
+ethaboxam <- read_excel(here("data", "Pythium_Ethaboxam.xlsx")) %>% 
+  mutate(fungicide = "Ethaboxam")
 
+metalaxyl <- read_excel(here("data", "Pythium_Metalaxyl.xlsx")) %>% 
+  mutate(fungicide = "Metalaxyl")
 
+mefenoxam <- read_excel(here("data", "Pythium_Mefenoxam.xlsx")) %>% 
+  mutate(fungicide = "Mefenoxam")
 
+# combine in one file
+all_fungicide_data <- bind_rows(azoxystrobin, ethaboxam, metalaxyl, mefenoxam)
 
-
-
-
-
-
-
-
-
-
+write_csv(all_fungicide_data, here("output", "clean_data", "01-fungicide-sensitivty_clean-data.csv"))
+```

@@ -41,8 +41,8 @@ P. irregulare,pi,c,0,8,3,0,control,Pu control
 P. irregulare,pi,d,0,8,0,0,control,Pu control
 P. irregulare,pi,d,0,8,1,0,control,Pu control
 P. irregulare,pi,d,2,8,3,0,control,Pu control
-P. irregulare,pi,e,-,-,-,-,control,Pu control
-P. irregulare,pi,e,-,-,-,-,control,Pu control
+P. irregulare,pi,e,NA,NA,NA,NA,control,Pu control
+P. irregulare,pi,e,NA,NA,NA,NA,control,Pu control
 P. irregulare,pi,e,4,8,3,0,control,Pu control
 P. irregulare,pi,f,1,8,0,0,control,Pu control
 P. irregulare,pi,f,2,8,0,0,control,Pu control
@@ -342,7 +342,7 @@ P. ultimum,47,d,1,8,1,0,17PR015I.2,Pythium ultimum var. ultimum
 P. ultimum,47,d,2,8,2,0,17PR015I.2,Pythium ultimum var. ultimum
 P. ultimum,47,d,4,8,4,0,17PR015I.2,Pythium ultimum var. ultimum
 P. ultimum,47,i,3,8,0,0,17PR015I.2,Pythium ultimum var. ultimum
-P. ultimum,47,i,3,-,0,0,17PR015I.2,Pythium ultimum var. ultimum
+P. ultimum,47,i,3,NA,0,0,17PR015I.2,Pythium ultimum var. ultimum
 P. ultimum,47,i,5,8,1,0,17PR015I.2,Pythium ultimum var. ultimum
 P. ultimum,50,d,3,5,3,0,17PR016C.1,Pythium ultimum var. ultimum
 P. ultimum,50,d,3,8,3,0,17PR016C.1,Pythium ultimum var. ultimum
