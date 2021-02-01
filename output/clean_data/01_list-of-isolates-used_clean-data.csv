@@ -1,0 +1,68 @@
+sample_id,county,isolate_id,species,plate_id
+16PR001,Champaign,16PR001.1,Pythium ultimum var. sporangiiferum,1
+16PR007,Champaign,16PR007.1,Pythium yorkensis*,2
+16PR007,Champaign,16PR007.2,Pythium yorkensis*,3
+16PR008,Champaign,16PR008B.1,Pythium torulosum,4
+16PR010,Champaign,16PR010.1,Pythium irregulare,5
+16PR012,"IN WISCONSIN, closest to McHenry",16PR012.1,Pythium pleroticum*,6
+16PR013C,Kankakee,16PR013C.1,Pythium ultimum var. ultimum,7
+16PR014C,Kankakee,16PR014C.1,Pythium vexans,8
+16PR015A,Kankakee,16PR015A.1,Pythium ultimum var. ultimum,9
+16PR015B,Kankakee,16PR015B.1,Pythium vexans,10
+16PR015C,Kankakee,16PR015C.2,Pythium pleroticum*,11
+16PR016C,Will,16PR016C.1,Pythium pleroticum*,12
+16PR017B,Kankakee,16PR017B.1,Pythium yorkensis,13
+16PR017C,Kankakee,16PR017C.1,Pythium acrogynum*,14
+16PR019A,Kankakee,16PR019A.1,Pythium aphanidermatum,15
+16PR019B,Kankakee,16PR019B.1,Pythium yorkensis,16
+16PR021B,Kendall,16PR021B.1,Pythium ultimum var. sporangiiferum,17
+16PR028A,Kane,16PR028A.1,Pythium ultimum var. ultimum,18
+-,-,17PRORR.2,Pythium ultimum var. ultimum,19
+-,-,17PRORR.3,-,20
+-,-,17PRORR.4,Pythium ultimum var. ultimum,21
+17PR004J,Cass,17PR004J.1,Pythium aphanidermatum,22
+17PR008A,Macon,17PR008A.1,Pythium ultimum var. ultimum,23
+17PR008H,Macon,17PR008H.2,Pythium torulosum,24
+17PR009B,Franklin,17PR009B.1,Pythium acanthophoron,25
+17PR009B,Franklin,17PR009B.2,Pythium acanthophoron,26
+17PR009D,Franklin,17PR009D.1,Pythium ultimum var. ultimum,27
+17PR010C,Jackson,17PR010C.2,Pythium ultimum var. ultimum,28
+17PR010D,Jackson,17PR010D.1,Pythium ultimum var. ultimum,29
+17PR010G,Jackson,17PR010G.1,Pythium pleroticum*,30
+17PR010G,Jackson,17PR010G.2,Pythium ultimum var. ultimum,31
+17PR010H,Jackson,17PR010H.3,Pythium ultimum var. ultimum,32
+17PR010I,Jackson,17PR010I.2,Pythium ultimum var. ultimum,33
+17PR011G,Edgar,17PR011G.1,Pythium aphanidermatum,34
+17PR011H,Edgar,17PR011H.2,Pythium ultimum var. ultimum,35
+17PR011J,Edgar,17PR011J.1,Pythium aphanidermatum,36
+17PR012C,Clark,17PR012C.2,Pythium ultimum var. ultimum,37
+17PR013A,Crawford,17PR013A.1,Pythium ultimum var. ultimum,38
+17PR013A,Crawford,17PR013A.2,Pythium ultimum var. ultimum,39
+17PR013A,Crawford,17PR013A.4,Pythium ultimum var. ultimum,40
+17PR013B,Crawford,17PR013B.1,Pythium ultimum var. ultimum,41
+17PR013B,Crawford,17PR013B.2,Pythium ultimum var. ultimum,42
+17PR013B,Crawford,17PR013B.3,Pythium ultimum var. ultimum,43
+17PR013D,Crawford,17PR013D.1,Pythium ultimum var. ultimum,44
+17PR013G,Crawford,17PR013G.1,Pythium torulosum,45
+17PR015I,DeKalb,17PR015I.1,Pythium ultimum var. ultimum,46
+17PR015I,DeKalb,17PR015I.2,Pythium ultimum var. ultimum,47
+17PR015J,DeKalb,17PR015J.1,-,48
+17PR016B,McHenry,17PR016B.1,Pythium ultimum var. ultimum,49
+17PR016C,McHenry,17PR016C.1,Pythium ultimum var. ultimum,50
+17PR016C,McHenry,17PR016C.2,Pythium ultimum var. ultimum,51
+17PR016E,McHenry,17PR016E.1,Pythium ultimum var. ultimum,52
+17PR016G,McHenry,17PR016G.1,Pythium ultimum var. ultimum,53
+17PR016G,McHenry,17PR016G.2,Pythium ultimum var. ultimum,54
+17PR016G,McHenry,17PR016G.3,Pythium ultimum var. ultimum,55
+17PR016J,McHenry,17PR016J.1,Pythium ultimum var. ultimum,56
+17PR007K,Macon,17PR007K.2,Pythium ultimum var. ultimum,57
+17PR001L,Woodford,17PR001L.1,Pythium ultimum var. ultimum,58
+17PR003K,Fulton,17PR003K.1,Pythium ultimum var. ultimum,59
+17PR003K,Fulton,17PR003K.2,Pythium ultimum var. ultimum,60
+17PR012K,Clark,17PR012K.1,Pythium ultimum var. ultimum,61
+NA,NA,17PR012L.1,NA,62
+17PR012L,Clark,17PR012L.2,Pythium ultimum var. ultimum,63
+17PR007K,Macon,17PR007K.1,Pythium ultimum var. ultimum,64
+17PR007K,Macon,17PR007K.3,Pythium ultimum var. ultimum,65
+17PR016J,McHenry,17PR016J.2,Pythium ultimum var. ultimum,66
+NA,NA,-,NA,67

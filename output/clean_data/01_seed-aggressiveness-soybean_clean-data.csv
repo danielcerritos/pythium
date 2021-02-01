@@ -1,0 +1,442 @@
+Species,plate_id,rep,colonized_5,colonized_10,rotted,germination,isolate_id,species
+plug,pda,a,0,0,0,8,control,PDA control
+plug,pda,a,0,0,0,6,control,PDA control
+plug,pda,a,0,0,0,7,control,PDA control
+plug,pda,b,0,0,0,7,control,PDA control
+plug,pda,b,0,0,0,6,control,PDA control
+plug,pda,b,0,0,0,7,control,PDA control
+plug,pda,c,0,0,1,4,control,PDA control
+plug,pda,c,0,0,0,6,control,PDA control
+plug,pda,c,0,0,0,7,control,PDA control
+plug,pda,d,0,0,1,7,control,PDA control
+plug,pda,d,0,0,1,6,control,PDA control
+plug,pda,d,0,0,0,6,control,PDA control
+plug,pda,e,0,0,1,8,control,PDA control
+plug,pda,e,0,0,0,6,control,PDA control
+plug,pda,e,0,0,0,7,control,PDA control
+plug,pda,f,0,0,0,5,control,PDA control
+plug,pda,f,0,0,0,8,control,PDA control
+plug,pda,f,0,0,0,3,control,PDA control
+plug,pda,g,0,0,0,4,control,PDA control
+plug,pda,g,0,0,1,4,control,PDA control
+plug,pda,g,0,0,0,5,control,PDA control
+plug,pda,h,0,0,0,7,control,PDA control
+plug,pda,h,0,0,0,4,control,PDA control
+plug,pda,h,0,0,0,6,control,PDA control
+plug,pda,i,0,0,0,5,control,PDA control
+plug,pda,i,0,0,0,7,control,PDA control
+plug,pda,i,0,0,0,5,control,PDA control
+plug,pda,j,0,0,0,4,control,PDA control
+plug,pda,j,0,0,0,3,control,PDA control
+plug,pda,j,0,0,1,2,control,PDA control
+P. irregulare,pi,a,0,8,1,0,control,Pu control
+P. irregulare,pi,a,3,8,4,0,control,Pu control
+P. irregulare,pi,a,0,8,2,0,control,Pu control
+P. irregulare,pi,b,3,8,4,0,control,Pu control
+P. irregulare,pi,b,1,8,3,0,control,Pu control
+P. irregulare,pi,b,1,8,1,0,control,Pu control
+P. irregulare,pi,c,0,8,1,0,control,Pu control
+P. irregulare,pi,c,1,8,1,0,control,Pu control
+P. irregulare,pi,c,0,8,3,0,control,Pu control
+P. irregulare,pi,d,0,8,0,0,control,Pu control
+P. irregulare,pi,d,0,8,1,0,control,Pu control
+P. irregulare,pi,d,2,8,3,0,control,Pu control
+P. irregulare,pi,e,-,-,-,-,control,Pu control
+P. irregulare,pi,e,-,-,-,-,control,Pu control
+P. irregulare,pi,e,4,8,3,0,control,Pu control
+P. irregulare,pi,f,1,8,0,0,control,Pu control
+P. irregulare,pi,f,2,8,0,0,control,Pu control
+P. irregulare,pi,f,3,8,1,0,control,Pu control
+P. irregulare,pi,g,0,8,0,0,control,Pu control
+P. irregulare,pi,g,2,8,1,0,control,Pu control
+P. irregulare,pi,g,0,8,1,0,control,Pu control
+P. irregulare,pi,h,0,8,0,0,control,Pu control
+P. irregulare,pi,h,1,8,0,0,control,Pu control
+P. irregulare,pi,h,0,8,0,0,control,Pu control
+P. irregulare,pi,i,2,8,2,0,control,Pu control
+P. irregulare,pi,i,2,8,0,0,control,Pu control
+P. irregulare,pi,i,0,8,2,0,control,Pu control
+P. irregulare,pi,j,1,8,0,0,control,Pu control
+P. irregulare,pi,j,1,8,0,0,control,Pu control
+P. irregulare,pi,j,0,8,1,0,control,Pu control
+P. ultimum,pu,a,5,8,1,0,control,Pi control
+P. ultimum,pu,a,2,8,0,0,control,Pi control
+P. ultimum,pu,a,4,8,1,0,control,Pi control
+P. ultimum,pu,b,0,8,3,0,control,Pi control
+P. ultimum,pu,b,2,8,4,0,control,Pi control
+P. ultimum,pu,b,3,8,1,0,control,Pi control
+P. ultimum,pu,c,0,8,1,0,control,Pi control
+P. ultimum,pu,c,0,8,0,0,control,Pi control
+P. ultimum,pu,c,1,8,2,0,control,Pi control
+P. ultimum,pu,d,1,8,1,0,control,Pi control
+P. ultimum,pu,d,5,8,2,0,control,Pi control
+P. ultimum,pu,d,0,8,1,0,control,Pi control
+P. ultimum,pu,e,4,8,1,0,control,Pi control
+P. ultimum,pu,e,5,8,3,0,control,Pi control
+P. ultimum,pu,e,5,8,2,0,control,Pi control
+P. ultimum,pu,f,5,8,1,0,control,Pi control
+P. ultimum,pu,f,4,8,1,0,control,Pi control
+P. ultimum,pu,f,2,8,2,0,control,Pi control
+P. ultimum,pu,g,3,8,1,0,control,Pi control
+P. ultimum,pu,g,5,8,1,0,control,Pi control
+P. ultimum,pu,g,4,8,0,0,control,Pi control
+P. ultimum,pu,h,0,8,0,0,control,Pi control
+P. ultimum,pu,h,0,8,0,0,control,Pi control
+P. ultimum,pu,h,0,8,0,0,control,Pi control
+P. ultimum,pu,i,4,8,0,0,control,Pi control
+P. ultimum,pu,i,3,8,0,0,control,Pi control
+P. ultimum,pu,i,2,8,0,0,control,Pi control
+P. ultimum,pu,j,1,8,2,0,control,Pi control
+P. ultimum,pu,j,3,8,0,0,control,Pi control
+P. ultimum,pu,j,2,8,0,0,control,Pi control
+P. ultimum,1,a,8,8,7,0,16PR001.1,Pythium ultimum var. sporangiiferum
+P. ultimum,1,a,8,8,8,0,16PR001.1,Pythium ultimum var. sporangiiferum
+P. ultimum,1,a,8,8,7,0,16PR001.1,Pythium ultimum var. sporangiiferum
+P. ultimum,1,f,3,7,0,0,16PR001.1,Pythium ultimum var. sporangiiferum
+P. ultimum,1,f,3,8,0,0,16PR001.1,Pythium ultimum var. sporangiiferum
+P. ultimum,1,f,5,8,0,0,16PR001.1,Pythium ultimum var. sporangiiferum
+P. ultimum,2,f,0,7,0,0,16PR007.1,Pythium yorkensis*
+P. ultimum,2,f,0,5,0,1,16PR007.1,Pythium yorkensis*
+P. ultimum,2,f,1,6,1,0,16PR007.1,Pythium yorkensis*
+P. ultimum,3,a,0,0,0,3,16PR007.2,Pythium yorkensis*
+P. ultimum,3,a,0,0,3,4,16PR007.2,Pythium yorkensis*
+P. ultimum,3,a,0,1,1,7,16PR007.2,Pythium yorkensis*
+P. ultimum,3,f,0,8,1,1,16PR007.2,Pythium yorkensis*
+P. ultimum,3,f,0,5,3,3,16PR007.2,Pythium yorkensis*
+P. ultimum,3,f,1,8,0,0,16PR007.2,Pythium yorkensis*
+P. dissotocum,4,a,0,2,0,6,16PR008B.1,Pythium torulosum
+P. dissotocum,4,a,0,1,0,5,16PR008B.1,Pythium torulosum
+P. dissotocum,4,a,0,1,2,6,16PR008B.1,Pythium torulosum
+P. dissotocum,4,f,0,8,2,0,16PR008B.1,Pythium torulosum
+P. dissotocum,4,f,0,7,0,0,16PR008B.1,Pythium torulosum
+P. dissotocum,4,f,0,8,0,2,16PR008B.1,Pythium torulosum
+P. irregulare,5,a,1,8,4,0,16PR010.1,Pythium irregulare
+P. irregulare,5,a,2,8,6,0,16PR010.1,Pythium irregulare
+P. irregulare,5,a,7,6,5,0,16PR010.1,Pythium irregulare
+P. ultimum,6,a,0,1,0,7,16PR012.1,Pythium pleroticum*
+P. ultimum,6,a,0,3,2,6,16PR012.1,Pythium pleroticum*
+P. ultimum,6,a,0,3,2,3,16PR012.1,Pythium pleroticum*
+P. ultimum,6,f,0,7,0,1,16PR012.1,Pythium pleroticum*
+P. ultimum,6,f,1,8,1,4,16PR012.1,Pythium pleroticum*
+P. ultimum,6,f,0,8,0,6,16PR012.1,Pythium pleroticum*
+P. ultimum,7,a,2,8,1,0,16PR013C.1,Pythium ultimum var. ultimum
+P. ultimum,7,a,4,8,4,0,16PR013C.1,Pythium ultimum var. ultimum
+P. ultimum,7,a,4,8,3,0,16PR013C.1,Pythium ultimum var. ultimum
+P. ultimum,7,f,3,8,0,0,16PR013C.1,Pythium ultimum var. ultimum
+P. ultimum,7,f,2,8,0,0,16PR013C.1,Pythium ultimum var. ultimum
+P. ultimum,7,f,2,8,0,0,16PR013C.1,Pythium ultimum var. ultimum
+P. vexans,8,a,0,8,1,0,16PR014C.1,Pythium vexans
+P. vexans,8,a,1,8,2,0,16PR014C.1,Pythium vexans
+P. vexans,8,a,0,8,2,0,16PR014C.1,Pythium vexans
+P. vexans,8,f,1,4,0,2,16PR014C.1,Pythium vexans
+P. vexans,8,f,0,3,0,2,16PR014C.1,Pythium vexans
+P. vexans,8,f,0,3,1,0,16PR014C.1,Pythium vexans
+P. ultimum,9,a,7,8,6,0,16PR015A.1,Pythium ultimum var. ultimum
+P. ultimum,9,a,8,8,0,0,16PR015A.1,Pythium ultimum var. ultimum
+P. ultimum,9,a,8,8,4,0,16PR015A.1,Pythium ultimum var. ultimum
+P. ultimum,9,f,4,8,0,0,16PR015A.1,Pythium ultimum var. ultimum
+P. ultimum,9,f,2,8,0,0,16PR015A.1,Pythium ultimum var. ultimum
+P. ultimum,9,f,5,8,0,0,16PR015A.1,Pythium ultimum var. ultimum
+P. vexans,10,a,2,8,2,0,16PR015B.1,Pythium vexans
+P. vexans,10,a,0,7,0,1,16PR015B.1,Pythium vexans
+P. vexans,10,a,0,8,1,1,16PR015B.1,Pythium vexans
+P. vexans,10,f,0,4,0,4,16PR015B.1,Pythium vexans
+P. vexans,10,f,0,0,1,7,16PR015B.1,Pythium vexans
+P. vexans,10,f,0,3,0,2,16PR015B.1,Pythium vexans
+P. ultimum,11,a,0,2,1,6,16PR015C.2,Pythium pleroticum*
+P. ultimum,11,a,1,2,1,6,16PR015C.2,Pythium pleroticum*
+P. ultimum,11,a,0,3,1,6,16PR015C.2,Pythium pleroticum*
+P. ultimum,11,f,0,3,0,4,16PR015C.2,Pythium pleroticum*
+P. ultimum,11,f,0,4,0,2,16PR015C.2,Pythium pleroticum*
+P. ultimum,11,f,1,1,0,6,16PR015C.2,Pythium pleroticum*
+P. ultimum,12,a,0,4,0,5,16PR016C.1,Pythium pleroticum*
+P. ultimum,12,a,0,6,1,4,16PR016C.1,Pythium pleroticum*
+P. ultimum,12,a,0,1,1,7,16PR016C.1,Pythium pleroticum*
+P. ultimum,12,f,0,3,1,2,16PR016C.1,Pythium pleroticum*
+P. ultimum,12,f,0,4,1,2,16PR016C.1,Pythium pleroticum*
+P. ultimum,12,f,0,4,0,4,16PR016C.1,Pythium pleroticum*
+P. ultimum,13,b,0,0,2,0,16PR017B.1,Pythium yorkensis
+P. ultimum,13,b,0,0,1,0,16PR017B.1,Pythium yorkensis
+P. ultimum,13,b,0,0,1,0,16PR017B.1,Pythium yorkensis
+P. ultimum,13,f,0,3,1,2,16PR017B.1,Pythium yorkensis
+P. ultimum,13,f,0,7,1,1,16PR017B.1,Pythium yorkensis
+P. ultimum,13,f,0,5,1,3,16PR017B.1,Pythium yorkensis
+P. ultimum,14,b,0,3,1,3,16PR017C.1,Pythium acrogynum*
+P. ultimum,14,b,0,5,3,3,16PR017C.1,Pythium acrogynum*
+P. ultimum,14,b,0,3,2,3,16PR017C.1,Pythium acrogynum*
+P. ultimum,14,f,0,5,0,3,16PR017C.1,Pythium acrogynum*
+P. ultimum,14,f,0,3,0,5,16PR017C.1,Pythium acrogynum*
+P. ultimum,14,f,0,3,1,3,16PR017C.1,Pythium acrogynum*
+P. aphanidermatum,15,b,0,8,2,0,16PR019A.1,Pythium aphanidermatum
+P. aphanidermatum,15,b,1,8,3,0,16PR019A.1,Pythium aphanidermatum
+P. aphanidermatum,15,b,2,8,4,0,16PR019A.1,Pythium aphanidermatum
+P. aphanidermatum,15,f,0,8,0,0,16PR019A.1,Pythium aphanidermatum
+P. aphanidermatum,15,f,0,8,0,0,16PR019A.1,Pythium aphanidermatum
+P. aphanidermatum,15,f,0,8,0,0,16PR019A.1,Pythium aphanidermatum
+P. ultimum,16,b,0,3,1,5,16PR019B.1,Pythium yorkensis
+P. ultimum,16,b,0,6,2,1,16PR019B.1,Pythium yorkensis
+P. ultimum,16,b,0,5,0,0,16PR019B.1,Pythium yorkensis
+P. ultimum,16,f,0,5,0,4,16PR019B.1,Pythium yorkensis
+P. ultimum,16,f,0,8,0,1,16PR019B.1,Pythium yorkensis
+P. ultimum,16,f,0,8,1,2,16PR019B.1,Pythium yorkensis
+P. ultimum,17,b,0,8,1,0,16PR021B.1,Pythium ultimum var. sporangiiferum
+P. ultimum,17,b,0,8,2,0,16PR021B.1,Pythium ultimum var. sporangiiferum
+P. ultimum,17,b,0,8,0,0,16PR021B.1,Pythium ultimum var. sporangiiferum
+P. ultimum,17,g,7,7,0,0,16PR021B.1,Pythium ultimum var. sporangiiferum
+P. ultimum,17,g,2,8,0,0,16PR021B.1,Pythium ultimum var. sporangiiferum
+P. ultimum,17,g,3,8,0,0,16PR021B.1,Pythium ultimum var. sporangiiferum
+P. ultimum,18,b,3,8,4,0,16PR028A.1,Pythium ultimum var. ultimum
+P. ultimum,18,b,1,8,3,0,16PR028A.1,Pythium ultimum var. ultimum
+P. ultimum,18,b,2,8,3,0,16PR028A.1,Pythium ultimum var. ultimum
+P. ultimum,18,g,3,8,1,0,16PR028A.1,Pythium ultimum var. ultimum
+P. ultimum,18,g,2,7,0,0,16PR028A.1,Pythium ultimum var. ultimum
+P. ultimum,18,g,1,8,0,0,16PR028A.1,Pythium ultimum var. ultimum
+P. ultimum,19,b,1,8,2,0,17PRORR.2,Pythium ultimum var. ultimum
+P. ultimum,19,b,0,8,1,0,17PRORR.2,Pythium ultimum var. ultimum
+P. ultimum,19,b,0,8,0,0,17PRORR.2,Pythium ultimum var. ultimum
+P. ultimum,19,g,3,8,0,0,17PRORR.2,Pythium ultimum var. ultimum
+P. ultimum,19,g,2,8,1,0,17PRORR.2,Pythium ultimum var. ultimum
+P. ultimum,19,g,0,8,0,0,17PRORR.2,Pythium ultimum var. ultimum
+P. ultimum,21,b,1,8,1,0,17PRORR.4,Pythium ultimum var. ultimum
+P. ultimum,21,b,2,8,2,0,17PRORR.4,Pythium ultimum var. ultimum
+P. ultimum,21,b,1,8,2,0,17PRORR.4,Pythium ultimum var. ultimum
+P. ultimum,21,g,4,8,0,0,17PRORR.4,Pythium ultimum var. ultimum
+P. ultimum,21,g,4,8,0,0,17PRORR.4,Pythium ultimum var. ultimum
+P. ultimum,21,g,3,8,1,0,17PRORR.4,Pythium ultimum var. ultimum
+P. ultimum,23,b,0,8,3,0,17PR008A.1,Pythium ultimum var. ultimum
+P. ultimum,23,b,3,8,3,0,17PR008A.1,Pythium ultimum var. ultimum
+P. ultimum,23,b,2,8,3,0,17PR008A.1,Pythium ultimum var. ultimum
+P. ultimum,23,g,4,8,1,0,17PR008A.1,Pythium ultimum var. ultimum
+P. ultimum,23,g,2,8,0,0,17PR008A.1,Pythium ultimum var. ultimum
+P. ultimum,23,g,2,8,1,0,17PR008A.1,Pythium ultimum var. ultimum
+P. dissotocum,24,b,0,8,3,2,17PR008H.2,Pythium torulosum
+P. dissotocum,24,b,1,8,0,0,17PR008H.2,Pythium torulosum
+P. dissotocum,24,b,0,8,0,3,17PR008H.2,Pythium torulosum
+P. dissotocum,24,g,0,7,1,3,17PR008H.2,Pythium torulosum
+P. dissotocum,24,g,1,6,0,3,17PR008H.2,Pythium torulosum
+P. dissotocum,24,g,0,8,0,3,17PR008H.2,Pythium torulosum
+P. ultimum,25,b,0,5,1,2,17PR009B.1,Pythium acanthophoron
+P. ultimum,25,b,0,7,1,0,17PR009B.1,Pythium acanthophoron
+P. ultimum,25,b,0,7,0,0,17PR009B.1,Pythium acanthophoron
+P. ultimum,26,c,0,7,1,1,17PR009B.2,Pythium acanthophoron
+P. ultimum,26,c,0,3,1,1,17PR009B.2,Pythium acanthophoron
+P. ultimum,26,c,1,4,0,4,17PR009B.2,Pythium acanthophoron
+P. ultimum,26,g,1,7,0,1,17PR009B.2,Pythium acanthophoron
+P. ultimum,26,g,0,6,0,2,17PR009B.2,Pythium acanthophoron
+P. ultimum,26,g,0,8,0,0,17PR009B.2,Pythium acanthophoron
+P. ultimum,27,c,0,8,1,0,17PR009D.1,Pythium ultimum var. ultimum
+P. ultimum,27,c,1,8,1,0,17PR009D.1,Pythium ultimum var. ultimum
+P. ultimum,27,c,2,8,2,0,17PR009D.1,Pythium ultimum var. ultimum
+P. ultimum,27,g,5,8,1,0,17PR009D.1,Pythium ultimum var. ultimum
+P. ultimum,27,g,3,8,0,0,17PR009D.1,Pythium ultimum var. ultimum
+P. ultimum,27,g,1,8,0,0,17PR009D.1,Pythium ultimum var. ultimum
+P. ultimum,28,c,0,8,1,0,17PR010C.2,Pythium ultimum var. ultimum
+P. ultimum,28,c,2,7,2,0,17PR010C.2,Pythium ultimum var. ultimum
+P. ultimum,28,c,3,8,3,0,17PR010C.2,Pythium ultimum var. ultimum
+P. ultimum,28,g,3,8,1,0,17PR010C.2,Pythium ultimum var. ultimum
+P. ultimum,28,g,2,8,1,0,17PR010C.2,Pythium ultimum var. ultimum
+P. ultimum,28,g,3,8,0,0,17PR010C.2,Pythium ultimum var. ultimum
+P. ultimum,29,c,0,8,0,0,17PR010D.1,Pythium ultimum var. ultimum
+P. ultimum,29,c,0,8,1,0,17PR010D.1,Pythium ultimum var. ultimum
+P. ultimum,29,c,1,8,0,0,17PR010D.1,Pythium ultimum var. ultimum
+P. ultimum,29,g,2,7,1,0,17PR010D.1,Pythium ultimum var. ultimum
+P. ultimum,29,g,2,8,0,0,17PR010D.1,Pythium ultimum var. ultimum
+P. ultimum,29,g,1,8,1,0,17PR010D.1,Pythium ultimum var. ultimum
+P. ultimum,30,c,0,8,2,0,17PR010G.1,Pythium pleroticum*
+P. ultimum,30,c,6,8,1,0,17PR010G.1,Pythium pleroticum*
+P. ultimum,30,c,3,8,3,0,17PR010G.1,Pythium pleroticum*
+P. ultimum,30,g,5,8,2,0,17PR010G.1,Pythium pleroticum*
+P. ultimum,30,g,5,8,0,0,17PR010G.1,Pythium pleroticum*
+P. ultimum,30,g,4,8,1,0,17PR010G.1,Pythium pleroticum*
+P. ultimum,31,c,0,8,0,0,17PR010G.2,Pythium ultimum var. ultimum
+P. ultimum,31,c,2,8,2,0,17PR010G.2,Pythium ultimum var. ultimum
+P. ultimum,31,c,2,8,1,0,17PR010G.2,Pythium ultimum var. ultimum
+P. ultimum,31,h,4,8,0,0,17PR010G.2,Pythium ultimum var. ultimum
+P. ultimum,31,h,2,8,0,0,17PR010G.2,Pythium ultimum var. ultimum
+P. ultimum,31,h,4,8,1,0,17PR010G.2,Pythium ultimum var. ultimum
+P. ultimum,32,c,0,7,2,0,17PR010H.3,Pythium ultimum var. ultimum
+P. ultimum,32,c,2,8,2,0,17PR010H.3,Pythium ultimum var. ultimum
+P. ultimum,32,c,4,8,4,0,17PR010H.3,Pythium ultimum var. ultimum
+P. ultimum,32,h,1,7,1,0,17PR010H.3,Pythium ultimum var. ultimum
+P. ultimum,32,h,4,8,0,0,17PR010H.3,Pythium ultimum var. ultimum
+P. ultimum,32,h,1,8,1,0,17PR010H.3,Pythium ultimum var. ultimum
+P. ultimum,33,c,0,8,3,0,17PR010I.2,Pythium ultimum var. ultimum
+P. ultimum,33,c,7,8,5,0,17PR010I.2,Pythium ultimum var. ultimum
+P. ultimum,33,c,7,8,1,0,17PR010I.2,Pythium ultimum var. ultimum
+P. ultimum,33,h,3,8,0,0,17PR010I.2,Pythium ultimum var. ultimum
+P. ultimum,33,h,4,8,0,0,17PR010I.2,Pythium ultimum var. ultimum
+P. ultimum,33,h,2,8,0,0,17PR010I.2,Pythium ultimum var. ultimum
+P. aphanidermatum,34,c,0,8,0,0,17PR011G.1,Pythium aphanidermatum
+P. aphanidermatum,34,c,0,8,1,0,17PR011G.1,Pythium aphanidermatum
+P. aphanidermatum,34,c,0,8,1,0,17PR011G.1,Pythium aphanidermatum
+P. aphanidermatum,34,h,3,8,1,0,17PR011G.1,Pythium aphanidermatum
+P. aphanidermatum,34,h,3,8,0,0,17PR011G.1,Pythium aphanidermatum
+P. aphanidermatum,34,h,1,7,0,0,17PR011G.1,Pythium aphanidermatum
+P. aphanidermatum,36,c,0,8,1,0,17PR011J.1,Pythium aphanidermatum
+P. aphanidermatum,36,c,0,8,0,0,17PR011J.1,Pythium aphanidermatum
+P. aphanidermatum,36,c,0,8,0,0,17PR011J.1,Pythium aphanidermatum
+P. aphanidermatum,36,h,4,8,0,0,17PR011J.1,Pythium aphanidermatum
+P. aphanidermatum,36,h,3,8,0,0,17PR011J.1,Pythium aphanidermatum
+P. aphanidermatum,36,h,0,8,0,0,17PR011J.1,Pythium aphanidermatum
+P. ultimum,37,c,0,7,3,0,17PR012C.2,Pythium ultimum var. ultimum
+P. ultimum,37,c,3,8,1,0,17PR012C.2,Pythium ultimum var. ultimum
+P. ultimum,37,c,0,8,1,0,17PR012C.2,Pythium ultimum var. ultimum
+P. ultimum,37,h,3,8,0,0,17PR012C.2,Pythium ultimum var. ultimum
+P. ultimum,37,h,2,8,0,0,17PR012C.2,Pythium ultimum var. ultimum
+P. ultimum,37,h,2,8,0,0,17PR012C.2,Pythium ultimum var. ultimum
+P. ultimum,38,c,2,7,3,0,17PR013A.1,Pythium ultimum var. ultimum
+P. ultimum,38,c,0,8,0,0,17PR013A.1,Pythium ultimum var. ultimum
+P. ultimum,38,c,2,8,2,0,17PR013A.1,Pythium ultimum var. ultimum
+P. ultimum,38,h,3,8,1,0,17PR013A.1,Pythium ultimum var. ultimum
+P. ultimum,38,h,4,8,1,0,17PR013A.1,Pythium ultimum var. ultimum
+P. ultimum,38,h,2,7,0,0,17PR013A.1,Pythium ultimum var. ultimum
+P. ultimum,39,d,6,8,3,0,17PR013A.2,Pythium ultimum var. ultimum
+P. ultimum,39,d,6,8,2,0,17PR013A.2,Pythium ultimum var. ultimum
+P. ultimum,39,d,2,8,3,0,17PR013A.2,Pythium ultimum var. ultimum
+P. ultimum,39,h,4,8,0,0,17PR013A.2,Pythium ultimum var. ultimum
+P. ultimum,39,h,4,8,0,0,17PR013A.2,Pythium ultimum var. ultimum
+P. ultimum,39,h,0,7,1,0,17PR013A.2,Pythium ultimum var. ultimum
+P. ultimum,40,d,2,8,0,0,17PR013A.4,Pythium ultimum var. ultimum
+P. ultimum,40,d,0,8,0,0,17PR013A.4,Pythium ultimum var. ultimum
+P. ultimum,40,d,5,8,2,0,17PR013A.4,Pythium ultimum var. ultimum
+P. ultimum,40,h,4,8,0,0,17PR013A.4,Pythium ultimum var. ultimum
+P. ultimum,40,h,3,8,1,0,17PR013A.4,Pythium ultimum var. ultimum
+P. ultimum,40,h,2,8,1,0,17PR013A.4,Pythium ultimum var. ultimum
+P. ultimum,41,d,1,8,1,0,17PR013B.1,Pythium ultimum var. ultimum
+P. ultimum,41,d,4,8,1,0,17PR013B.1,Pythium ultimum var. ultimum
+P. ultimum,41,d,3,8,3,0,17PR013B.1,Pythium ultimum var. ultimum
+P. ultimum,41,h,5,8,0,0,17PR013B.1,Pythium ultimum var. ultimum
+P. ultimum,41,h,3,7,0,0,17PR013B.1,Pythium ultimum var. ultimum
+P. ultimum,41,h,4,8,0,0,17PR013B.1,Pythium ultimum var. ultimum
+P. ultimum,42,d,2,8,3,0,17PR013B.2,Pythium ultimum var. ultimum
+P. ultimum,42,d,0,8,1,0,17PR013B.2,Pythium ultimum var. ultimum
+P. ultimum,42,d,2,8,2,0,17PR013B.2,Pythium ultimum var. ultimum
+P. ultimum,42,h,0,8,0,0,17PR013B.2,Pythium ultimum var. ultimum
+P. ultimum,42,h,1,8,0,0,17PR013B.2,Pythium ultimum var. ultimum
+P. ultimum,42,h,2,8,0,0,17PR013B.2,Pythium ultimum var. ultimum
+P. ultimum,43,d,3,8,2,0,17PR013B.3,Pythium ultimum var. ultimum
+P. ultimum,43,d,0,8,1,0,17PR013B.3,Pythium ultimum var. ultimum
+P. ultimum,43,d,1,8,3,0,17PR013B.3,Pythium ultimum var. ultimum
+P. ultimum,43,h,3,8,1,0,17PR013B.3,Pythium ultimum var. ultimum
+P. ultimum,43,h,4,8,1,0,17PR013B.3,Pythium ultimum var. ultimum
+P. ultimum,43,h,3,8,0,0,17PR013B.3,Pythium ultimum var. ultimum
+P. ultimum,44,d,2,8,2,0,17PR013D.1,Pythium ultimum var. ultimum
+P. ultimum,44,d,3,8,2,0,17PR013D.1,Pythium ultimum var. ultimum
+P. ultimum,44,d,2,8,1,0,17PR013D.1,Pythium ultimum var. ultimum
+P. ultimum,44,i,3,8,0,0,17PR013D.1,Pythium ultimum var. ultimum
+P. ultimum,44,i,1,8,0,0,17PR013D.1,Pythium ultimum var. ultimum
+P. ultimum,44,i,5,8,0,0,17PR013D.1,Pythium ultimum var. ultimum
+P. dissotocum,45,d,0,6,2,0,17PR013G.1,Pythium torulosum
+P. dissotocum,45,d,0,2,1,2,17PR013G.1,Pythium torulosum
+P. dissotocum,45,d,0,8,2,1,17PR013G.1,Pythium torulosum
+P. dissotocum,45,i,0,8,0,0,17PR013G.1,Pythium torulosum
+P. dissotocum,45,i,0,8,0,0,17PR013G.1,Pythium torulosum
+P. dissotocum,45,i,1,8,1,2,17PR013G.1,Pythium torulosum
+P. ultimum,46,d,3,8,2,0,17PR015I.1,Pythium ultimum var. ultimum
+P. ultimum,46,d,2,8,1,0,17PR015I.1,Pythium ultimum var. ultimum
+P. ultimum,46,d,1,8,0,0,17PR015I.1,Pythium ultimum var. ultimum
+P. ultimum,46,i,0,8,0,0,17PR015I.1,Pythium ultimum var. ultimum
+P. ultimum,46,i,2,8,0,0,17PR015I.1,Pythium ultimum var. ultimum
+P. ultimum,46,i,3,8,0,0,17PR015I.1,Pythium ultimum var. ultimum
+P. ultimum,47,d,1,8,1,0,17PR015I.2,Pythium ultimum var. ultimum
+P. ultimum,47,d,2,8,2,0,17PR015I.2,Pythium ultimum var. ultimum
+P. ultimum,47,d,4,8,4,0,17PR015I.2,Pythium ultimum var. ultimum
+P. ultimum,47,i,3,8,0,0,17PR015I.2,Pythium ultimum var. ultimum
+P. ultimum,47,i,3,-,0,0,17PR015I.2,Pythium ultimum var. ultimum
+P. ultimum,47,i,5,8,1,0,17PR015I.2,Pythium ultimum var. ultimum
+P. ultimum,50,d,3,5,3,0,17PR016C.1,Pythium ultimum var. ultimum
+P. ultimum,50,d,3,8,3,0,17PR016C.1,Pythium ultimum var. ultimum
+P. ultimum,50,d,3,8,2,0,17PR016C.1,Pythium ultimum var. ultimum
+P. ultimum,50,i,4,8,0,0,17PR016C.1,Pythium ultimum var. ultimum
+P. ultimum,50,i,3,8,0,0,17PR016C.1,Pythium ultimum var. ultimum
+P. ultimum,50,i,2,8,2,0,17PR016C.1,Pythium ultimum var. ultimum
+P. ultimum,51,d,1,8,2,0,17PR016C.2,Pythium ultimum var. ultimum
+P. ultimum,51,d,2,8,2,0,17PR016C.2,Pythium ultimum var. ultimum
+P. ultimum,51,d,3,8,3,0,17PR016C.2,Pythium ultimum var. ultimum
+P. ultimum,51,i,2,8,2,0,17PR016C.2,Pythium ultimum var. ultimum
+P. ultimum,51,i,0,8,0,0,17PR016C.2,Pythium ultimum var. ultimum
+P. ultimum,51,i,2,8,0,0,17PR016C.2,Pythium ultimum var. ultimum
+P. ultimum,52,d,2,8,2,0,17PR016E.1,Pythium ultimum var. ultimum
+P. ultimum,52,d,2,8,1,0,17PR016E.1,Pythium ultimum var. ultimum
+P. ultimum,52,d,1,8,1,0,17PR016E.1,Pythium ultimum var. ultimum
+P. ultimum,52,i,0,8,0,0,17PR016E.1,Pythium ultimum var. ultimum
+P. ultimum,52,i,3,6,0,0,17PR016E.1,Pythium ultimum var. ultimum
+P. ultimum,52,i,4,8,0,0,17PR016E.1,Pythium ultimum var. ultimum
+P. ultimum,53,d,3,8,3,0,17PR016G.1,Pythium ultimum var. ultimum
+P. ultimum,53,d,1,8,2,0,17PR016G.1,Pythium ultimum var. ultimum
+P. ultimum,53,d,2,8,4,0,17PR016G.1,Pythium ultimum var. ultimum
+P. ultimum,53,i,3,8,1,0,17PR016G.1,Pythium ultimum var. ultimum
+P. ultimum,53,i,4,8,3,0,17PR016G.1,Pythium ultimum var. ultimum
+P. ultimum,53,i,2,8,0,0,17PR016G.1,Pythium ultimum var. ultimum
+P. ultimum,54,d,4,8,2,0,17PR016G.2,Pythium ultimum var. ultimum
+P. ultimum,54,d,3,8,2,0,17PR016G.2,Pythium ultimum var. ultimum
+P. ultimum,54,d,1,8,2,0,17PR016G.2,Pythium ultimum var. ultimum
+P. ultimum,54,i,2,8,0,0,17PR016G.2,Pythium ultimum var. ultimum
+P. ultimum,54,i,2,8,2,0,17PR016G.2,Pythium ultimum var. ultimum
+P. ultimum,54,i,5,8,1,0,17PR016G.2,Pythium ultimum var. ultimum
+P. ultimum,55,e,3,8,2,0,17PR016G.3,Pythium ultimum var. ultimum
+P. ultimum,55,e,3,8,2,0,17PR016G.3,Pythium ultimum var. ultimum
+P. ultimum,55,e,2,8,2,0,17PR016G.3,Pythium ultimum var. ultimum
+P. ultimum,55,i,4,7,0,0,17PR016G.3,Pythium ultimum var. ultimum
+P. ultimum,55,i,1,8,0,0,17PR016G.3,Pythium ultimum var. ultimum
+P. ultimum,55,i,2,8,0,0,17PR016G.3,Pythium ultimum var. ultimum
+P. ultimum,56,e,2,8,2,0,17PR016J.1,Pythium ultimum var. ultimum
+P. ultimum,56,e,6,8,4,0,17PR016J.1,Pythium ultimum var. ultimum
+P. ultimum,56,e,4,8,2,0,17PR016J.1,Pythium ultimum var. ultimum
+P. ultimum,56,i,2,8,0,0,17PR016J.1,Pythium ultimum var. ultimum
+P. ultimum,56,i,2,8,1,0,17PR016J.1,Pythium ultimum var. ultimum
+P. ultimum,56,i,4,8,4,0,17PR016J.1,Pythium ultimum var. ultimum
+P. ultimum,57,e,3,8,2,0,17PR007K.2,Pythium ultimum var. ultimum
+P. ultimum,57,e,4,8,2,0,17PR007K.2,Pythium ultimum var. ultimum
+P. ultimum,57,e,4,8,2,0,17PR007K.2,Pythium ultimum var. ultimum
+P. ultimum,57,i,3,8,2,0,17PR007K.2,Pythium ultimum var. ultimum
+P. ultimum,57,i,1,8,0,0,17PR007K.2,Pythium ultimum var. ultimum
+P. ultimum,57,i,4,8,2,0,17PR007K.2,Pythium ultimum var. ultimum
+P. ultimum,58,e,6,8,5,0,17PR001L.1,Pythium ultimum var. ultimum
+P. ultimum,58,e,5,8,3,0,17PR001L.1,Pythium ultimum var. ultimum
+P. ultimum,58,e,4,8,3,0,17PR001L.1,Pythium ultimum var. ultimum
+P. ultimum,58,j,0,8,0,0,17PR001L.1,Pythium ultimum var. ultimum
+P. ultimum,58,j,0,8,0,0,17PR001L.1,Pythium ultimum var. ultimum
+P. ultimum,58,j,0,8,0,0,17PR001L.1,Pythium ultimum var. ultimum
+P. ultimum,59,e,2,7,3,0,17PR003K.1,Pythium ultimum var. ultimum
+P. ultimum,59,e,3,8,3,0,17PR003K.1,Pythium ultimum var. ultimum
+P. ultimum,59,e,5,8,2,0,17PR003K.1,Pythium ultimum var. ultimum
+P. ultimum,59,j,1,8,0,0,17PR003K.1,Pythium ultimum var. ultimum
+P. ultimum,59,j,4,8,0,0,17PR003K.1,Pythium ultimum var. ultimum
+P. ultimum,59,j,3,8,0,0,17PR003K.1,Pythium ultimum var. ultimum
+P. ultimum,60,e,2,8,2,0,17PR003K.2,Pythium ultimum var. ultimum
+P. ultimum,60,e,5,8,3,0,17PR003K.2,Pythium ultimum var. ultimum
+P. ultimum,60,e,3,7,3,0,17PR003K.2,Pythium ultimum var. ultimum
+P. ultimum,60,j,6,8,0,0,17PR003K.2,Pythium ultimum var. ultimum
+P. ultimum,60,j,3,7,0,0,17PR003K.2,Pythium ultimum var. ultimum
+P. ultimum,60,j,5,8,0,0,17PR003K.2,Pythium ultimum var. ultimum
+P. ultimum,61,e,2,8,1,0,17PR012K.1,Pythium ultimum var. ultimum
+P. ultimum,61,e,3,8,3,0,17PR012K.1,Pythium ultimum var. ultimum
+P. ultimum,61,e,2,6,1,0,17PR012K.1,Pythium ultimum var. ultimum
+P. ultimum,61,j,2,8,0,0,17PR012K.1,Pythium ultimum var. ultimum
+P. ultimum,61,j,4,7,0,0,17PR012K.1,Pythium ultimum var. ultimum
+P. ultimum,61,j,2,8,0,0,17PR012K.1,Pythium ultimum var. ultimum
+P. ultimum,63,e,7,7,6,0,17PR012L.2,Pythium ultimum var. ultimum
+P. ultimum,63,e,4,8,2,0,17PR012L.2,Pythium ultimum var. ultimum
+P. ultimum,63,e,7,8,5,0,17PR012L.2,Pythium ultimum var. ultimum
+P. ultimum,63,j,4,8,0,0,17PR012L.2,Pythium ultimum var. ultimum
+P. ultimum,63,j,3,8,0,0,17PR012L.2,Pythium ultimum var. ultimum
+P. ultimum,63,j,4,8,0,0,17PR012L.2,Pythium ultimum var. ultimum
+P. ultimum,64,e,5,8,3,0,17PR007K.1,Pythium ultimum var. ultimum
+P. ultimum,64,e,4,8,5,0,17PR007K.1,Pythium ultimum var. ultimum
+P. ultimum,64,e,6,8,4,0,17PR007K.1,Pythium ultimum var. ultimum
+P. ultimum,64,j,3,8,0,0,17PR007K.1,Pythium ultimum var. ultimum
+P. ultimum,64,j,2,7,0,0,17PR007K.1,Pythium ultimum var. ultimum
+P. ultimum,64,j,2,7,0,0,17PR007K.1,Pythium ultimum var. ultimum
+P. ultimum,65,e,4,8,2,0,17PR007K.3,Pythium ultimum var. ultimum
+P. ultimum,65,e,4,8,2,0,17PR007K.3,Pythium ultimum var. ultimum
+P. ultimum,65,e,3,8,2,0,17PR007K.3,Pythium ultimum var. ultimum
+P. ultimum,65,j,1,8,0,0,17PR007K.3,Pythium ultimum var. ultimum
+P. ultimum,65,j,0,0,0,0,17PR007K.3,Pythium ultimum var. ultimum
+P. ultimum,65,j,2,8,0,0,17PR007K.3,Pythium ultimum var. ultimum
+P. ultimum,66,e,7,8,4,0,17PR016J.2,Pythium ultimum var. ultimum
+P. ultimum,66,e,3,8,2,0,17PR016J.2,Pythium ultimum var. ultimum
+P. ultimum,66,e,5,8,3,0,17PR016J.2,Pythium ultimum var. ultimum
+P. ultimum,66,j,1,8,0,0,17PR016J.2,Pythium ultimum var. ultimum
+P. ultimum,66,j,2,8,0,0,17PR016J.2,Pythium ultimum var. ultimum
+P. ultimum,66,j,3,8,0,0,17PR016J.2,Pythium ultimum var. ultimum
