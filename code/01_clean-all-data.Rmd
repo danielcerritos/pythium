@@ -107,7 +107,7 @@ seed_corn <- read_excel(here("data", "Pythium isolate survey Aggressiveness -cor
                         sheet = 2, skip = 3)
 
 seed_corn <- seed_corn %>% 
-  dplyr::select(Species, plate_id = id, run, rep = Rep, colonized = fuzzy, germination, 
+  dplyr::select(Species, plate_id = id, run, rep = Rep, colonized_5 = fuzzy, germination_5 = germination, 
                 bag_weight_g = `Bag weight`, dry_weight_bag_g =`Dry Mass(w/ bag)`, 
                 )
 
