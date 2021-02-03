@@ -9,18 +9,31 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
-
-```{r cars}
-summary(cars)
+```{r library}
+library(here)
+library(tidyverse)
 ```
 
-## Including Plots
+```{r import data}
+# aggressiveness seed assays
+seed_soybean <- read_csv(here("output", "clean_data", "01_seed-aggressiveness-soybean_clean-data.csv"))
+seed_corn <- read_csv(here("output", "clean_data", "01_seed-aggressiveness-corn_clean-data.csv"))
+# aggressiveness seedling assays
+seedling_soybean_agar <- read_csv(here("output", "clean_data", "01_seedling-aggressiveness-soybean-agar_clean-data.csv"))
+seedling_soybean_millet <- read_csv(here("output", "clean_data", "01_seedling-aggressiveness-soybean-agar_clean-data.csv"))
+# effect of media on pythium growth 
+media_soybean <- read_csv(here("output", "clean_data", "01_media-effect-pythium-aggressiveness.csv"))
+# fungicide sensitivity
+fungicide <- read_csv(here("output", "clean_data", "01-fungicide-sensitivty_clean-data.csv"))
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Aggressiveness on seed
+
+### Soybean
+
+```{r agg soybean }
+seed_soybean
+```
+

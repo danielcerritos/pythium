@@ -95,15 +95,15 @@ P. ultimum,1,a,8,8,7,0,16PR001.1,Pythium ultimum var. sporangiiferum
 P. ultimum,1,f,3,7,0,0,16PR001.1,Pythium ultimum var. sporangiiferum
 P. ultimum,1,f,3,8,0,0,16PR001.1,Pythium ultimum var. sporangiiferum
 P. ultimum,1,f,5,8,0,0,16PR001.1,Pythium ultimum var. sporangiiferum
-P. ultimum,2,f,0,7,0,0,16PR007.1,Pythium yorkensis*
-P. ultimum,2,f,0,5,0,1,16PR007.1,Pythium yorkensis*
-P. ultimum,2,f,1,6,1,0,16PR007.1,Pythium yorkensis*
-P. ultimum,3,a,0,0,0,3,16PR007.2,Pythium yorkensis*
-P. ultimum,3,a,0,0,3,4,16PR007.2,Pythium yorkensis*
-P. ultimum,3,a,0,1,1,7,16PR007.2,Pythium yorkensis*
-P. ultimum,3,f,0,8,1,1,16PR007.2,Pythium yorkensis*
-P. ultimum,3,f,0,5,3,3,16PR007.2,Pythium yorkensis*
-P. ultimum,3,f,1,8,0,0,16PR007.2,Pythium yorkensis*
+P. ultimum,2,f,0,7,0,0,16PR007.1,Pythium yorkensis
+P. ultimum,2,f,0,5,0,1,16PR007.1,Pythium yorkensis
+P. ultimum,2,f,1,6,1,0,16PR007.1,Pythium yorkensis
+P. ultimum,3,a,0,0,0,3,16PR007.2,Pythium yorkensis
+P. ultimum,3,a,0,0,3,4,16PR007.2,Pythium yorkensis
+P. ultimum,3,a,0,1,1,7,16PR007.2,Pythium yorkensis
+P. ultimum,3,f,0,8,1,1,16PR007.2,Pythium yorkensis
+P. ultimum,3,f,0,5,3,3,16PR007.2,Pythium yorkensis
+P. ultimum,3,f,1,8,0,0,16PR007.2,Pythium yorkensis
 P. dissotocum,4,a,0,2,0,6,16PR008B.1,Pythium torulosum
 P. dissotocum,4,a,0,1,0,5,16PR008B.1,Pythium torulosum
 P. dissotocum,4,a,0,1,2,6,16PR008B.1,Pythium torulosum
@@ -113,12 +113,12 @@ P. dissotocum,4,f,0,8,0,2,16PR008B.1,Pythium torulosum
 P. irregulare,5,a,1,8,4,0,16PR010.1,Pythium irregulare
 P. irregulare,5,a,2,8,6,0,16PR010.1,Pythium irregulare
 P. irregulare,5,a,7,6,5,0,16PR010.1,Pythium irregulare
-P. ultimum,6,a,0,1,0,7,16PR012.1,Pythium pleroticum*
-P. ultimum,6,a,0,3,2,6,16PR012.1,Pythium pleroticum*
-P. ultimum,6,a,0,3,2,3,16PR012.1,Pythium pleroticum*
-P. ultimum,6,f,0,7,0,1,16PR012.1,Pythium pleroticum*
-P. ultimum,6,f,1,8,1,4,16PR012.1,Pythium pleroticum*
-P. ultimum,6,f,0,8,0,6,16PR012.1,Pythium pleroticum*
+P. ultimum,6,a,0,1,0,7,16PR012.1,Pythium pleroticum
+P. ultimum,6,a,0,3,2,6,16PR012.1,Pythium pleroticum
+P. ultimum,6,a,0,3,2,3,16PR012.1,Pythium pleroticum
+P. ultimum,6,f,0,7,0,1,16PR012.1,Pythium pleroticum
+P. ultimum,6,f,1,8,1,4,16PR012.1,Pythium pleroticum
+P. ultimum,6,f,0,8,0,6,16PR012.1,Pythium pleroticum
 P. ultimum,7,a,2,8,1,0,16PR013C.1,Pythium ultimum var. ultimum
 P. ultimum,7,a,4,8,4,0,16PR013C.1,Pythium ultimum var. ultimum
 P. ultimum,7,a,4,8,3,0,16PR013C.1,Pythium ultimum var. ultimum
@@ -143,30 +143,30 @@ P. vexans,10,a,0,8,1,1,16PR015B.1,Pythium vexans
 P. vexans,10,f,0,4,0,4,16PR015B.1,Pythium vexans
 P. vexans,10,f,0,0,1,7,16PR015B.1,Pythium vexans
 P. vexans,10,f,0,3,0,2,16PR015B.1,Pythium vexans
-P. ultimum,11,a,0,2,1,6,16PR015C.2,Pythium pleroticum*
-P. ultimum,11,a,1,2,1,6,16PR015C.2,Pythium pleroticum*
-P. ultimum,11,a,0,3,1,6,16PR015C.2,Pythium pleroticum*
-P. ultimum,11,f,0,3,0,4,16PR015C.2,Pythium pleroticum*
-P. ultimum,11,f,0,4,0,2,16PR015C.2,Pythium pleroticum*
-P. ultimum,11,f,1,1,0,6,16PR015C.2,Pythium pleroticum*
-P. ultimum,12,a,0,4,0,5,16PR016C.1,Pythium pleroticum*
-P. ultimum,12,a,0,6,1,4,16PR016C.1,Pythium pleroticum*
-P. ultimum,12,a,0,1,1,7,16PR016C.1,Pythium pleroticum*
-P. ultimum,12,f,0,3,1,2,16PR016C.1,Pythium pleroticum*
-P. ultimum,12,f,0,4,1,2,16PR016C.1,Pythium pleroticum*
-P. ultimum,12,f,0,4,0,4,16PR016C.1,Pythium pleroticum*
+P. ultimum,11,a,0,2,1,6,16PR015C.2,Pythium pleroticum
+P. ultimum,11,a,1,2,1,6,16PR015C.2,Pythium pleroticum
+P. ultimum,11,a,0,3,1,6,16PR015C.2,Pythium pleroticum
+P. ultimum,11,f,0,3,0,4,16PR015C.2,Pythium pleroticum
+P. ultimum,11,f,0,4,0,2,16PR015C.2,Pythium pleroticum
+P. ultimum,11,f,1,1,0,6,16PR015C.2,Pythium pleroticum
+P. ultimum,12,a,0,4,0,5,16PR016C.1,Pythium pleroticum
+P. ultimum,12,a,0,6,1,4,16PR016C.1,Pythium pleroticum
+P. ultimum,12,a,0,1,1,7,16PR016C.1,Pythium pleroticum
+P. ultimum,12,f,0,3,1,2,16PR016C.1,Pythium pleroticum
+P. ultimum,12,f,0,4,1,2,16PR016C.1,Pythium pleroticum
+P. ultimum,12,f,0,4,0,4,16PR016C.1,Pythium pleroticum
 P. ultimum,13,b,0,0,2,0,16PR017B.1,Pythium yorkensis
 P. ultimum,13,b,0,0,1,0,16PR017B.1,Pythium yorkensis
 P. ultimum,13,b,0,0,1,0,16PR017B.1,Pythium yorkensis
 P. ultimum,13,f,0,3,1,2,16PR017B.1,Pythium yorkensis
 P. ultimum,13,f,0,7,1,1,16PR017B.1,Pythium yorkensis
 P. ultimum,13,f,0,5,1,3,16PR017B.1,Pythium yorkensis
-P. ultimum,14,b,0,3,1,3,16PR017C.1,Pythium acrogynum*
-P. ultimum,14,b,0,5,3,3,16PR017C.1,Pythium acrogynum*
-P. ultimum,14,b,0,3,2,3,16PR017C.1,Pythium acrogynum*
-P. ultimum,14,f,0,5,0,3,16PR017C.1,Pythium acrogynum*
-P. ultimum,14,f,0,3,0,5,16PR017C.1,Pythium acrogynum*
-P. ultimum,14,f,0,3,1,3,16PR017C.1,Pythium acrogynum*
+P. ultimum,14,b,0,3,1,3,16PR017C.1,Pythium acrogynum
+P. ultimum,14,b,0,5,3,3,16PR017C.1,Pythium acrogynum
+P. ultimum,14,b,0,3,2,3,16PR017C.1,Pythium acrogynum
+P. ultimum,14,f,0,5,0,3,16PR017C.1,Pythium acrogynum
+P. ultimum,14,f,0,3,0,5,16PR017C.1,Pythium acrogynum
+P. ultimum,14,f,0,3,1,3,16PR017C.1,Pythium acrogynum
 P. aphanidermatum,15,b,0,8,2,0,16PR019A.1,Pythium aphanidermatum
 P. aphanidermatum,15,b,1,8,3,0,16PR019A.1,Pythium aphanidermatum
 P. aphanidermatum,15,b,2,8,4,0,16PR019A.1,Pythium aphanidermatum
@@ -242,12 +242,12 @@ P. ultimum,29,c,1,8,0,0,17PR010D.1,Pythium ultimum var. ultimum
 P. ultimum,29,g,2,7,1,0,17PR010D.1,Pythium ultimum var. ultimum
 P. ultimum,29,g,2,8,0,0,17PR010D.1,Pythium ultimum var. ultimum
 P. ultimum,29,g,1,8,1,0,17PR010D.1,Pythium ultimum var. ultimum
-P. ultimum,30,c,0,8,2,0,17PR010G.1,Pythium pleroticum*
-P. ultimum,30,c,6,8,1,0,17PR010G.1,Pythium pleroticum*
-P. ultimum,30,c,3,8,3,0,17PR010G.1,Pythium pleroticum*
-P. ultimum,30,g,5,8,2,0,17PR010G.1,Pythium pleroticum*
-P. ultimum,30,g,5,8,0,0,17PR010G.1,Pythium pleroticum*
-P. ultimum,30,g,4,8,1,0,17PR010G.1,Pythium pleroticum*
+P. ultimum,30,c,0,8,2,0,17PR010G.1,Pythium pleroticum
+P. ultimum,30,c,6,8,1,0,17PR010G.1,Pythium pleroticum
+P. ultimum,30,c,3,8,3,0,17PR010G.1,Pythium pleroticum
+P. ultimum,30,g,5,8,2,0,17PR010G.1,Pythium pleroticum
+P. ultimum,30,g,5,8,0,0,17PR010G.1,Pythium pleroticum
+P. ultimum,30,g,4,8,1,0,17PR010G.1,Pythium pleroticum
 P. ultimum,31,c,0,8,0,0,17PR010G.2,Pythium ultimum var. ultimum
 P. ultimum,31,c,2,8,2,0,17PR010G.2,Pythium ultimum var. ultimum
 P. ultimum,31,c,2,8,1,0,17PR010G.2,Pythium ultimum var. ultimum

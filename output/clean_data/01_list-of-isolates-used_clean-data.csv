@@ -1,18 +1,18 @@
 sample_id,county,isolate_id,species,plate_id
 16PR001,Champaign,16PR001.1,Pythium ultimum var. sporangiiferum,1
-16PR007,Champaign,16PR007.1,Pythium yorkensis*,2
-16PR007,Champaign,16PR007.2,Pythium yorkensis*,3
+16PR007,Champaign,16PR007.1,Pythium yorkensis,2
+16PR007,Champaign,16PR007.2,Pythium yorkensis,3
 16PR008,Champaign,16PR008B.1,Pythium torulosum,4
 16PR010,Champaign,16PR010.1,Pythium irregulare,5
-16PR012,"IN WISCONSIN, closest to McHenry",16PR012.1,Pythium pleroticum*,6
+16PR012,"IN WISCONSIN, closest to McHenry",16PR012.1,Pythium pleroticum,6
 16PR013C,Kankakee,16PR013C.1,Pythium ultimum var. ultimum,7
 16PR014C,Kankakee,16PR014C.1,Pythium vexans,8
 16PR015A,Kankakee,16PR015A.1,Pythium ultimum var. ultimum,9
 16PR015B,Kankakee,16PR015B.1,Pythium vexans,10
-16PR015C,Kankakee,16PR015C.2,Pythium pleroticum*,11
-16PR016C,Will,16PR016C.1,Pythium pleroticum*,12
+16PR015C,Kankakee,16PR015C.2,Pythium pleroticum,11
+16PR016C,Will,16PR016C.1,Pythium pleroticum,12
 16PR017B,Kankakee,16PR017B.1,Pythium yorkensis,13
-16PR017C,Kankakee,16PR017C.1,Pythium acrogynum*,14
+16PR017C,Kankakee,16PR017C.1,Pythium acrogynum,14
 16PR019A,Kankakee,16PR019A.1,Pythium aphanidermatum,15
 16PR019B,Kankakee,16PR019B.1,Pythium yorkensis,16
 16PR021B,Kendall,16PR021B.1,Pythium ultimum var. sporangiiferum,17
@@ -28,7 +28,7 @@ sample_id,county,isolate_id,species,plate_id
 17PR009D,Franklin,17PR009D.1,Pythium ultimum var. ultimum,27
 17PR010C,Jackson,17PR010C.2,Pythium ultimum var. ultimum,28
 17PR010D,Jackson,17PR010D.1,Pythium ultimum var. ultimum,29
-17PR010G,Jackson,17PR010G.1,Pythium pleroticum*,30
+17PR010G,Jackson,17PR010G.1,Pythium pleroticum,30
 17PR010G,Jackson,17PR010G.2,Pythium ultimum var. ultimum,31
 17PR010H,Jackson,17PR010H.3,Pythium ultimum var. ultimum,32
 17PR010I,Jackson,17PR010I.2,Pythium ultimum var. ultimum,33

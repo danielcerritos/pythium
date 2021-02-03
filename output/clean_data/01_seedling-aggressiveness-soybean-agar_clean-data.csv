@@ -2,21 +2,21 @@ isolate_id,species,plate_id,rep,emergence,plant_mass_g,root_mass_g,root_rot_perc
 16PR001.1,Pythium ultimum var. sporangiiferum,1,A,N,NA,NA,NA
 16PR001.1,Pythium ultimum var. sporangiiferum,1,B,Y,3.22,1.53,0
 16PR001.1,Pythium ultimum var. sporangiiferum,1,C,N,NA,NA,NA
-16PR007.1,Pythium yorkensis*,2,A,Y,3.22,1.83,50
-16PR007.1,Pythium yorkensis*,2,B,N,NA,NA,NA
-16PR007.1,Pythium yorkensis*,2,C,N,NA,NA,NA
-16PR007.2,Pythium yorkensis*,3,A,Y,2.82,1.23,10
-16PR007.2,Pythium yorkensis*,3,B,Y,3.6,1.51,20
-16PR007.2,Pythium yorkensis*,3,C,Y,2.03,0.64,20
+16PR007.1,Pythium yorkensis,2,A,Y,3.22,1.83,50
+16PR007.1,Pythium yorkensis,2,B,N,NA,NA,NA
+16PR007.1,Pythium yorkensis,2,C,N,NA,NA,NA
+16PR007.2,Pythium yorkensis,3,A,Y,2.82,1.23,10
+16PR007.2,Pythium yorkensis,3,B,Y,3.6,1.51,20
+16PR007.2,Pythium yorkensis,3,C,Y,2.03,0.64,20
 16PR008B.1,Pythium torulosum,4,A,Y,2.48,0.91,0
 16PR008B.1,Pythium torulosum,4,B,Y,2.96,1.67,40
 16PR008B.1,Pythium torulosum,4,C,N,NA,NA,NA
 16PR010.1,Pythium irregulare,5,A,N,NA,NA,NA
 16PR010.1,Pythium irregulare,5,B,N,NA,NA,NA
 16PR010.1,Pythium irregulare,5,C,N,NA,NA,NA
-16PR012.1,Pythium pleroticum*,6,A,N,NA,NA,NA
-16PR012.1,Pythium pleroticum*,6,B,Y,1.31,0.33,20
-16PR012.1,Pythium pleroticum*,6,C,N,NA,NA,NA
+16PR012.1,Pythium pleroticum,6,A,N,NA,NA,NA
+16PR012.1,Pythium pleroticum,6,B,Y,1.31,0.33,20
+16PR012.1,Pythium pleroticum,6,C,N,NA,NA,NA
 16PR013C.1,Pythium ultimum var. ultimum,7,A,N,NA,NA,NA
 16PR013C.1,Pythium ultimum var. ultimum,7,B,N,NA,NA,NA
 16PR013C.1,Pythium ultimum var. ultimum,7,C,N,NA,NA,NA
@@ -29,18 +29,18 @@ isolate_id,species,plate_id,rep,emergence,plant_mass_g,root_mass_g,root_rot_perc
 16PR015B.1,Pythium vexans,10,A,Y,NA,NA,NA
 16PR015B.1,Pythium vexans,10,B,N,NA,NA,NA
 16PR015B.1,Pythium vexans,10,C,Y,1.83,0.8,30
-16PR015C.2,Pythium pleroticum*,11,A,Y,2.59,1.57,10
-16PR015C.2,Pythium pleroticum*,11,B,N,NA,NA,NA
-16PR015C.2,Pythium pleroticum*,11,C,Y,1.45,NA,20
-16PR016C.1,Pythium pleroticum*,12,A,N,NA,NA,NA
-16PR016C.1,Pythium pleroticum*,12,B,N,NA,NA,NA
-16PR016C.1,Pythium pleroticum*,12,C,Y,2.68,1.28,30
+16PR015C.2,Pythium pleroticum,11,A,Y,2.59,1.57,10
+16PR015C.2,Pythium pleroticum,11,B,N,NA,NA,NA
+16PR015C.2,Pythium pleroticum,11,C,Y,1.45,NA,20
+16PR016C.1,Pythium pleroticum,12,A,N,NA,NA,NA
+16PR016C.1,Pythium pleroticum,12,B,N,NA,NA,NA
+16PR016C.1,Pythium pleroticum,12,C,Y,2.68,1.28,30
 16PR017B.1,Pythium yorkensis,13,A,Y,2.47,0.89,30
 16PR017B.1,Pythium yorkensis,13,B,Y,2.59,1.11,30
 16PR017B.1,Pythium yorkensis,13,C,Y,1.16,0.36,0
-16PR017C.1,Pythium acrogynum*,14,A,Y,2.28,0.97,0
-16PR017C.1,Pythium acrogynum*,14,B,Y,3.45,1.71,10
-16PR017C.1,Pythium acrogynum*,14,C,Y,1.33,0.51,10
+16PR017C.1,Pythium acrogynum,14,A,Y,2.28,0.97,0
+16PR017C.1,Pythium acrogynum,14,B,Y,3.45,1.71,10
+16PR017C.1,Pythium acrogynum,14,C,Y,1.33,0.51,10
 16PR019A.1,Pythium aphanidermatum,15,A,Y,2.21,0.61,10
 16PR019A.1,Pythium aphanidermatum,15,B,Y,3.05,1.74,30
 16PR019A.1,Pythium aphanidermatum,15,C,Y,3.71,1.45,30
@@ -86,9 +86,9 @@ isolate_id,species,plate_id,rep,emergence,plant_mass_g,root_mass_g,root_rot_perc
 17PR010D.1,Pythium ultimum var. ultimum,29,A,N,NA,NA,NA
 17PR010D.1,Pythium ultimum var. ultimum,29,B,N,NA,NA,NA
 17PR010D.1,Pythium ultimum var. ultimum,29,C,N,NA,NA,NA
-17PR010G.1,Pythium pleroticum*,30,A,N,NA,NA,NA
-17PR010G.1,Pythium pleroticum*,30,B,N,NA,NA,NA
-17PR010G.1,Pythium pleroticum*,30,C,N,NA,NA,NA
+17PR010G.1,Pythium pleroticum,30,A,N,NA,NA,NA
+17PR010G.1,Pythium pleroticum,30,B,N,NA,NA,NA
+17PR010G.1,Pythium pleroticum,30,C,N,NA,NA,NA
 17PR010G.2,Pythium ultimum var. ultimum,31,A,N,NA,NA,NA
 17PR010G.2,Pythium ultimum var. ultimum,31,B,N,NA,NA,NA
 17PR010G.2,Pythium ultimum var. ultimum,31,C,N,NA,NA,NA
