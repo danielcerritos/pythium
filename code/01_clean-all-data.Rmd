@@ -205,6 +205,8 @@ media_soybean <- media_soybean %>%
 # replace "-" with NAs
 media_soybean <- media_soybean %>% 
   replace_with_na_all(condition = ~.x == "-")
+
+write_csv(media_soybean, here("output", "clean_data", "01_media-effect-pythium-aggressiveness.csv"))
 ```
 
 ## fungicide sensitivity 
