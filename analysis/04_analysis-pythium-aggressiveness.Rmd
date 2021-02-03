@@ -1,0 +1,42 @@
+---
+title: "Analysis Pythium aggressiveness"
+author: "Daniel Cerritos"
+date: "2/2/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# recreate map you use in the poster?
+
+# recovered isolates 
+isolates_recovered <- read_csv(here("data", "all-isolates-in-data-base.csv"))
+
+isolates_species <- isolates_recovered %>% 
+  dplyr::select(species) %>%
+  group_by(species) %>% 
+  count() %>%  
+  mutate(genus = case_when(
+    grepl("Phyto", species) ~ "Phytophthora spp.",
+    grepl("Pyth", species) ~"Pythium spp.")) %>% 
+  mutate(percentage = (n/180))
+
+isolates_species %>% 
+  ggplot(aes(x = reorder(species, percentage), y = percentage, fill = genus)) +
+  geom_col(alpha = 0.5) +
+  coord_flip() +
+  theme_minimal_hgrid() +
+  labs(y = "Isolates recovered", 
+       x = "") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.05)), 
+                     labels = percent_format()) +
+  theme_minimal_vgrid() +
+  theme(legend.position = "none",
+        axis.text.y  = element_text(face = "italic")) +
+  scale_fill_manual(values = c("#e31a1c", "#BEBEBE"))
+
+```
+
