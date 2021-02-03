@@ -65,7 +65,7 @@ seed_soybean <- read_excel(here("data", "Pythium isolate survey 2018 aggressiven
 # select what you need
 seed_soybean <- seed_soybean %>% 
   dplyr::select(Species, plate_id = id, rep, colonized_5 = fuzzy, colonized_10 = ...5, 
-                rotted, germination)
+                rotted_5 = rotted,  germination_10 = germination)
 
 # seperate controls because they are characters
 seed_soybean_controls <- seed_soybean %>% 

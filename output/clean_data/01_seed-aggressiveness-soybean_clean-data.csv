@@ -1,4 +1,4 @@
-Species,plate_id,rep,colonized_5,colonized_10,rotted,germination,isolate_id,species
+Species,plate_id,rep,colonized_5,colonized_10,rotted_5,germination_10,isolate_id,species
 plug,pda,a,0,0,0,8,control,PDA control
 plug,pda,a,0,0,0,6,control,PDA control
 plug,pda,a,0,0,0,7,control,PDA control
