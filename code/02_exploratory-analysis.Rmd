@@ -60,25 +60,29 @@ Differences b/w species?
 
 ```{r soy seed agg species}
 seed_soybean %>% 
-  ggplot(aes(x = species, y = germination_10)) +
+  filter(!is.na(germination_10)) %>% 
+  ggplot(aes(x = reorder(species, germination_10), y = germination_10)) +
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
   coord_flip()
 
 seed_soybean %>% 
-  ggplot(aes(x = species, y = colonized_5)) +
+  filter(!is.na(colonized_5)) %>% 
+  ggplot(aes(x = reorder(species, colonized_5), y = colonized_5)) +
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
   coord_flip()
 
 seed_soybean %>% 
-  ggplot(aes(x = species, y = colonized_10)) +
+  filter(!is.na(colonized_10)) %>% 
+  ggplot(aes(x = reorder(species, colonized_10), y = colonized_10))+
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
   coord_flip()
 
 seed_soybean %>% 
-  ggplot(aes(x = species, y = rotted_5)) +
+  filter(!is.na(rotted_5)) %>% 
+  ggplot(aes(x = reorder(species, rotted_5), y = rotted_5)) +
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
   coord_flip() # not that informative, probably drop variable
@@ -213,4 +217,46 @@ seedling_soybean_millet %>%
 
 ```
 
+## Effect of media on pythium growth 
+
+
+```{r}
+media_soybean %>% 
+  ggplot(aes(x = reorder(type, germination_5), y = germination_5)) +
+  geom_boxplot() +
+  geom_jitter() +
+  facet_wrap(vars(innocolum), scales = "free_x")
+
+media_soybean %>% 
+  ggplot(aes(x = reorder(type, germination_10), y = germination_10)) +
+  geom_boxplot() +
+  geom_jitter() +
+  facet_wrap(vars(innocolum), scales = "free_x")
+
+
+media_soybean %>% 
+  ggplot(aes(x = reorder(type, colonized_5), y = colonized_5)) +
+  geom_boxplot() +
+  geom_jitter() +
+  facet_wrap(vars(innocolum), scales = "free_x")
+  
+media_soybean %>% 
+  ggplot(aes(x = reorder(type, colonized_10), y = colonized_5)) +
+  geom_boxplot() +
+  geom_jitter() +
+  facet_wrap(vars(innocolum), scales = "free_x") # not much difference from day 5
+
+# not using the rotted data, most is missing data
+media_soybean %>% 
+  ggplot(aes(x = reorder(type, rotted_5), y = rotted_5)) +
+  geom_boxplot() +
+  geom_jitter() +
+  facet_wrap(vars(innocolum), scales = "free_x")
+  
+media_soybean %>% 
+  ggplot(aes(x = reorder(type, rotted_10), y = rotted_5)) +
+  geom_boxplot() +
+  geom_jitter() +
+  facet_wrap(vars(innocolum), scales = "free_x") 
+```
 

@@ -1,193 +1,193 @@
-media,innocolum,run,colonized_5,germination_5,rotted_5,colonized_10,germination_10,rotted_10
-WA,plug,A,0,6,NA,0,8,NA
-WA,plug,A,0,2,NA,0,4,NA
-WA,plug,A,0,4,NA,0,7,NA
-WA,plug,A,0,3,NA,0,5,NA
-WA,plug,A,0,4,NA,0,6,NA
-WA,plug,A,0,4,NA,0,6,NA
-WA,plug,A,8,0,7,8,0,7
-WA,plug,A,8,0,8,8,0,8
-WA,plug,A,8,0,6,8,0,6
-WA,plug,A,8,0,8,8,0,8
-WA,plug,A,8,0,8,8,0,8
-WA,plug,A,8,0,4,8,0,6
-WA,plug,A,8,0,NA,8,0,NA
-WA,plug,A,8,0,NA,8,0,NA
-WA,plug,A,8,0,NA,8,0,NA
-WA,plug,A,8,0,NA,8,0,NA
-WA,plug,A,8,0,NA,8,0,NA
-WA,plug,A,8,0,NA,8,0,NA
-WA,plug,A,8,0,NA,8,0,NA
-WA,plug,A,8,0,NA,8,0,NA
-WA,plug,A,8,0,NA,8,0,NA
-WA,plug,A,8,0,NA,8,0,NA
-WA,plug,A,8,0,NA,8,0,NA
-WA,plug,A,8,0,NA,8,0,NA
-WA,millet,A,8,0,NA,8,0,NA
-WA,millet,A,6,1,NA,6,1,NA
-WA,millet,A,8,0,NA,8,1,NA
-WA,millet,A,6,0,NA,8,2,NA
-WA,millet,A,8,0,NA,8,0,NA
-WA,millet,A,5,3,NA,8,3,NA
-WA,millet,A,8,0,6,8,0,6
-WA,millet,A,8,0,7,8,0,8
-WA,millet,A,8,0,0,8,0,5
-WA,millet,A,8,0,3,8,0,3
-WA,millet,A,8,0,3,8,0,3
-WA,millet,A,8,0,2,8,0,6
-WA,millet,A,8,1,NA,8,1,NA
-WA,millet,A,8,0,NA,8,1,NA
-WA,millet,A,8,2,NA,8,3,NA
-WA,millet,A,8,0,NA,8,0,NA
-WA,millet,A,6,4,NA,8,3,NA
-WA,millet,A,8,0,NA,8,0,NA
-WA,millet,A,8,0,NA,8,0,NA
-WA,millet,A,8,0,NA,8,0,NA
-WA,millet,A,8,0,NA,8,0,NA
-WA,millet,A,8,0,NA,8,0,NA
-WA,millet,A,0,3,NA,3,7,NA
-WA,millet,A,8,0,NA,8,0,NA
-PDA,plug,A,0,3,NA,0,6,NA
-PDA,plug,A,0,1,NA,0,4,NA
-PDA,plug,A,0,4,NA,0,4,NA
-PDA,plug,A,0,0,NA,0,2,NA
-PDA,plug,A,0,5,NA,0,7,NA
-PDA,plug,A,0,1,NA,0,2,NA
-PDA,plug,A,8,0,2,8,0,2
-PDA,plug,A,8,0,5,8,0,5
-PDA,plug,A,8,0,6,8,0,6
-PDA,plug,A,8,0,6,8,0,6
-PDA,plug,A,8,0,5,8,0,5
-PDA,plug,A,8,0,1,8,0,1
-PDA,plug,A,8,0,NA,8,0,NA
-PDA,plug,A,6,0,NA,8,0,NA
-PDA,plug,A,7,0,NA,7,0,NA
-PDA,plug,A,7,0,NA,7,0,NA
-PDA,plug,A,8,0,NA,8,0,NA
-PDA,plug,A,3,0,NA,8,0,NA
-PDA,plug,A,8,0,NA,8,0,NA
-PDA,plug,A,8,0,NA,8,0,NA
-PDA,plug,A,7,0,NA,8,0,NA
-PDA,plug,A,5,0,NA,8,0,NA
-PDA,plug,A,8,0,NA,8,0,NA
-PDA,plug,A,7,0,NA,8,0,NA
-PDA,millet,A,2,0,NA,6,0,NA
-PDA,millet,A,1,0,NA,4,0,NA
-PDA,millet,A,3,0,NA,5,0,NA
-PDA,millet,A,4,0,NA,6,0,NA
-PDA,millet,A,7,0,NA,8,0,NA
-PDA,millet,A,3,0,NA,4,0,NA
-PDA,millet,A,4,0,1,4,0,2
-PDA,millet,A,4,0,3,6,0,4
-PDA,millet,A,0,0,2,6,0,4
-PDA,millet,A,6,0,3,8,0,5
-PDA,millet,A,6,0,2,6,0,2
-PDA,millet,A,3,0,2,6,0,2
-PDA,millet,A,8,0,NA,8,0,NA
-PDA,millet,A,7,0,NA,8,0,NA
-PDA,millet,A,5,0,NA,8,0,NA
-PDA,millet,A,6,0,NA,8,0,NA
-PDA,millet,A,4,0,NA,8,0,NA
-PDA,millet,A,6,0,NA,8,0,NA
-PDA,millet,A,7,0,NA,8,0,NA
-PDA,millet,A,4,0,NA,5,0,NA
-PDA,millet,A,8,0,NA,8,0,NA
-PDA,millet,A,4,0,NA,8,0,NA
-PDA,millet,A,0,0,NA,7,0,NA
-PDA,millet,A,5,0,NA,7,0,NA
-PDA+strep,plug,A,0,2,NA,0,4,NA
-PDA+strep,plug,A,0,2,NA,0,4,NA
-PDA+strep,plug,A,0,1,NA,0,6,NA
-PDA+strep,plug,A,0,4,NA,0,5,NA
-PDA+strep,plug,A,0,2,NA,0,6,NA
-PDA+strep,plug,A,0,3,NA,0,6,NA
-PDA+strep,plug,A,5,0,5,8,0,5
-PDA+strep,plug,A,4,0,2,8,0,5
-PDA+strep,plug,A,6,0,3,8,0,4
-PDA+strep,plug,A,1,3,1,7,0,4
-PDA+strep,plug,A,3,0,3,5,0,5
-PDA+strep,plug,A,3,1,5,8,0,6
-PDA+strep,plug,A,8,0,NA,8,0,NA
-PDA+strep,plug,A,6,0,NA,8,0,NA
-PDA+strep,plug,A,7,0,NA,8,0,NA
-PDA+strep,plug,A,7,0,NA,8,0,NA
-PDA+strep,plug,A,8,0,NA,8,0,NA
-PDA+strep,plug,A,7,0,NA,8,0,NA
-PDA+strep,plug,A,8,0,NA,8,0,NA
-PDA+strep,plug,A,7,0,NA,8,0,NA
-PDA+strep,plug,A,7,0,NA,8,0,NA
-PDA+strep,plug,A,8,0,NA,8,0,NA
-PDA+strep,plug,A,7,0,NA,8,0,NA
-PDA+strep,plug,A,8,0,NA,8,0,NA
-PDA+strep,millet,A,7,0,NA,8,0,NA
-PDA+strep,millet,A,6,0,NA,7,0,NA
-PDA+strep,millet,A,5,0,NA,7,0,NA
-PDA+strep,millet,A,8,0,NA,8,0,NA
-PDA+strep,millet,A,8,0,NA,8,0,NA
-PDA+strep,millet,A,8,0,NA,8,0,NA
-PDA+strep,millet,A,2,0,2,8,0,5
-PDA+strep,millet,A,4,0,2,7,0,4
-PDA+strep,millet,A,2,0,1,7,0,1
-PDA+strep,millet,A,4,0,2,7,0,4
-PDA+strep,millet,A,1,0,0,7,0,3
-PDA+strep,millet,A,4,0,1,4,0,1
-PDA+strep,millet,A,4,0,NA,8,0,NA
-PDA+strep,millet,A,7,0,NA,8,0,NA
-PDA+strep,millet,A,6,0,NA,8,0,NA
-PDA+strep,millet,A,8,0,NA,8,0,NA
-PDA+strep,millet,A,4,0,NA,5,0,NA
-PDA+strep,millet,A,2,0,NA,8,0,NA
-PDA+strep,millet,A,7,0,NA,7,0,NA
-PDA+strep,millet,A,7,0,NA,7,0,NA
-PDA+strep,millet,A,6,0,NA,8,0,NA
-PDA+strep,millet,A,7,0,NA,8,0,NA
-PDA+strep,millet,A,6,0,NA,6,0,NA
-PDA+strep,millet,A,8,0,NA,8,0,NA
-WA,millet,B,8,0,NA,8,0,NA
-WA,millet,B,8,0,NA,8,0,NA
-WA,millet,B,8,0,NA,8,0,NA
-WA,millet,B,8,0,NA,8,0,NA
-WA,millet,B,0,5,NA,4,5,NA
-WA,millet,B,0,6,NA,4,6,NA
-WA,millet,B,0,4,NA,7,7,NA
-WA,millet,B,0,5,NA,3,6,NA
-PDA,millet,B,8,0,NA,8,0,NA
-PDA,millet,B,7,0,NA,7,0,NA
-PDA,millet,B,6,0,NA,8,0,NA
-PDA,millet,B,7,0,NA,8,0,NA
-PDA,millet,B,0,3,NA,4,5,NA
-PDA,millet,B,1,2,NA,8,2,NA
-PDA,millet,B,2,1,NA,7,1,NA
-PDA,millet,B,1,4,NA,4,5,NA
-PDA+strep,millet,B,6,0,NA,8,0,NA
-PDA+strep,millet,B,7,0,NA,8,0,NA
-PDA+strep,millet,B,8,0,NA,8,0,NA
-PDA+strep,millet,B,8,0,NA,8,0,NA
-PDA+strep,millet,B,0,0,NA,2,7,NA
-PDA+strep,millet,B,2,2,NA,5,4,NA
-PDA+strep,millet,B,0,0,NA,7,2,NA
-PDA+strep,millet,B,0,2,NA,7,3,NA
-WA,millet,C,7,0,NA,8,0,NA
-WA,millet,C,8,0,NA,8,0,NA
-WA,millet,C,8,0,NA,8,0,NA
-WA,millet,C,7,0,NA,8,0,NA
-WA,millet,C,2,0,NA,4,2,NA
-WA,millet,C,2,1,NA,6,3,NA
-WA,millet,C,0,4,NA,7,6,NA
-WA,millet,C,0,2,NA,7,5,NA
-PDA,millet,C,6,0,NA,8,0,NA
-PDA,millet,C,4,0,NA,8,0,NA
-PDA,millet,C,6,0,NA,8,0,NA
-PDA,millet,C,5,0,NA,8,0,NA
-PDA,millet,C,0,0,NA,6,5,NA
-PDA,millet,C,0,0,NA,6,3,NA
-PDA,millet,C,1,0,NA,8,1,NA
-PDA,millet,C,0,0,NA,5,2,NA
-PDA+strep,millet,C,7,0,NA,8,0,NA
-PDA+strep,millet,C,5,0,NA,8,0,NA
-PDA+strep,millet,C,6,0,NA,8,0,NA
-PDA+strep,millet,C,6,0,NA,8,0,NA
-PDA+strep,millet,C,1,1,NA,8,4,NA
-PDA+strep,millet,C,0,0,NA,5,0,NA
-PDA+strep,millet,C,0,0,NA,7,2,NA
-PDA+strep,millet,C,0,0,NA,8,0,NA
+media,innocolum,type,run,colonized_5,germination_5,rotted_5,colonized_10,germination_10,rotted_10
+WA,plug,None,A,0,6,NA,0,8,NA
+WA,plug,None,A,0,2,NA,0,4,NA
+WA,plug,None,A,0,4,NA,0,7,NA
+WA,plug,None,A,0,3,NA,0,5,NA
+WA,plug,None,A,0,4,NA,0,6,NA
+WA,plug,None,A,0,4,NA,0,6,NA
+WA,plug,P irregulare,A,8,0,7,8,0,7
+WA,plug,P irregulare,A,8,0,8,8,0,8
+WA,plug,P irregulare,A,8,0,6,8,0,6
+WA,plug,P irregulare,A,8,0,8,8,0,8
+WA,plug,P irregulare,A,8,0,8,8,0,8
+WA,plug,P irregulare,A,8,0,4,8,0,6
+WA,plug,P sylvaticum,A,8,0,NA,8,0,NA
+WA,plug,P sylvaticum,A,8,0,NA,8,0,NA
+WA,plug,P sylvaticum,A,8,0,NA,8,0,NA
+WA,plug,P sylvaticum,A,8,0,NA,8,0,NA
+WA,plug,P sylvaticum,A,8,0,NA,8,0,NA
+WA,plug,P sylvaticum,A,8,0,NA,8,0,NA
+WA,plug,P ultimum,A,8,0,NA,8,0,NA
+WA,plug,P ultimum,A,8,0,NA,8,0,NA
+WA,plug,P ultimum,A,8,0,NA,8,0,NA
+WA,plug,P ultimum,A,8,0,NA,8,0,NA
+WA,plug,P ultimum,A,8,0,NA,8,0,NA
+WA,plug,P ultimum,A,8,0,NA,8,0,NA
+WA,millet,Mix,A,8,0,NA,8,0,NA
+WA,millet,Mix,A,6,1,NA,6,1,NA
+WA,millet,Mix,A,8,0,NA,8,1,NA
+WA,millet,Mix,A,6,0,NA,8,2,NA
+WA,millet,Mix,A,8,0,NA,8,0,NA
+WA,millet,Mix,A,5,3,NA,8,3,NA
+WA,millet,P irregulare,A,8,0,6,8,0,6
+WA,millet,P irregulare,A,8,0,7,8,0,8
+WA,millet,P irregulare,A,8,0,0,8,0,5
+WA,millet,P irregulare,A,8,0,3,8,0,3
+WA,millet,P irregulare,A,8,0,3,8,0,3
+WA,millet,P irregulare,A,8,0,2,8,0,6
+WA,millet,P sylvaticum,A,8,1,NA,8,1,NA
+WA,millet,P sylvaticum,A,8,0,NA,8,1,NA
+WA,millet,P sylvaticum,A,8,2,NA,8,3,NA
+WA,millet,P sylvaticum,A,8,0,NA,8,0,NA
+WA,millet,P sylvaticum,A,6,4,NA,8,3,NA
+WA,millet,P sylvaticum,A,8,0,NA,8,0,NA
+WA,millet,P ultimum,A,8,0,NA,8,0,NA
+WA,millet,P ultimum,A,8,0,NA,8,0,NA
+WA,millet,P ultimum,A,8,0,NA,8,0,NA
+WA,millet,P ultimum,A,8,0,NA,8,0,NA
+WA,millet,P ultimum,A,0,3,NA,3,7,NA
+WA,millet,P ultimum,A,8,0,NA,8,0,NA
+PDA,plug,None,A,0,3,NA,0,6,NA
+PDA,plug,None,A,0,1,NA,0,4,NA
+PDA,plug,None,A,0,4,NA,0,4,NA
+PDA,plug,None,A,0,0,NA,0,2,NA
+PDA,plug,None,A,0,5,NA,0,7,NA
+PDA,plug,None,A,0,1,NA,0,2,NA
+PDA,plug,P irregulare,A,8,0,2,8,0,2
+PDA,plug,P irregulare,A,8,0,5,8,0,5
+PDA,plug,P irregulare,A,8,0,6,8,0,6
+PDA,plug,P irregulare,A,8,0,6,8,0,6
+PDA,plug,P irregulare,A,8,0,5,8,0,5
+PDA,plug,P irregulare,A,8,0,1,8,0,1
+PDA,plug,P sylvaticum,A,8,0,NA,8,0,NA
+PDA,plug,P sylvaticum,A,6,0,NA,8,0,NA
+PDA,plug,P sylvaticum,A,7,0,NA,7,0,NA
+PDA,plug,P sylvaticum,A,7,0,NA,7,0,NA
+PDA,plug,P sylvaticum,A,8,0,NA,8,0,NA
+PDA,plug,P sylvaticum,A,3,0,NA,8,0,NA
+PDA,plug,P ultimum,A,8,0,NA,8,0,NA
+PDA,plug,P ultimum,A,8,0,NA,8,0,NA
+PDA,plug,P ultimum,A,7,0,NA,8,0,NA
+PDA,plug,P ultimum,A,5,0,NA,8,0,NA
+PDA,plug,P ultimum,A,8,0,NA,8,0,NA
+PDA,plug,P ultimum,A,7,0,NA,8,0,NA
+PDA,millet,Mix,A,2,0,NA,6,0,NA
+PDA,millet,Mix,A,1,0,NA,4,0,NA
+PDA,millet,Mix,A,3,0,NA,5,0,NA
+PDA,millet,Mix,A,4,0,NA,6,0,NA
+PDA,millet,Mix,A,7,0,NA,8,0,NA
+PDA,millet,Mix,A,3,0,NA,4,0,NA
+PDA,millet,P irregulare,A,4,0,1,4,0,2
+PDA,millet,P irregulare,A,4,0,3,6,0,4
+PDA,millet,P irregulare,A,0,0,2,6,0,4
+PDA,millet,P irregulare,A,6,0,3,8,0,5
+PDA,millet,P irregulare,A,6,0,2,6,0,2
+PDA,millet,P irregulare,A,3,0,2,6,0,2
+PDA,millet,P sylvaticum,A,8,0,NA,8,0,NA
+PDA,millet,P sylvaticum,A,7,0,NA,8,0,NA
+PDA,millet,P sylvaticum,A,5,0,NA,8,0,NA
+PDA,millet,P sylvaticum,A,6,0,NA,8,0,NA
+PDA,millet,P sylvaticum,A,4,0,NA,8,0,NA
+PDA,millet,P sylvaticum,A,6,0,NA,8,0,NA
+PDA,millet,P ultimum,A,7,0,NA,8,0,NA
+PDA,millet,P ultimum,A,4,0,NA,5,0,NA
+PDA,millet,P ultimum,A,8,0,NA,8,0,NA
+PDA,millet,P ultimum,A,4,0,NA,8,0,NA
+PDA,millet,P ultimum,A,0,0,NA,7,0,NA
+PDA,millet,P ultimum,A,5,0,NA,7,0,NA
+PDA+strep,plug,None,A,0,2,NA,0,4,NA
+PDA+strep,plug,None,A,0,2,NA,0,4,NA
+PDA+strep,plug,None,A,0,1,NA,0,6,NA
+PDA+strep,plug,None,A,0,4,NA,0,5,NA
+PDA+strep,plug,None,A,0,2,NA,0,6,NA
+PDA+strep,plug,None,A,0,3,NA,0,6,NA
+PDA+strep,plug,P irregulare,A,5,0,5,8,0,5
+PDA+strep,plug,P irregulare,A,4,0,2,8,0,5
+PDA+strep,plug,P irregulare,A,6,0,3,8,0,4
+PDA+strep,plug,P irregulare,A,1,3,1,7,0,4
+PDA+strep,plug,P irregulare,A,3,0,3,5,0,5
+PDA+strep,plug,P irregulare,A,3,1,5,8,0,6
+PDA+strep,plug,P sylvaticum,A,8,0,NA,8,0,NA
+PDA+strep,plug,P sylvaticum,A,6,0,NA,8,0,NA
+PDA+strep,plug,P sylvaticum,A,7,0,NA,8,0,NA
+PDA+strep,plug,P sylvaticum,A,7,0,NA,8,0,NA
+PDA+strep,plug,P sylvaticum,A,8,0,NA,8,0,NA
+PDA+strep,plug,P sylvaticum,A,7,0,NA,8,0,NA
+PDA+strep,plug,P ultimum,A,8,0,NA,8,0,NA
+PDA+strep,plug,P ultimum,A,7,0,NA,8,0,NA
+PDA+strep,plug,P ultimum,A,7,0,NA,8,0,NA
+PDA+strep,plug,P ultimum,A,8,0,NA,8,0,NA
+PDA+strep,plug,P ultimum,A,7,0,NA,8,0,NA
+PDA+strep,plug,P ultimum,A,8,0,NA,8,0,NA
+PDA+strep,millet,Mix,A,7,0,NA,8,0,NA
+PDA+strep,millet,Mix,A,6,0,NA,7,0,NA
+PDA+strep,millet,Mix,A,5,0,NA,7,0,NA
+PDA+strep,millet,Mix,A,8,0,NA,8,0,NA
+PDA+strep,millet,Mix,A,8,0,NA,8,0,NA
+PDA+strep,millet,Mix,A,8,0,NA,8,0,NA
+PDA+strep,millet,P irregulare,A,2,0,2,8,0,5
+PDA+strep,millet,P irregulare,A,4,0,2,7,0,4
+PDA+strep,millet,P irregulare,A,2,0,1,7,0,1
+PDA+strep,millet,P irregulare,A,4,0,2,7,0,4
+PDA+strep,millet,P irregulare,A,1,0,0,7,0,3
+PDA+strep,millet,P irregulare,A,4,0,1,4,0,1
+PDA+strep,millet,P sylvaticum,A,4,0,NA,8,0,NA
+PDA+strep,millet,P sylvaticum,A,7,0,NA,8,0,NA
+PDA+strep,millet,P sylvaticum,A,6,0,NA,8,0,NA
+PDA+strep,millet,P sylvaticum,A,8,0,NA,8,0,NA
+PDA+strep,millet,P sylvaticum,A,4,0,NA,5,0,NA
+PDA+strep,millet,P sylvaticum,A,2,0,NA,8,0,NA
+PDA+strep,millet,P ultimum,A,7,0,NA,7,0,NA
+PDA+strep,millet,P ultimum,A,7,0,NA,7,0,NA
+PDA+strep,millet,P ultimum,A,6,0,NA,8,0,NA
+PDA+strep,millet,P ultimum,A,7,0,NA,8,0,NA
+PDA+strep,millet,P ultimum,A,6,0,NA,6,0,NA
+PDA+strep,millet,P ultimum,A,8,0,NA,8,0,NA
+WA,millet,P ultimum,B,8,0,NA,8,0,NA
+WA,millet,P ultimum,B,8,0,NA,8,0,NA
+WA,millet,P ultimum,B,8,0,NA,8,0,NA
+WA,millet,P ultimum,B,8,0,NA,8,0,NA
+WA,millet,sterile,B,0,5,NA,4,5,NA
+WA,millet,sterile,B,0,6,NA,4,6,NA
+WA,millet,sterile,B,0,4,NA,7,7,NA
+WA,millet,sterile,B,0,5,NA,3,6,NA
+PDA,millet,P ultimum,B,8,0,NA,8,0,NA
+PDA,millet,P ultimum,B,7,0,NA,7,0,NA
+PDA,millet,P ultimum,B,6,0,NA,8,0,NA
+PDA,millet,P ultimum,B,7,0,NA,8,0,NA
+PDA,millet,sterile,B,0,3,NA,4,5,NA
+PDA,millet,sterile,B,1,2,NA,8,2,NA
+PDA,millet,sterile,B,2,1,NA,7,1,NA
+PDA,millet,sterile,B,1,4,NA,4,5,NA
+PDA+strep,millet,P ultimum,B,6,0,NA,8,0,NA
+PDA+strep,millet,P ultimum,B,7,0,NA,8,0,NA
+PDA+strep,millet,P ultimum,B,8,0,NA,8,0,NA
+PDA+strep,millet,P ultimum,B,8,0,NA,8,0,NA
+PDA+strep,millet,sterile,B,0,0,NA,2,7,NA
+PDA+strep,millet,sterile,B,2,2,NA,5,4,NA
+PDA+strep,millet,sterile,B,0,0,NA,7,2,NA
+PDA+strep,millet,sterile,B,0,2,NA,7,3,NA
+WA,millet,P ultimum,C,7,0,NA,8,0,NA
+WA,millet,P ultimum,C,8,0,NA,8,0,NA
+WA,millet,P ultimum,C,8,0,NA,8,0,NA
+WA,millet,P ultimum,C,7,0,NA,8,0,NA
+WA,millet,sterile,C,2,0,NA,4,2,NA
+WA,millet,sterile,C,2,1,NA,6,3,NA
+WA,millet,sterile,C,0,4,NA,7,6,NA
+WA,millet,sterile,C,0,2,NA,7,5,NA
+PDA,millet,P ultimum,C,6,0,NA,8,0,NA
+PDA,millet,P ultimum,C,4,0,NA,8,0,NA
+PDA,millet,P ultimum,C,6,0,NA,8,0,NA
+PDA,millet,P ultimum,C,5,0,NA,8,0,NA
+PDA,millet,sterile,C,0,0,NA,6,5,NA
+PDA,millet,sterile,C,0,0,NA,6,3,NA
+PDA,millet,sterile,C,1,0,NA,8,1,NA
+PDA,millet,sterile,C,0,0,NA,5,2,NA
+PDA+strep,millet,P ultimum,C,7,0,NA,8,0,NA
+PDA+strep,millet,P ultimum,C,5,0,NA,8,0,NA
+PDA+strep,millet,P ultimum,C,6,0,NA,8,0,NA
+PDA+strep,millet,P ultimum,C,6,0,NA,8,0,NA
+PDA+strep,millet,sterile,C,1,1,NA,8,4,NA
+PDA+strep,millet,sterile,C,0,0,NA,5,0,NA
+PDA+strep,millet,sterile,C,0,0,NA,7,2,NA
+PDA+strep,millet,sterile,C,0,0,NA,8,0,NA

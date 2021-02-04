@@ -167,10 +167,9 @@ soybean_millet <- read_excel(here("data", "Pythium isolate aggressiveness-pot ex
                              sheet = 2, skip = 2)
 
 soybean_millet <- soybean_millet %>% 
-  rename(total_plant = `total plants`, germination_per = `germination (%)`, 
-         envelope_g = `envelope mass (g)`, envelope_plant_g = `envelope + plant mass (g)`, 
-         dry_weight = `dry mass (g)`) %>% 
-  dplyr::select(-`dry mass average (g)`)
+  rename(total_plant = `total plants`, 
+         envelope_g = `envelope mass (g)`, envelope_plant_g = `envelope + plant mass (g)`) %>% 
+  dplyr::select(-c(`dry mass average (g)`, `germination (%)`, `dry mass (g)`))
 
 soybean_millet <- soybean_millet %>% 
   mutate(
@@ -201,7 +200,7 @@ media_soybean <- read_excel(here("data", "aggressiveness-media.xlsx"),
                              sheet = 2, skip = 4)
 
 media_soybean <- media_soybean %>% 
-  dplyr::select(media = Media, innocolum = Innoculm, run, colonized_5 = fuzzy...5, 
+  dplyr::select(media = Media, innocolum = Innoculm, type, run, colonized_5 = fuzzy...5, 
                 germination_5 = germination...6, rotted_5 = rotted...7,
                 colonized_10 = fuzzy...8, germination_10 = germination...9, 
                 rotted_10 = rotted...10)
