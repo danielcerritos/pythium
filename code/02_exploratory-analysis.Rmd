@@ -36,6 +36,32 @@ fungicide <- read_csv(here("output", "clean_data", "01-fungicide-sensitivty_clea
 
 ### Soybean
 
+```{r}
+# check controls across reps
+seed_soybean %>% 
+  filter(isolate_id == "control") %>% 
+  ggplot(aes(x = reorder(species, germination_10), y = germination_10)) +
+  geom_boxplot() +
+  geom_jitter() +
+  facet_wrap(vars(rep))
+
+seed_soybean %>% 
+  filter(isolate_id == "control") %>% 
+  ggplot(aes(x = reorder(species, colonized_5), y = colonized_5)) +
+  geom_boxplot() +
+  geom_jitter() +
+  facet_wrap(vars(rep))
+
+seed_soybean %>% 
+  filter(isolate_id == "control") %>% 
+  ggplot(aes(x = reorder(species, colonized_10), y = colonized_10)) +
+  geom_boxplot() +
+  geom_jitter() +
+  facet_wrap(vars(rep))
+```
+
+Controls look fine, the responses are similar across different set of experiments 
+
 ```{r agg soybean distributions}
 # distributions
 seed_soybean %>% 
@@ -78,7 +104,7 @@ seed_soybean %>%
   ggplot(aes(x = reorder(species, colonized_10), y = colonized_10))+
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
-  coord_flip()
+  coord_flip() # more differences observed at 10 days
 
 seed_soybean %>% 
   filter(!is.na(rotted_5)) %>% 
@@ -95,11 +121,21 @@ Difference within species?
 # filter the most aggressive species, no difference it seems
 most_agg_species <- c("Pythium ultimum var. ultimum", "Pythium ultimum var. sporangiiferum", 
                        "Pythium aphanidermatum", "Pu control", "Pi control", "Pythium irregulare")
+
+seed_soybean %>% 
+  filter(!is.na(colonized_5), 
+         species %in% most_agg_species) %>% 
+  ggplot(aes(x = reorder(plate_id, colonized_5), y = colonized_5, color = species)) +
+  geom_point(stat = "summary") +
+  geom_errorbar(stat="summary", fun.data="mean_se", fun.args = list(mult = 1.96), width = 0.2) # no difference at 5 days
+
 seed_soybean %>% 
   filter(!is.na(germination_10), 
          !species %in% most_agg_species) %>% 
   ggplot(aes(x = reorder(plate_id, germination_10), y = germination_10, color = species)) +
-  geom_point(stat = "summary") 
+  geom_point(stat = "summary") +
+  geom_errorbar(stat="summary", fun.data="mean_se", fun.args = list(mult = 1.96), width = 0.2)
+
 
 seed_soybean %>% 
   filter(!is.na(colonized_10), 
@@ -111,6 +147,34 @@ seed_soybean %>%
 it looks there is some variation b/w isolates of same species, but for more aggressive species doesn't seem to be variation
 
 ### Corn 
+
+
+```{r check controls}
+seed_corn %>% 
+  filter(isolate_id == "control") %>% 
+  ggplot(aes(x = reorder(species, germination_5), y = germination_5)) +
+  geom_boxplot() +
+  geom_jitter() +
+  facet_wrap(vars(run))
+
+seed_soybean %>% 
+  filter(isolate_id == "control") %>% 
+  ggplot(aes(x = reorder(species, colonized_5), y = colonized_5)) +
+  geom_boxplot() +
+  geom_jitter() +
+  facet_wrap(vars(rep))
+
+seed_corn %>% 
+  mutate(dry_weight_g = dry_weight_bag_g - bag_weight_g) %>% 
+  filter(isolate_id == "control") %>% 
+  ggplot(aes(x = reorder(species, dry_weight_g), y = dry_weight_g)) +
+  geom_boxplot() +
+  geom_jitter() +
+  facet_wrap(vars(rep))
+```
+
+Controls across the different sets and runs look the same.
+
 
 ```{r}
 # distributions
@@ -133,20 +197,24 @@ Differences b/w species?
 
 ```{r corn seed agg species}
 seed_corn %>%
-  ggplot(aes(x = species, y = germination_5)) +
+  filter(!species == "Pi control") %>% 
+  ggplot(aes(x = reorder(species, germination_5), y = germination_5)) +
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
   coord_flip()
 
 seed_corn %>% 
-  ggplot(aes(x = species, y = colonized_5)) +
+  filter(!species == "Pi control") %>% 
+  ggplot(aes(x = reorder(species, colonized_5), y = colonized_5)) +
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
   coord_flip()
 
 seed_corn %>% 
-  mutate(dry_weight_g = dry_weight_bag_g - bag_weight_g) %>%   
-  ggplot(aes(x = species, y = dry_weight_g)) +
+  filter(!species == "Pi control") %>% 
+  mutate(dry_weight_g = dry_weight_bag_g - bag_weight_g) %>%  
+  filter(!is.na(dry_weight_g)) %>% 
+  ggplot(aes(x = reorder(species, dry_weight_g), y = dry_weight_g)) +
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
   coord_flip()
@@ -158,63 +226,80 @@ Differences within species?
 
 ```{r}
 seed_corn %>% 
-  filter(!is.na(germination_5)) %>% 
+  filter(!is.na(germination_5), 
+         !species == "Pi control") %>% 
   ggplot(aes(x = reorder(plate_id, germination_5), y = germination_5, color = species)) +
   geom_point(stat = "summary") +
   geom_errorbar(stat="summary", fun.data="mean_se", fun.args = list(mult = 1.96), width = 0.2)
 
 
 seed_corn %>% 
-  filter(!is.na(colonized_5)) %>% 
+  filter(!is.na(colonized_5), 
+         !species == "Pi control") %>% 
   ggplot(aes(x = reorder(plate_id, colonized_5), y = colonized_5, color = species)) +
   geom_point(stat = "summary") +
   geom_errorbar(stat="summary", fun.data="mean_se", fun.args = list(mult = 1.96), width = 0.2)
 
 seed_corn %>% 
   mutate(dry_weight_g = dry_weight_bag_g - bag_weight_g) %>% 
-  filter(!is.na(dry_weight_g)) %>% 
+  filter(!is.na(dry_weight_g), 
+         !species == "Pi control") %>% 
   ggplot(aes(x = reorder(plate_id, dry_weight_g), y = dry_weight_g, color = species)) +
   geom_point(stat = "summary") +
   geom_errorbar(stat="summary", fun.data="mean_se", fun.args = list(mult = 1.96), width = 0.2)
 ```
 
-## aggressiveness seedling assays
+## Aggressiveness seedling assays
 
+### Agar
 ```{r}
 seedling_soybean_agar %>% 
-  ggplot(aes(x = species, y = emergence)) +
+  filter(!is.na(species)) %>% 
+  mutate(emergence_bi = case_when(
+    emergence == "N" ~ 0, 
+    emergence == "Y" ~ 1,
+    )) %>% 
+  filter(!is.na(emergence_bi)) %>% 
+  ggplot(aes(x = reorder(species, emergence_bi), y = emergence_bi)) +
   geom_col() +
-  coord_flip() 
-  
+  coord_flip() # no idea how to manage this data
+
 seedling_soybean_agar %>%
-  ggplot(aes(x = species, y = plant_mass_g)) +
+  filter(!is.na(species), 
+         !is.na(plant_mass_g)) %>% 
+  ggplot(aes(x = reorder(species, plant_mass_g), y = plant_mass_g)) +
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
   coord_flip()
 
 seedling_soybean_agar %>%
-  ggplot(aes(x = species, y = root_mass_g)) +
+   filter(!is.na(species), 
+         !is.na(root_mass_g)) %>% 
+  ggplot(aes(x = reorder(species, root_mass_g), y = root_mass_g)) +
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
   coord_flip()
 ```
 
+### Millet
+
 ```{r}
+
 seedling_soybean_millet %>%
-  ggplot(aes(x = reorder(species, germination), y = germination, color = factor(millet_ml))) +
-  geom_boxplot() + 
-  geom_jitter (alpha = 0.2) +
+  ggplot(aes(x = reorder(species, germination), y = germination,  color = factor(millet_ml))) +
+  geom_boxplot(alpha = 0.5) + 
+  geom_jitter (alpha = 0.2, color = "gray50") +
   coord_flip() 
   facet_wrap(vars(millet_ml))
-
-
+  
+  
 seedling_soybean_millet %>%
   mutate(dry_weight_g = envelope_plant_g - envelope_g) %>% 
-  ggplot(aes(x = reorder(species, dry_weight_g), y = dry_weight_g, color = factor(millet_ml))) +
-  geom_boxplot() + 
-  geom_jitter (alpha = 0.2) +
+  ggplot(aes(x = reorder(species, dry_weight_g ), y = dry_weight_g,  color = factor(millet_ml))) +
+  geom_boxplot(alpha = 0.5) + 
+  geom_jitter (alpha = 0.2, color = "gray50") +
   coord_flip() 
-
+  facet_wrap(vars(millet_ml))
 ```
 
 ## Effect of media on pythium growth 

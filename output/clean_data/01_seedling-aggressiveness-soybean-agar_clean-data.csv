@@ -197,9 +197,9 @@ isolate_id,species,plate_id,rep,emergence,plant_mass_g,root_mass_g,root_rot_perc
 17PR016J.2,Pythium ultimum var. ultimum,66,A,N,NA,NA,NA
 17PR016J.2,Pythium ultimum var. ultimum,66,B,N,NA,NA,NA
 17PR016J.2,Pythium ultimum var. ultimum,66,C,N,NA,NA,NA
-Mixed Control,NA,67,A,N,NA,NA,NA
-untreated control,NA,68,A,Y,2.75,1.06,0
-Mixed Control,NA,67,B,N,NA,NA,NA
-untreated control,NA,68,B,Y,2.51,1.05,0
-Mixed Control,NA,67,C,N,NA,NA,NA
-untreated control,NA,68,C,Y,1.86,0.56,0
+Mixed Control,Mixed contol,67,A,N,NA,NA,NA
+untreated control,Untreated control,68,A,Y,2.75,1.06,0
+Mixed Control,Mixed contol,67,B,N,NA,NA,NA
+untreated control,Untreated control,68,B,Y,2.51,1.05,0
+Mixed Control,Mixed contol,67,C,N,NA,NA,NA
+untreated control,Untreated control,68,C,Y,1.86,0.56,0

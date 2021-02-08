@@ -97,7 +97,7 @@ seed_soybean_clean <- seed_soybean_clean %>%
     replace_with_na_all(condition = ~.x == "-")
 
 # save
-write_csv(seed_soybean_clean, path = here("output", "clean_data", "01_seed-aggressiveness-soybean_clean-data.csv"))
+# write_csv(seed_soybean_clean, path = here("output", "clean_data", "01_seed-aggressiveness-soybean_clean-data.csv"))
 ```
 
 ### Corn
@@ -123,8 +123,8 @@ seed_corn_controls <- seed_corn %>%
   mutate(isolate_id = "control", 
          species = case_when(
            plate_id == "pda" ~ "PDA control", 
-           plate_id == "control" ~ "Pythium control", 
-           plate_id == "control" ~ "Pythium control"
+           Species == "P. ultimum" ~ "Pu control", 
+           Species == "P. irregulare" ~ "Pi control"
          ))
 
 # combine both
@@ -132,7 +132,7 @@ seed_corn_isolates_names$plate_id <- as.character(seed_corn_isolates_names$plate
 seed_corn_clean <- bind_rows(seed_corn_controls, seed_corn_isolates_names)
 
 # save
-write_csv(seed_corn_clean, path = here("output", "clean_data", "01_seed-aggressiveness-corn_clean-data.csv"))
+# write_csv(seed_corn_clean, here("output", "clean_data", "01_seed-aggressiveness-corn_clean-data.csv"))
 ```
 
 
@@ -155,8 +155,17 @@ soybean_plug$root_mass_g <- as.double(gsub('[a-zA-Z]', '', soybean_plug$root_mas
 soybean_plug_clean <- right_join(add_names, soybean_plug)
 soybean_plug_clean <- soybean_plug_clean %>% 
   replace_with_na_all(condition = ~.x == "-")
+
+# controls species column
+soybean_plug_clean <- soybean_plug_clean %>% 
+  mutate(species = case_when(
+    isolate_id == "Mixed Control" ~ "Mixed contol", 
+    isolate_id == "untreated control" ~ "Untreated control",
+    TRUE ~ as.character(species)
+  ))
+
 # save
-write_csv(soybean_plug_clean, path = here("output", "clean_data", "01_seedling-aggressiveness-soybean-agar_clean-data.csv"))
+write_csv(soybean_plug_clean, here("output", "clean_data", "01_seedling-aggressiveness-soybean-agar_clean-data.csv"))
 ```
 
 ### millet inocolum
