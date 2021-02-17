@@ -71,7 +71,10 @@ seed_soybean <- seed_soybean %>%
 seed_soybean_controls <- seed_soybean %>% 
   filter(plate_id %in% c("pda", "pi", "pu")) %>% 
   mutate(
-    isolate_id = "control",
+    isolate_id = case_when(
+    plate_id == "pda" ~ "PDA control", 
+    plate_id == "pi" ~ "Pu control", 
+    plate_id == "pu" ~ "Pi control"),
     species = case_when(
     plate_id == "pda" ~ "PDA control", 
     plate_id == "pi" ~ "Pu control", 
@@ -96,8 +99,10 @@ seed_soybean_clean <- bind_rows(seed_soybean_controls, seed_soybean_isolates_cor
 seed_soybean_clean <- seed_soybean_clean %>% 
     replace_with_na_all(condition = ~.x == "-")
 
+seed_soybean_clean
+
 # save
-# write_csv(seed_soybean_clean, path = here("output", "clean_data", "01_seed-aggressiveness-soybean_clean-data.csv"))
+# write_csv(seed_soybean_clean, file = here("output", "clean_data", "01_seed-aggressiveness-soybean_clean-data.csv"))
 ```
 
 ### Corn
@@ -120,7 +125,10 @@ seed_corn_isolates_names <- right_join(add_names, seed_corn_isolates, by = "plat
 
 seed_corn_controls <- seed_corn %>% 
   filter(plate_id %in% c("pda", "control")) %>% 
-  mutate(isolate_id = "control", 
+  mutate(isolate_id = case_when(
+           plate_id == "pda" ~ "PDA control", 
+           Species == "P. ultimum" ~ "Pu control", 
+           Species == "P. irregulare" ~ "Pi control"), 
          species = case_when(
            plate_id == "pda" ~ "PDA control", 
            Species == "P. ultimum" ~ "Pu control", 
