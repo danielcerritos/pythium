@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r library}
 library(here)
 library(tidyverse)
-theme_set(theme_bw())
+theme_set(theme_light())
 ```
 
 ```{r import data}
@@ -37,50 +37,48 @@ fungicide <- read_csv(here("output", "clean_data", "01-fungicide-sensitivty_clea
 ### Soybean
 
 ```{r}
+seed_soybean %>% 
+  ggplot(aes(x = reorder(rep, rotted_5), y = rotted_5)) +
+  geom_boxplot() + 
+  geom_jitter() 
+  facet_wrap(vars(rep)) +
+  coord_flip()
+```
+
+
+
+
+
+```{r}
 # check controls across reps
 seed_soybean %>% 
-  filter(isolate_id == "control") %>% 
-  ggplot(aes(x = reorder(species, germination_10), y = germination_10)) +
-  geom_boxplot() +
+  filter(isolate_id %in% c("PDA control", "Pu control", "Pi control")) %>% 
+  ggplot(aes(x = reorder(species, rotted_5), y = rotted_5)) +
+  geom_boxplot() + 
   geom_jitter() +
-  facet_wrap(vars(rep))
+  facet_wrap(vars(rep)) +
+  coord_flip()
 
 seed_soybean %>% 
-  filter(isolate_id == "control") %>% 
-  ggplot(aes(x = reorder(species, colonized_5), y = colonized_5)) +
-  geom_boxplot() +
+  filter(isolate_id %in% c("PDA control", "Pu control", "Pi control")) %>% 
+  ggplot(aes(x = reorder(species, colonized_5), y = colonized_5, color =  species)) +
   geom_jitter() +
-  facet_wrap(vars(rep))
+  facet_wrap(vars(rep)) 
 
 seed_soybean %>% 
-  filter(isolate_id == "control") %>% 
-  ggplot(aes(x = reorder(species, colonized_10), y = colonized_10)) +
-  geom_boxplot() +
+  filter(isolate_id %in% c("PDA control", "Pu control", "Pi control")) %>% 
+  ggplot(aes(x = reorder(species, colonized_10), y = colonized_10, color =  species)) +
   geom_jitter() +
-  facet_wrap(vars(rep))
+  facet_wrap(vars(rep)) 
+
+seed_soybean %>% 
+  filter(isolate_id %in% c("PDA control", "Pu control", "Pi control")) %>% 
+  ggplot(aes(x = reorder(species, germination_10), y = germination_10, color =  species)) +
+  geom_jitter() +
+  facet_wrap(vars(rep)) 
 ```
 
 Controls look fine, the responses are similar across different set of experiments 
-
-```{r agg soybean distributions}
-# distributions
-seed_soybean %>% 
-  ggplot(aes(y = germination_10)) +
-  geom_histogram()
-  
-seed_soybean %>% 
-  ggplot(aes(y = colonized_5)) +
-  geom_histogram()
-  
-seed_soybean %>% 
-  ggplot(aes(y = colonized_10)) +
-  geom_histogram() 
-
-seed_soybean %>% 
-  ggplot(aes(y = rotted_5)) +
-  geom_histogram() 
-# skew distributions in all variables
-```
 
 Differences b/w species?
 
@@ -90,7 +88,8 @@ seed_soybean %>%
   ggplot(aes(x = reorder(species, germination_10), y = germination_10)) +
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
-  coord_flip()
+  coord_flip() +
+  facet_wrap(vars(experiment), scales = "free_x") 
 
 seed_soybean %>% 
   filter(!is.na(colonized_5)) %>% 
@@ -282,25 +281,6 @@ seedling_soybean_agar %>%
 ```
 
 ### Millet
-
-```{r}
-
-seedling_soybean_millet %>%
-  ggplot(aes(x = reorder(species, germination), y = germination,  color = factor(millet_ml))) +
-  geom_boxplot(alpha = 0.5) + 
-  geom_jitter (alpha = 0.2, color = "gray50") +
-  coord_flip() 
-  facet_wrap(vars(millet_ml))
-  
-  
-seedling_soybean_millet %>%
-  mutate(dry_weight_g = envelope_plant_g - envelope_g) %>% 
-  ggplot(aes(x = reorder(species, dry_weight_g ), y = dry_weight_g,  color = factor(millet_ml))) +
-  geom_boxplot(alpha = 0.5) + 
-  geom_jitter (alpha = 0.2, color = "gray50") +
-  coord_flip() 
-  facet_wrap(vars(millet_ml))
-```
 
 ## Effect of media on pythium growth 
 

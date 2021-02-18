@@ -3,18 +3,46 @@ title: "Analysis Pythium aggressiveness"
 author: "Daniel Cerritos"
 date: "2/2/2021"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
-# recreate map you use in the poster?
+```{r library, message=FALSE}
+library(here)
+library(tidyverse)
+library(scales)
+library(patchwork)
+library(cowplot)
+library(ggfortify)
+library(lmerTest)
+library(emmeans)
+library(drc)
+theme_set(theme_light())
+```
 
+```{r import data, message=FALSE}
 # recovered isolates 
 isolates_recovered <- read_csv(here("data", "all-isolates-in-data-base.csv"))
+# aggressiveness seed assays
+seed_soybean <- read_csv(here("output", "clean_data", "01_seed-aggressiveness-soybean_clean-data.csv"))
+seed_corn <- read_csv(here("output", "clean_data", "01_seed-aggressiveness-corn_clean-data.csv"))
+# aggressiveness seedling assays
+seedling_soybean_agar <- read_csv(here("output", "clean_data", "01_seedling-aggressiveness-soybean-agar_clean-data.csv"))
+seedling_soybean_millet <- read_csv(here("output", "clean_data", "01_seedling-aggressiveness-soybean-millet_clean-data.csv"))
+# effect of media on pythium growth 
+media_soybean <- read_csv(here("output", "clean_data", "01_media-effect-pythium-aggressiveness.csv"))
+# fungicide sensitivity
+fungicide <- read_csv(here("output", "clean_data", "01-fungicide-sensitivty_clean-data.csv"))
 
+```
+
+```{r}
+# recreate map you use in the poster?
+# just use the isolates used in the experiments
 isolates_species <- isolates_recovered %>% 
   dplyr::select(species) %>%
   group_by(species) %>% 
@@ -25,7 +53,9 @@ isolates_species <- isolates_recovered %>%
   mutate(percentage = (n/180))
 
 isolates_species %>% 
-  ggplot(aes(x = reorder(species, percentage), y = percentage, fill = genus)) +
+  filter(!genus == "Phytophthora spp.", 
+         !species == "Pythium spp.") %>% 
+  ggplot(aes(x = reorder(species, percentage), y = percentage)) +
   geom_col(alpha = 0.5) +
   coord_flip() +
   theme_minimal_hgrid() +
@@ -36,7 +66,518 @@ isolates_species %>%
   theme_minimal_vgrid() +
   theme(legend.position = "none",
         axis.text.y  = element_text(face = "italic")) +
-  scale_fill_manual(values = c("#e31a1c", "#BEBEBE"))
+  scale_fill_manual(values = c("#BEBEBE"))
 
 ```
 
+# Soybean Seed aggressiveness 
+
+## Experiments 
+
+Check variance across experiments
+
+```{r}
+seed_soybean %>% 
+  filter(!is.na(rotted_5)) %>% 
+  ggplot(aes(x = reorder(species, rotted_5), y = rotted_5)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip() +
+  facet_wrap(vars(experiment), scales = "free_x") 
+
+seed_soybean %>% 
+  filter(!is.na(colonized_5)) %>% 
+  ggplot(aes(x = reorder(species, colonized_5), y = colonized_5)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip() +
+  facet_wrap(vars(experiment), scales = "free_x") 
+
+seed_soybean %>% 
+  filter(!is.na(colonized_10)) %>% 
+  ggplot(aes(x = reorder(species, colonized_10), y = colonized_10)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip() +
+  facet_wrap(vars(experiment), scales = "free_x") 
+
+seed_soybean %>% 
+  filter(!is.na(germination_10)) %>% 
+  ggplot(aes(x = reorder(species, germination_10), y = germination_10)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip() +
+  facet_wrap(vars(experiment), scales = "free_x") 
+```
+
+## Controls
+
+Reproducibility of assays, check controls across different reps
+
+```{r}
+# check controls across reps
+seed_soybean %>% 
+  filter(isolate_id %in% c("PDA control", "Pu control", "Pi control")) %>% 
+  ggplot(aes(x = reorder(species, rotted_5), y = rotted_5)) +
+  geom_boxplot() + 
+  geom_jitter(aes(color = species), alpha = 0.4) +
+  facet_wrap(vars(rep)) +
+  coord_flip()
+
+seed_soybean %>% 
+  filter(isolate_id %in% c("PDA control", "Pu control", "Pi control")) %>% 
+  ggplot(aes(x = reorder(species, colonized_5), y = colonized_5)) +
+  geom_boxplot() + 
+  geom_jitter(aes(color = species), alpha = 0.4) +
+  facet_wrap(vars(rep)) +
+  coord_flip()
+
+seed_soybean %>% 
+  filter(isolate_id %in% c("PDA control", "Pu control", "Pi control")) %>% 
+  ggplot(aes(x = reorder(species, colonized_10), y = colonized_10)) +
+  geom_boxplot() + 
+  geom_jitter(aes(color = species), alpha = 0.4) +
+  facet_wrap(vars(rep)) +
+  coord_flip()
+
+seed_soybean %>% 
+  filter(isolate_id %in% c("PDA control", "Pu control", "Pi control")) %>% 
+  ggplot(aes(x = reorder(species, germination_10), y = germination_10)) +
+  geom_boxplot() + 
+  geom_jitter(aes(color = species), alpha = 0.4) +
+  facet_wrap(vars(rep)) +
+  coord_flip()
+```
+
+## Fit models 
+
+Include experiment as a factor
+
+```{r fm_seed_agg_rot_5 }
+fm_seed_agg_rot_5 <- lm(rotted_5 ~ factor(species) + factor(isolate_id) + factor(experiment) + factor(rep), data = seed_soybean)
+qplot(fm_seed_agg_rot_5$residuals)
+autoplot(fm_seed_agg_rot_5, which = 1:6, ncol = 3, label.size = 3)
+anova(fm_seed_agg_rot_5)
+```
+
+```{r fm_seed_agg_col_5}
+fm_seed_agg_col_5 <- lm(colonized_5 ~ factor(species) + factor(isolate_id) + factor(experiment) + factor(rep), data = seed_soybean)
+qplot(fm_seed_agg_col_5$residuals)
+autoplot(fm_seed_agg_col_5, which = 1:6, ncol = 3, label.size = 3)
+anova(fm_seed_agg_col_5)
+```
+
+```{r fm_seed_agg_col_10}
+fm_seed_agg_col_10 <- lm(colonized_10 ~ factor(species) + factor(isolate_id) + factor(experiment) + factor(rep), data = seed_soybean)
+qplot(fm_seed_agg_col_10$residuals)
+autoplot(fm_seed_agg_col_10, which = 1:6, ncol = 3, label.size = 3)
+anova(fm_seed_agg_col_10)
+```
+
+```{r fm_seed_agg_col_10}
+fm_seed_agg_ger_10 <- lm(germination_10 ~ factor(species) + factor(isolate_id) + factor(experiment) + factor(rep), data = seed_soybean)
+qplot(fm_seed_agg_ger_10$residuals)
+autoplot(fm_seed_agg_ger_10, which = 1:6, ncol = 3, label.size = 3)
+anova(fm_seed_agg_ger_10)
+```
+
+# Corn Seed aggressiveness 
+
+```{r}
+# transform data, subtract paper bag weight 
+seed_corn <- seed_corn %>% 
+  mutate(weight_g = dry_weight_bag_g - bag_weight_g)
+```
+
+## Controls
+
+Check controls across sets 
+
+```{r}
+# check controls across reps
+# drop Pi control, only in one set
+seed_corn %>% 
+  filter(isolate_id %in% c("PDA control", "Pu control")) %>% 
+  ggplot(aes(x = reorder(species, colonized_5), y = colonized_5)) +
+  geom_boxplot() + 
+  geom_jitter(aes(color = species), alpha = 0.4) +
+  facet_wrap(vars(run)) 
+
+seed_corn %>% 
+  filter(isolate_id %in% c("PDA control", "Pu control")) %>% 
+  ggplot(aes(x = reorder(species, germination_5), y = germination_5)) +
+  geom_boxplot() + 
+  geom_jitter(aes(color = species), alpha = 0.4) +
+  facet_wrap(vars(run)) 
+
+seed_corn %>% 
+  filter(isolate_id %in% c("PDA control", "Pu control")) %>% 
+  ggplot(aes(x = reorder(species, weight_g), y = weight_g)) +
+  geom_boxplot() + 
+  geom_jitter(aes(color = species), alpha = 0.4) +
+  facet_wrap(vars(run)) 
+```
+
+
+## Experiment
+
+Check variances across the two experiment 
+
+
+```{r}
+seed_corn %>% 
+  filter(!is.na(colonized_5), 
+         !species == "Pi control") %>% 
+  ggplot(aes(x = reorder(species, colonized_5), y = colonized_5)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip() +
+  facet_wrap(vars(experiment), scales = "free_x") 
+# isolates 8 and 10 there first and second run were in 3 and 4
+
+seed_corn %>% 
+  filter(!is.na(colonized_5), 
+         !species == "Pi control") %>% 
+  ggplot(aes(x = reorder(species, germination_5), y = germination_5)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip() +
+  facet_wrap(vars(experiment), scales = "free_x") 
+
+seed_corn %>% 
+  filter(!is.na(colonized_5), 
+         !species == "Pi control") %>% 
+  ggplot(aes(x = reorder(species, weight_g), y = weight_g)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip() +
+  facet_wrap(vars(experiment), scales = "free_x") 
+```
+
+## Fit models
+
+```{r}
+fm_seed_corn_col_5 <- lm(colonized_5 ~ factor(species) +factor(isolate_id) + factor(experiment) + factor(run), data = seed_corn)
+qplot(fm_seed_corn_col_5$residuals)
+autoplot(fm_seed_corn_col_5, which = 1:6, ncol = 3, label.size = 3)
+anova(fm_seed_corn_col_5)
+```
+
+```{r}
+fm_seed_corn_ger_5 <- lm(germination_5 ~ factor(species) +factor(isolate_id) + factor(experiment) + factor(run), data = seed_corn)
+qplot(fm_seed_corn_ger_5$residuals)
+autoplot(fm_seed_corn_ger_5, which = 1:6, ncol = 3, label.size = 3)
+anova(fm_seed_corn_ger_5)
+```
+
+```{r}
+fm_seed_corn_weig <- lm(weight_g ~ factor(species) + factor(isolate_id) + factor(experiment) + factor(run), data = seed_corn)
+qplot(fm_seed_corn_weig$residuals)
+autoplot(fm_seed_corn_weig, which = 1:6, ncol = 3, label.size = 3)
+anova(fm_seed_corn_weig)
+```
+
+
+# Aggressiveness soybean seedling assays
+
+## agar
+
+```{r}
+# filter isolates with no species identified 
+# transform to binomial data 
+seedling_soybean_agar <- seedling_soybean_agar %>% 
+  filter(!is.na(species)) %>% 
+  mutate(emergence_bi = case_when(
+    emergence == "N" ~ 0, 
+    emergence == "Y" ~ 1
+  )) 
+```
+
+
+```{r}
+seedling_soybean_agar %>% 
+  ggplot(aes(x = species, y = emergence_bi)) 
+
+seedling_soybean_agar %>%
+  filter(!is.na(species), 
+         !is.na(plant_mass_g)) %>% 
+  ggplot(aes(x = reorder(species, plant_mass_g), y = plant_mass_g)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip()
+
+seedling_soybean_agar %>%
+   filter(!is.na(species), 
+         !is.na(root_mass_g)) %>% 
+  ggplot(aes(x = reorder(species, root_mass_g), y = root_mass_g)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip()
+```
+
+## Fit models
+
+```{r}
+# trash, trash, trash 
+seedling_soybean_agar %>% view()
+fm_agar_emer <- glm(emergence_bi ~ factor(species) + factor(species), data = seedling_soybean_agar, family = "binomial")
+qplot(fm_agar_emer$residuals)
+autoplot(fm_agar_emer, which = 1:6, ncol = 3, label.size = 3)
+anova(fm_agar_emer , test="Chisq")
+
+```
+
+```{r}
+fm_seed_agar_plant <- lm(plant_mass_g ~ factor(species) + factor(isolate_id), data = seedling_soybean_agar)
+qplot(fm_seed_agar_plant$residuals)
+autoplot(fm_seed_agar_plant, which = 1:6, ncol = 3, label.size = 3)
+anova(fm_seed_agar_plant)
+```
+
+```{r}
+fm_seed_agar_root <- lm(root_mass_g ~ factor(species) + factor(isolate_id), data = seedling_soybean_agar)
+qplot(fm_seed_agar_root$residuals)
+autoplot(fm_seed_agar_root, which = 1:6, ncol = 3, label.size = 3)
+anova(fm_seed_agar_root)
+```
+
+## millet 
+
+```{r}
+seedling_soybean_millet <- seedling_soybean_millet %>%
+  mutate(dry_weight_g = envelope_plant_g - envelope_g)
+```
+
+
+```{r}
+fm_millet_ger <- lm(germination ~ factor(species) + factor(millet_ml) , data = seedling_soybean_millet)
+summary(fm_millet_ger)
+anova(fm_millet_ger)
+emmeans(fm_millet_ger, ~species) %>% 
+  
+
+```
+
+
+
+
+```{r}
+seedling_soybean_millet %>%
+  ggplot(aes(x = reorder(species, germination), y = germination,  color = factor(millet_ml))) +
+  geom_boxplot(alpha = 0.5) + 
+  geom_jitter (alpha = 0.2, color = "gray50") +
+  coord_flip() 
+  facet_wrap(vars(millet_ml))
+  
+  
+seedling_soybean_millet %>%
+  ggplot(aes(x = reorder(species, dry_weight_g ), y = dry_weight_g,  color = factor(millet_ml))) +
+  geom_boxplot(alpha = 0.5) + 
+  geom_jitter (alpha = 0.2, color = "gray50") +
+  coord_flip() 
+  facet_wrap(vars(millet_ml))
+```
+
+# Fungicide sensitivity
+
+```{r}
+# eliminate NAs
+# average colony measurements 
+transform_fungicide <- fungicide %>% 
+  filter(!is.na(a)) %>%  
+  mutate(length_mm = (a + b)/2) 
+
+# subtract the plug diameter
+transform_fungicide <- transform_fungicide %>% 
+  mutate(length_mm = case_when(
+    length_mm > 0 ~ length_mm - 4, 
+    TRUE ~ length_mm - 0
+    )) %>% 
+  filter(!length_mm < 0) # eliminate any negative values
+
+# mean growth of control plate (dose 0)
+control_fungicide <- transform_fungicide  %>% 
+  filter(dose == 0, 
+         !is.na(length_mm)) %>% 
+  group_by(fungicide, run, isolate_id) %>% 
+  summarise(control_mean = mean(length_mm)) 
+
+transform_fungicide <- left_join(transform_fungicide, control_fungicide, by = c("fungicide",
+                                                                                "run", 
+                                                                                "isolate_id"))
+
+# relative growth calculation
+transform_fungicide  <- transform_fungicide  %>% 
+  mutate(relative_growth = (length_mm/control_mean)*100)
+
+# write_csv(transform_fungicide, here("output", "transform_data", "03_fungicide-sensitivity_transform.csv"))
+```
+
+```{r}
+transform_fungicide %>% 
+  group_by(species, isolate_id) %>% 
+  tally()
+```
+
+```{r}
+# check if there are isolates with no EC50
+# combine both trials
+mean_relative_growth <- transform_fungicide %>% 
+group_by(fungicide, isolate_id, dose, species) %>% 
+  summarise(relative_growth = mean(relative_growth))
+
+# isolates with >50% rel growth in the higher dose, no EC50 can be calculated
+# Azoxystrobin
+mean_relative_growth %>% 
+  filter(fungicide %in% c("Mefenoxam","Metalaxyl", "Azoxystrobin") & dose == 10 & relative_growth > 50) 
+
+# Ethaboxam
+mean_relative_growth %>% 
+  filter(fungicide == "Ethaboxam" & dose == 100 & relative_growth > 50)
+
+# remove insensitive isolates for analysis
+no_EC50_data <- transform_fungicide %>% 
+  filter(!(fungicide == "Azoxystrobin" & species == "Pythium vexans"))
+
+no_EC50_data <- no_EC50_data 
+```
+
+```{r}
+# check if there are isolates with hormetic effect
+# >100% rel growth at lower dose
+hormetic_isolates <- no_EC50_data %>% 
+  group_by(fungicide, run, isolate_id, dose) %>% 
+  summarise(relative_growth = mean(relative_growth)) %>% 
+  filter(relative_growth > 100, 
+         !dose == 0) %>% 
+  dplyr::select(fungicide, run, isolate_id)
+
+hormetic_isolates %>% 
+  group_by(fungicide, run, isolate_id) %>% 
+  n_distinct()
+
+hormetic_data <- semi_join(no_EC50_data, hormetic_isolates, by = c("fungicide",
+                                                                   "run", 
+                                                                   "isolate_id"))
+                                                                        
+# when combine data from both runs
+hormetic_isolates_both <- no_EC50_data %>% 
+  group_by(fungicide, isolate_id, dose) %>% 
+  summarise(relative_growth = mean(relative_growth)) %>% 
+  filter(relative_growth > 100, 
+         !dose == 0) %>% 
+  dplyr::select(fungicide, isolate_id)
+
+```
+
+## fit log logistic models
+
+```{r}
+# fit log-logistic models with 3 and 4 parameters 
+nest_fungicide <- no_EC50_data %>% 
+  group_by(fungicide, isolate_id, species) %>% 
+  nest()
+
+fit_LL3 <- function(dataset){
+  drm(relative_growth ~ dose, fct = LL.3(names = c("slope", "upper", "EC50")), data = dataset)
+}
+
+fit_LL4 <- function(dataset){
+  drm(relative_growth ~ dose, fct = LL.4(names = c("slope", "lower", "upper", "EC50")), data = dataset)
+}
+
+log_models <- nest_fungicide %>% 
+  mutate(ll3.model = purrr::map(data, fit_LL3), 
+         ll4.model = purrr::map(data, fit_LL4), 
+         ll3.fit = purrr::map(ll3.model, mselect), 
+         ll4.fit = purrr::map(ll4.model, mselect) 
+         )
+
+log_selection <- log_models %>% 
+  dplyr::select(ll3.fit, ll4.fit) %>% 
+  gather(ll3.fit, ll4.fit, key = "model", value = "model.fit") %>%   
+  unnest_wider(model.fit)
+
+log_selection %>% 
+  dplyr::select(fungicide, isolate_id, model, IC) %>% 
+  spread(model, IC) %>% 
+  filter(ll3.fit < ll4.fit) %>% 
+  n_distinct() 
+
+# lack of fit p-values 
+log_selection %>% 
+  filter(`Lack of fit` > 0.05) %>% 
+  group_by(model)%>% 
+  count() 
+```
+
+LL.3 model look better overall
+
+```{r}
+# extract absolute EC50s from LL.4 model
+abs_EC50 <- function(models){
+  ED(models, respLev = c(50), type = "absolute", interval = "delta")
+}
+
+log_models <- log_models %>% 
+  mutate(ll3_EC50 = purrr::map(ll3.model, abs_EC50))
+
+log_EC50 <- log_models %>% 
+  dplyr::select(ll3_EC50 ) %>% 
+  unnest_wider(ll3_EC50) %>% 
+  rename(EC50 = ...1  , 
+         std.error = ...2 ,
+         lower = ...3, 
+         upper = ...4)
+
+# add isolates with no EC50
+azo_iso <- mean_relative_growth %>% 
+  filter(fungicide == "Azoxystrobin" & dose == 10 & relative_growth > 50)
+
+etha_iso <- mean_relative_growth %>% 
+  filter(fungicide == "Ethaboxam" & dose == 100 & relative_growth > 50)
+
+# EC50 for plotting
+no_EC50_isolates <- bind_rows(azo_iso, etha_iso, mef_met_iso) %>% 
+  dplyr::select(isolate_id, species, fungicide) %>% 
+  mutate(EC50 = case_when(
+      fungicide == "Azoxystrobin" ~ 10, 
+      fungicide == "Ethaboxam" ~ 100
+    ))
+
+# remove dose column
+no_EC50_isolates <- no_EC50_isolates %>% 
+  group_by(isolate_id, species, fungicide, EC50) %>% 
+  ungroup() %>% 
+  distinct(isolate_id, species, fungicide, EC50)
+
+# add missing columns to combine with calculated EC50
+no_EC50_isolates <- no_EC50_isolates %>% 
+  mutate(std.error = NA, 
+         lower = NA, 
+         upper = NA)
+
+# combine
+all_EC50_data <- bind_rows(log_EC50, no_EC50_isolates )
+
+# write_csv(all_EC50_data, here("output", "results", "03_fungicide-sensitivity_EC50.csv"))
+```
+
+```{r}
+fungicide_EC50 <- read_csv(here("output", "results", "03_fungicide-sensitivity_EC50.csv"))
+
+fungicide_EC50 %>% view()
+
+ggplot(fungicide_EC50, aes(x = EC50, fill = species)) +
+  geom_histogram(alpha = 0.6, color = "white", bins = 10) +
+  facet_wrap(~ fungicide, scales = "free_x") +
+  labs(x = expression('EC'[50]*' (μg ml'^-1*')'), 
+       y = "Frequency", 
+       fill = "") +
+  theme(strip.text = element_text(face = "bold", size = rel(1)), 
+        panel.grid.major.x = element_blank(), 
+        panel.grid.minor.x = element_blank(), 
+        panel.grid.minor.y = element_blank(), 
+        legend.position = "bottom") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.05)))
+```
