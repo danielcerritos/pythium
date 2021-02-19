@@ -18,6 +18,7 @@ library(scales)
 library(patchwork)
 library(cowplot)
 library(ggfortify)
+library(ggResidpanel)
 library(lmerTest)
 library(emmeans)
 library(drc)
@@ -47,23 +48,17 @@ isolates_species <- isolates_recovered %>%
   dplyr::select(species) %>%
   group_by(species) %>% 
   count() %>%  
-  mutate(genus = case_when(
-    grepl("Phyto", species) ~ "Phytophthora spp.",
-    grepl("Pyth", species) ~"Pythium spp.")) %>% 
-  mutate(percentage = (n/180))
+  mutate(percentage = (n/149))
 
 isolates_species %>% 
-  filter(!genus == "Phytophthora spp.", 
-         !species == "Pythium spp.") %>% 
+  filter(!species  %in% c("Phytophthora sansomeana", "Phytophthora sojae", "Phytophthora spp." )) %>% 
   ggplot(aes(x = reorder(species, percentage), y = percentage)) +
   geom_col(alpha = 0.5) +
   coord_flip() +
-  theme_minimal_hgrid() +
   labs(y = "Isolates recovered", 
        x = "") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.05)), 
                      labels = percent_format()) +
-  theme_minimal_vgrid() +
   theme(legend.position = "none",
         axis.text.y  = element_text(face = "italic")) +
   scale_fill_manual(values = c("#BEBEBE"))
@@ -75,6 +70,32 @@ isolates_species %>%
 ## Experiments 
 
 Check variance across experiments
+
+```{r}
+seed_soybean %>% 
+  filter(!is.na(rotted_5)) %>% 
+  ggplot(aes(x = factor(experiment), y = rotted_5)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) 
+
+seed_soybean %>% 
+  filter(!is.na(colonized_5)) %>% 
+  ggplot(aes(x = factor(experiment), y = colonized_5)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) # similar variance 
+
+seed_soybean %>% 
+  filter(!is.na(colonized_10)) %>% 
+  ggplot(aes(x = factor(experiment), y = colonized_10)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) # similar variance 
+
+seed_soybean %>% 
+  filter(!is.na(germination_10)) %>% 
+  ggplot(aes(x = factor(experiment), y = germination_10)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) # similar variance 
+```
 
 ```{r}
 seed_soybean %>% 
@@ -151,40 +172,52 @@ seed_soybean %>%
 
 ## Fit models 
 
+
+```{r}
+seed_soybean$rep <- as.factor(seed_soybean$rep)
+seed_soybean$isolate_id <- as.factor(seed_soybean$isolate_id)
+seed_soybean$species <- as.factor(seed_soybean$species)
+```
+
 Include experiment as a factor
 
 ```{r fm_seed_agg_rot_5 }
-fm_seed_agg_rot_5 <- lm(rotted_5 ~ factor(species) + factor(isolate_id) + factor(experiment) + factor(rep), data = seed_soybean)
+fm_seed_agg_rot_5 <- glm(rotted_5 ~ species + isolate_id + rep, data = seed_soybean)
 qplot(fm_seed_agg_rot_5$residuals)
-autoplot(fm_seed_agg_rot_5, which = 1:6, ncol = 3, label.size = 3)
-anova(fm_seed_agg_rot_5)
+resid_panel(fm_seed_agg_rot_5)
+anova(fm_seed_agg_rot_5, test = "Chisq")
+emmeans(fm_seed_agg_rot_5, ~ species, type = "response") %>% 
+    multcomp::cld()
 ```
 
 ```{r fm_seed_agg_col_5}
-fm_seed_agg_col_5 <- lm(colonized_5 ~ factor(species) + factor(isolate_id) + factor(experiment) + factor(rep), data = seed_soybean)
+fm_seed_agg_col_5 <- glm(colonized_5 ~ species + isolate_id + rep, data = seed_soybean)
 qplot(fm_seed_agg_col_5$residuals)
-autoplot(fm_seed_agg_col_5, which = 1:6, ncol = 3, label.size = 3)
-anova(fm_seed_agg_col_5)
+resid_panel(fm_seed_agg_col_5)
+anova(fm_seed_agg_col_5, test = "Chisq")
+emmeans(fm_seed_agg_col_5, ~ species, type = "response") %>% 
+    multcomp::cld()
 ```
 
 ```{r fm_seed_agg_col_10}
-fm_seed_agg_col_10 <- lm(colonized_10 ~ factor(species) + factor(isolate_id) + factor(experiment) + factor(rep), data = seed_soybean)
-qplot(fm_seed_agg_col_10$residuals)
-autoplot(fm_seed_agg_col_10, which = 1:6, ncol = 3, label.size = 3)
-anova(fm_seed_agg_col_10)
+fm_seed_agg_col_10 <- glm(colonized_10 ~ species + isolate_id + rep, data = seed_soybean)
+resid_panel(fm_seed_agg_col_10)
+anova(fm_seed_agg_col_10, test = "Chisq")
+  emmeans(fm_seed_agg_col_10, ~ species, type = "response") %>% 
+    multcomp::cld()
 ```
 
 ```{r fm_seed_agg_col_10}
-fm_seed_agg_ger_10 <- lm(germination_10 ~ factor(species) + factor(isolate_id) + factor(experiment) + factor(rep), data = seed_soybean)
+fm_seed_agg_ger_10 <- lm(germination_10 ~ species + isolate_id + rep, data = seed_soybean)
 qplot(fm_seed_agg_ger_10$residuals)
-autoplot(fm_seed_agg_ger_10, which = 1:6, ncol = 3, label.size = 3)
-anova(fm_seed_agg_ger_10)
+resid_panel(fm_seed_agg_ger_10)
+anova(fm_seed_agg_ger_10, test = "Chisq")
 ```
 
 # Corn Seed aggressiveness 
 
 ```{r}
-# transform data, subtract paper bag weight 
+# subtract paper bag weight 
 seed_corn <- seed_corn %>% 
   mutate(weight_g = dry_weight_bag_g - bag_weight_g)
 ```
@@ -257,125 +290,81 @@ seed_corn %>%
 ## Fit models
 
 ```{r}
-fm_seed_corn_col_5 <- lm(colonized_5 ~ factor(species) +factor(isolate_id) + factor(experiment) + factor(run), data = seed_corn)
+seed_corn$run <- as.factor(seed_corn$run)
+seed_corn$isolate_id <- as.factor(seed_corn$isolate_id)
+seed_corn$species <- as.factor(seed_corn$species)
+```
+
+```{r}
+fm_seed_corn_col_5 <- lm(colonized_5 ~ species + isolate_id + run, data = seed_corn)
 qplot(fm_seed_corn_col_5$residuals)
 autoplot(fm_seed_corn_col_5, which = 1:6, ncol = 3, label.size = 3)
-anova(fm_seed_corn_col_5)
+anova(fm_seed_corn_col_5) # remove run 
 ```
 
 ```{r}
-fm_seed_corn_ger_5 <- lm(germination_5 ~ factor(species) +factor(isolate_id) + factor(experiment) + factor(run), data = seed_corn)
+fm_seed_corn_ger_5 <- lm(germination_5 ~ species + isolate_id + run, data = seed_corn)
 qplot(fm_seed_corn_ger_5$residuals)
 autoplot(fm_seed_corn_ger_5, which = 1:6, ncol = 3, label.size = 3)
-anova(fm_seed_corn_ger_5)
+anova(fm_seed_corn_ger_5) # remove run
 ```
 
 ```{r}
-fm_seed_corn_weig <- lm(weight_g ~ factor(species) + factor(isolate_id) + factor(experiment) + factor(run), data = seed_corn)
+fm_seed_corn_weig <- lm(weight_g ~ species + isolate_id + run, data = seed_corn)
 qplot(fm_seed_corn_weig$residuals)
 autoplot(fm_seed_corn_weig, which = 1:6, ncol = 3, label.size = 3)
-anova(fm_seed_corn_weig)
+anova(fm_seed_corn_weig) # not remove
 ```
 
 
 # Aggressiveness soybean seedling assays
-
-## agar
-
-```{r}
-# filter isolates with no species identified 
-# transform to binomial data 
-seedling_soybean_agar <- seedling_soybean_agar %>% 
-  filter(!is.na(species)) %>% 
-  mutate(emergence_bi = case_when(
-    emergence == "N" ~ 0, 
-    emergence == "Y" ~ 1
-  )) 
-```
-
-
-```{r}
-seedling_soybean_agar %>% 
-  ggplot(aes(x = species, y = emergence_bi)) 
-
-seedling_soybean_agar %>%
-  filter(!is.na(species), 
-         !is.na(plant_mass_g)) %>% 
-  ggplot(aes(x = reorder(species, plant_mass_g), y = plant_mass_g)) +
-  geom_boxplot() + 
-  geom_jitter (alpha = 0.2) +
-  coord_flip()
-
-seedling_soybean_agar %>%
-   filter(!is.na(species), 
-         !is.na(root_mass_g)) %>% 
-  ggplot(aes(x = reorder(species, root_mass_g), y = root_mass_g)) +
-  geom_boxplot() + 
-  geom_jitter (alpha = 0.2) +
-  coord_flip()
-```
-
-## Fit models
-
-```{r}
-# trash, trash, trash 
-seedling_soybean_agar %>% view()
-fm_agar_emer <- glm(emergence_bi ~ factor(species) + factor(species), data = seedling_soybean_agar, family = "binomial")
-qplot(fm_agar_emer$residuals)
-autoplot(fm_agar_emer, which = 1:6, ncol = 3, label.size = 3)
-anova(fm_agar_emer , test="Chisq")
-
-```
-
-```{r}
-fm_seed_agar_plant <- lm(plant_mass_g ~ factor(species) + factor(isolate_id), data = seedling_soybean_agar)
-qplot(fm_seed_agar_plant$residuals)
-autoplot(fm_seed_agar_plant, which = 1:6, ncol = 3, label.size = 3)
-anova(fm_seed_agar_plant)
-```
-
-```{r}
-fm_seed_agar_root <- lm(root_mass_g ~ factor(species) + factor(isolate_id), data = seedling_soybean_agar)
-qplot(fm_seed_agar_root$residuals)
-autoplot(fm_seed_agar_root, which = 1:6, ncol = 3, label.size = 3)
-anova(fm_seed_agar_root)
-```
 
 ## millet 
 
 ```{r}
 seedling_soybean_millet <- seedling_soybean_millet %>%
   mutate(dry_weight_g = envelope_plant_g - envelope_g)
+
+seedling_soybean_millet %>% view()
+
+seedling_soybean_millet$run <- as.factor(seedling_soybean_millet$run)
+seedling_soybean_millet$millet_ml <- as.factor(seedling_soybean_millet$millet_ml)
+seedling_soybean_millet$species <- as.factor(seedling_soybean_millet$species)
 ```
 
 
 ```{r}
-fm_millet_ger <- lm(germination ~ factor(species) + factor(millet_ml) , data = seedling_soybean_millet)
-summary(fm_millet_ger)
-anova(fm_millet_ger)
-emmeans(fm_millet_ger, ~species) %>% 
-  
-
+fm_millet_ger <- lm(germination ~ species + millet_ml + run, data = seedling_soybean_millet)
+qplot(fm_millet_ger$residuals)
+autoplot(fm_millet_ger, which = 1:6, ncol = 3, label.size = 3)
+anova(fm_millet_ger) # no diff from millet and run
+emmeans(fm_millet_ger, ~ species) %>% 
+  multcomp::cld()
 ```
 
+```{r}
+fm_millet_weight <- lm(dry_weight_g ~ species + millet_ml + run, data = seedling_soybean_millet)
+qplot(fm_millet_weight$residuals)
+autoplot(fm_millet_weight, which = 1:6, ncol = 3, label.size = 3)
+anova(fm_millet_weight) # no diff from millet and run
+emmeans(fm_millet_weight, ~ species) %>% 
+  multcomp::cld()
+```
 
 
 
 ```{r}
 seedling_soybean_millet %>%
-  ggplot(aes(x = reorder(species, germination), y = germination,  color = factor(millet_ml))) +
+  ggplot(aes(x = reorder(species, germination), y = germination)) +
   geom_boxplot(alpha = 0.5) + 
   geom_jitter (alpha = 0.2, color = "gray50") +
   coord_flip() 
-  facet_wrap(vars(millet_ml))
-  
   
 seedling_soybean_millet %>%
-  ggplot(aes(x = reorder(species, dry_weight_g ), y = dry_weight_g,  color = factor(millet_ml))) +
+  ggplot(aes(x = reorder(species, dry_weight_g ), y = dry_weight_g)) +
   geom_boxplot(alpha = 0.5) + 
   geom_jitter (alpha = 0.2, color = "gray50") +
   coord_flip() 
-  facet_wrap(vars(millet_ml))
 ```
 
 # Fungicide sensitivity
@@ -566,10 +555,9 @@ all_EC50_data <- bind_rows(log_EC50, no_EC50_isolates )
 ```{r}
 fungicide_EC50 <- read_csv(here("output", "results", "03_fungicide-sensitivity_EC50.csv"))
 
-fungicide_EC50 %>% view()
 
 ggplot(fungicide_EC50, aes(x = EC50, fill = species)) +
-  geom_histogram(alpha = 0.6, color = "white", bins = 10) +
+  geom_histogram(alpha = 0.5, color = "white", bins = 10) +
   facet_wrap(~ fungicide, scales = "free_x") +
   labs(x = expression('EC'[50]*' (μg ml'^-1*')'), 
        y = "Frequency", 
