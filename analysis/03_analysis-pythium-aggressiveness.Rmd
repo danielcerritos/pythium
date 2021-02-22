@@ -214,6 +214,32 @@ resid_panel(fm_seed_agg_ger_10)
 anova(fm_seed_agg_ger_10, test = "Chisq")
 ```
 
+
+## Figures
+
+```{r}
+seed_soybean %>% 
+  filter(!is.na(colonized_5)) %>% 
+  ggplot(aes(x = reorder(species, colonized_5), y = colonized_5)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip() 
+
+seed_soybean %>% 
+  filter(!is.na(colonized_10)) %>% 
+  ggplot(aes(x = reorder(species, colonized_10), y = colonized_10)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip() 
+
+seed_soybean %>% 
+  filter(!is.na(germination_10)) %>% 
+  ggplot(aes(x = reorder(species, germination_10), y = germination_10)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip() 
+```
+
 # Corn Seed aggressiveness 
 
 ```{r}
@@ -559,7 +585,7 @@ fungicide_EC50 <- read_csv(here("output", "results", "03_fungicide-sensitivity_E
 ggplot(fungicide_EC50, aes(x = EC50, fill = species)) +
   geom_histogram(alpha = 0.5, color = "white", bins = 10) +
   facet_wrap(~ fungicide, scales = "free_x") +
-  labs(x = expression('EC'[50]*' (μg ml'^-1*')'), 
+  labs(x = expression('EC'[50]*' (μg/ml)'), 
        y = "Frequency", 
        fill = "") +
   theme(strip.text = element_text(face = "bold", size = rel(1)), 
