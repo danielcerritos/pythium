@@ -4,7 +4,7 @@ author: "Daniel Cerritos"
 date: "2/2/2021"
 output: html_document
 editor_options: 
-  chunk_output_type: console
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
@@ -22,6 +22,7 @@ library(ggResidpanel)
 library(lmerTest)
 library(emmeans)
 library(drc)
+library(patchwork)
 theme_set(theme_light())
 ```
 
@@ -174,6 +175,8 @@ seed_soybean %>%
 
 
 ```{r}
+
+seed_soybean %>% view()
 seed_soybean$rep <- as.factor(seed_soybean$rep)
 seed_soybean$isolate_id <- as.factor(seed_soybean$isolate_id)
 seed_soybean$species <- as.factor(seed_soybean$species)
@@ -181,21 +184,15 @@ seed_soybean$species <- as.factor(seed_soybean$species)
 
 Include experiment as a factor
 
-```{r fm_seed_agg_rot_5 }
-fm_seed_agg_rot_5 <- glm(rotted_5 ~ species + isolate_id + rep, data = seed_soybean)
-qplot(fm_seed_agg_rot_5$residuals)
-resid_panel(fm_seed_agg_rot_5)
-anova(fm_seed_agg_rot_5, test = "Chisq")
-emmeans(fm_seed_agg_rot_5, ~ species, type = "response") %>% 
-    multcomp::cld()
-```
-
 ```{r fm_seed_agg_col_5}
 fm_seed_agg_col_5 <- glm(colonized_5 ~ species + isolate_id + rep, data = seed_soybean)
 qplot(fm_seed_agg_col_5$residuals)
 resid_panel(fm_seed_agg_col_5)
 anova(fm_seed_agg_col_5, test = "Chisq")
+# mean separation
 emmeans(fm_seed_agg_col_5, ~ species, type = "response") %>% 
+    multcomp::cld()
+emmeans(fm_seed_agg_col_5, ~ isolate_id|species, type = "response") %>% 
     multcomp::cld()
 ```
 
@@ -203,41 +200,84 @@ emmeans(fm_seed_agg_col_5, ~ species, type = "response") %>%
 fm_seed_agg_col_10 <- glm(colonized_10 ~ species + isolate_id + rep, data = seed_soybean)
 resid_panel(fm_seed_agg_col_10)
 anova(fm_seed_agg_col_10, test = "Chisq")
-  emmeans(fm_seed_agg_col_10, ~ species, type = "response") %>% 
+# mean separation
+emmeans(fm_seed_agg_col_10, ~ species,  type = "response") %>% 
+    multcomp::cld()
+emmeans(fm_seed_agg_col_10, ~ isolate_id|species, type = "response") %>% 
     multcomp::cld()
 ```
 
-```{r fm_seed_agg_col_10}
+```{r fm_seed_agg_ger_10}
 fm_seed_agg_ger_10 <- lm(germination_10 ~ species + isolate_id + rep, data = seed_soybean)
 qplot(fm_seed_agg_ger_10$residuals)
 resid_panel(fm_seed_agg_ger_10)
 anova(fm_seed_agg_ger_10, test = "Chisq")
+# mean separation 
+emmeans(fm_seed_agg_ger_10, ~ species, type = "response") %>% 
+  multcomp::cld()
+emmeans(fm_seed_agg_ger_10, ~ isolate_id|species, type = "response" ) %>% 
+  multcomp::cld()
 ```
 
 
 ## Figures
 
 ```{r}
-seed_soybean %>% 
+# reduce the binomials length, for plotting
+seed_soybean <- seed_soybean %>% 
+  mutate(short_species = case_when(
+    species == "Pythium acrogynum" ~ "P. acrogynum", 
+    species == "Pythium irregulare" ~ "P. irregulare", 
+    species == "Pythium torulosum" ~ "P. torulosum",
+    species == "Pythium ultimum var. ultimum" ~ "P. ultimum var. ultimum", 
+    species == "Pythium yorkensis"  ~ "P. yorkensis", 
+    species == "Pythium acanthophoron" ~ "P. acanthophoron", 
+    species ==  "Pythium aphanidermatum" ~  "P. aphanidermatum", 
+    species == "Pythium pleroticum"  ~ "P. pleroticum", 
+    species == "Pythium ultimum var. sporangiiferum" ~ "P. ultimum var. sporangiiferum", 
+    species == "Pythium vexans" ~ "P. vexans" , 
+    TRUE ~ as.character(species)
+    ))
+```
+
+```{r fig.height=10, fig.width=5}
+soy_col_5 <- seed_soybean %>% 
   filter(!is.na(colonized_5)) %>% 
-  ggplot(aes(x = reorder(species, colonized_5), y = colonized_5)) +
+  ggplot(aes(x = reorder(short_species, colonized_5), y = colonized_5)) +
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
-  coord_flip() 
+  coord_flip() +
+  labs(y = "Colonized (5 dai)", 
+       x = "")
 
-seed_soybean %>% 
+soy_col_10 <-seed_soybean %>% 
   filter(!is.na(colonized_10)) %>% 
-  ggplot(aes(x = reorder(species, colonized_10), y = colonized_10)) +
+  ggplot(aes(x = reorder(short_species, colonized_10), y = colonized_10)) +
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
-  coord_flip() 
+  coord_flip() +
+  labs(y = "Colonized (10 dai)", 
+       x = "")
 
-seed_soybean %>% 
+# combine colonized 
+soybean_colonized <- soy_col_5 / soy_col_10 + plot_annotation(tag_levels = 'A')
+
+ggsave("figure1.tiff", soybean_colonized, dpi = 300, 
+       path = here("docs", "figures"), width = 5, height = 7)
+
+
+soybean_germination <- seed_soybean %>% 
   filter(!is.na(germination_10)) %>% 
-  ggplot(aes(x = reorder(species, germination_10), y = germination_10)) +
+  ggplot(aes(x = reorder(short_species, germination_10), y = germination_10)) +
   geom_boxplot() + 
   geom_jitter (alpha = 0.2) +
-  coord_flip() 
+  coord_flip() +
+  labs(y = "Germination (10 dai)", 
+       x = "")
+
+ggsave("figure2.tiff", soybean_germination, dpi = 300, 
+       path = here("docs", "figures"), width = 5, height = 5)
+
 ```
 
 # Corn Seed aggressiveness 
@@ -319,27 +359,107 @@ seed_corn %>%
 seed_corn$run <- as.factor(seed_corn$run)
 seed_corn$isolate_id <- as.factor(seed_corn$isolate_id)
 seed_corn$species <- as.factor(seed_corn$species)
+seed_corn <- seed_corn %>% 
+  filter(!species == "Pi control")
+
 ```
 
 ```{r}
 fm_seed_corn_col_5 <- lm(colonized_5 ~ species + isolate_id + run, data = seed_corn)
 qplot(fm_seed_corn_col_5$residuals)
-autoplot(fm_seed_corn_col_5, which = 1:6, ncol = 3, label.size = 3)
-anova(fm_seed_corn_col_5) # remove run 
+autoplot(fm_seed_corn_col_5, which = 1:4, ncol = 2, label.size = 3)
+anova(fm_seed_corn_col_5) # run not significant  
+
+# remove run
+fm_seed_corn_col_5 <- glm(colonized_5 ~ species + isolate_id, data = seed_corn)
+qplot(fm_seed_corn_col_5$residuals)
+autoplot(fm_seed_corn_col_5, which = 1:4, ncol = 2, label.size = 3)
+anova(fm_seed_corn_col_5, test = "Chisq")
+emmeans(fm_seed_corn_col_5, ~ species) %>% 
+  multcomp::cld()
 ```
 
 ```{r}
 fm_seed_corn_ger_5 <- lm(germination_5 ~ species + isolate_id + run, data = seed_corn)
 qplot(fm_seed_corn_ger_5$residuals)
 autoplot(fm_seed_corn_ger_5, which = 1:6, ncol = 3, label.size = 3)
-anova(fm_seed_corn_ger_5) # remove run
+anova(fm_seed_corn_ger_5) # run not significant  
+
+# remove run
+fm_seed_corn_ger_5 <- glm(germination_5 ~ species + isolate_id, data = seed_corn)
+qplot(fm_seed_corn_ger_5$residuals)
+autoplot(fm_seed_corn_ger_5, which = 1:6, ncol = 3, label.size = 3)
+anova(fm_seed_corn_ger_5, test = "Chisq") 
+emmeans(fm_seed_corn_ger_5, ~ species) %>% 
+  multcomp::cld()
+emmeans(fm_seed_corn_ger_5, ~ isolate_id|species) %>% 
+  multcomp::cld()
 ```
 
 ```{r}
+# I think I will not use this data
 fm_seed_corn_weig <- lm(weight_g ~ species + isolate_id + run, data = seed_corn)
 qplot(fm_seed_corn_weig$residuals)
-autoplot(fm_seed_corn_weig, which = 1:6, ncol = 3, label.size = 3)
+autoplot(fm_seed_corn_weig, which = 1:4, ncol = 2, label.size = 3)
 anova(fm_seed_corn_weig) # not remove
+emmeans(fm_seed_corn_weig, ~ species) %>% 
+  multcomp::cld()
+
+```
+
+
+## Figures
+
+```{r}
+# shorter species 
+seed_corn <- seed_corn %>% 
+  mutate(short_species = case_when(
+    species == "Pythium torulosum" ~ "P. torulosum",
+    species == "Pythium ultimum var. ultimum" ~ "P. ultimum var. ultimum", 
+    species ==  "Pythium aphanidermatum" ~  "P. aphanidermatum", 
+    species == "Pythium pleroticum"  ~ "P. pleroticum", 
+    species == "Pythium ultimum var. sporangiiferum" ~ "P. ultimum var. sporangiiferum", 
+    species == "Pythium vexans" ~ "P. vexans" , 
+    TRUE ~ as.character(species)
+    ))
+```
+
+```{r}
+corn_colonized <- seed_corn %>% 
+  filter(!is.na(colonized_5), 
+         !species == "Pi control") %>% 
+  ggplot(aes(x = reorder(short_species, colonized_5), y = colonized_5)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip() +
+  labs(y = "Colonized (5 dai)", 
+       x = "")
+
+corn_germination <- seed_corn %>% 
+  filter(!is.na(germination_5), 
+         !species == "Pi control") %>% 
+  ggplot(aes(x = reorder(short_species, germination_5), y = germination_5)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip() +
+  labs(y = "Germination (10 dai)", 
+       x = "")
+
+# combine colonized 
+corn_both <- corn_colonized / corn_germination + plot_annotation(tag_levels = 'A')
+
+ggsave("figure3.tiff", corn_both, dpi = 300, 
+       path = here("docs", "figures"), width = 5, height = 6)
+
+
+seed_corn %>% 
+  filter(!is.na(weight_g)) %>% 
+  ggplot(aes(x = reorder(short_species, weight_g), y = weight_g)) +
+  geom_boxplot() + 
+  geom_jitter (alpha = 0.2) +
+  coord_flip() +
+  labs(y = "Dry weight (g)", 
+       x = "")
 ```
 
 
@@ -351,8 +471,6 @@ anova(fm_seed_corn_weig) # not remove
 seedling_soybean_millet <- seedling_soybean_millet %>%
   mutate(dry_weight_g = envelope_plant_g - envelope_g)
 
-seedling_soybean_millet %>% view()
-
 seedling_soybean_millet$run <- as.factor(seedling_soybean_millet$run)
 seedling_soybean_millet$millet_ml <- as.factor(seedling_soybean_millet$millet_ml)
 seedling_soybean_millet$species <- as.factor(seedling_soybean_millet$species)
@@ -362,8 +480,14 @@ seedling_soybean_millet$species <- as.factor(seedling_soybean_millet$species)
 ```{r}
 fm_millet_ger <- lm(germination ~ species + millet_ml + run, data = seedling_soybean_millet)
 qplot(fm_millet_ger$residuals)
-autoplot(fm_millet_ger, which = 1:6, ncol = 3, label.size = 3)
+autoplot(fm_millet_ger, which = 1:4, ncol = 2, label.size = 3)
 anova(fm_millet_ger) # no diff from millet and run
+
+# remove millet and run from model 
+fm_millet_ger <- lm(germination ~ species, data = seedling_soybean_millet)
+qplot(fm_millet_ger$residuals)
+autoplot(fm_millet_ger, which = 1:4, ncol = 2, label.size = 3)
+anova(fm_millet_ger)
 emmeans(fm_millet_ger, ~ species) %>% 
   multcomp::cld()
 ```
@@ -371,26 +495,56 @@ emmeans(fm_millet_ger, ~ species) %>%
 ```{r}
 fm_millet_weight <- lm(dry_weight_g ~ species + millet_ml + run, data = seedling_soybean_millet)
 qplot(fm_millet_weight$residuals)
-autoplot(fm_millet_weight, which = 1:6, ncol = 3, label.size = 3)
+autoplot(fm_millet_weight, which = 1:4, ncol = 2, label.size = 3)
 anova(fm_millet_weight) # no diff from millet and run
+
+# remove millet and run from model 
+fm_millet_weight <- lm(dry_weight_g ~ species, data = seedling_soybean_millet)
+qplot(fm_millet_weight$residuals)
+autoplot(fm_millet_weight, which = 1:4, ncol = 2, label.size = 3)
+anova(fm_millet_weight)
 emmeans(fm_millet_weight, ~ species) %>% 
   multcomp::cld()
 ```
 
 
+## Figure
 
 ```{r}
-seedling_soybean_millet %>%
-  ggplot(aes(x = reorder(species, germination), y = germination)) +
+seedling_soybean_millet <- seedling_soybean_millet%>% 
+  mutate(short_species = case_when(
+    species == "Pythium sylvaticum" ~ "P. sylvaticum",
+    species == "Pythium ultimum var. ultimum" ~ "P. ultimum var. ultimum", 
+    species ==  "Pythium irregulare"  ~  "P. irregulare", 
+    TRUE ~ as.character(species)
+    ))
+```
+
+```{r}
+seedling_germination <- seedling_soybean_millet %>%
+  ggplot(aes(x = reorder(short_species, germination), y = germination)) +
   geom_boxplot(alpha = 0.5) + 
   geom_jitter (alpha = 0.2, color = "gray50") +
-  coord_flip() 
+  coord_flip() +
+  labs(y = "Germination (10 dai)", 
+       x = "")
   
-seedling_soybean_millet %>%
-  ggplot(aes(x = reorder(species, dry_weight_g ), y = dry_weight_g)) +
+seedling_weight <- seedling_soybean_millet %>%
+  ggplot(aes(x = reorder(short_species, dry_weight_g ), y = dry_weight_g)) +
   geom_boxplot(alpha = 0.5) + 
   geom_jitter (alpha = 0.2, color = "gray50") +
-  coord_flip() 
+  coord_flip() +
+  labs(y = "Dry weight (g)", 
+       x = "")
+
+# combine colonized 
+seedling_both <- seedling_germination / seedling_weight + plot_annotation(tag_levels = 'A')
+
+ggsave("figure4.tiff", seedling_both, dpi = 300, 
+       path = here("docs", "figures"), width = 4, height = 5)
+
+
+
 ```
 
 # Fungicide sensitivity
@@ -578,20 +732,52 @@ all_EC50_data <- bind_rows(log_EC50, no_EC50_isolates )
 # write_csv(all_EC50_data, here("output", "results", "03_fungicide-sensitivity_EC50.csv"))
 ```
 
+
+## Figure 
+
 ```{r}
 fungicide_EC50 <- read_csv(here("output", "results", "03_fungicide-sensitivity_EC50.csv"))
 
+# reduce the binomials length, for plotting
+fungicide_EC50 <- fungicide_EC50 %>% 
+  mutate(short_species = case_when(
+    species == "Pythium acrogynum" ~ "P. acrogynum", 
+    species == "Pythium irregulare" ~ "P. irregulare", 
+    species == "Pythium torulosum" ~ "P. torulosum",
+    species == "Pythium ultimum var. ultimum" ~ "P. ultimum var. ultimum", 
+    species == "Pythium yorkensis"  ~ "P. yorkensis", 
+    species == "Pythium acanthophoron" ~ "P. acanthophoron", 
+    species ==  "Pythium aphanidermatum" ~  "P. aphanidermatum", 
+    species == "Pythium pleroticum"  ~ "P. pleroticum", 
+    species == "Pythium ultimum var. sporangiiferum" ~ "P. ultimum var. sporangiiferum", 
+    species == "Pythium vexans" ~ "P. vexans" , 
+    TRUE ~ as.character(species)
+    ))
 
-ggplot(fungicide_EC50, aes(x = EC50, fill = species)) +
+figure5 <- ggplot(fungicide_EC50, aes(x = EC50, fill = short_species)) +
   geom_histogram(alpha = 0.5, color = "white", bins = 10) +
   facet_wrap(~ fungicide, scales = "free_x") +
   labs(x = expression('EC'[50]*' (μg/ml)'), 
        y = "Frequency", 
        fill = "") +
   theme(strip.text = element_text(face = "bold", size = rel(1)), 
-        panel.grid.major.x = element_blank(), 
         panel.grid.minor.x = element_blank(), 
-        panel.grid.minor.y = element_blank(), 
+        panel.grid.minor.y = element_blank(),
+        panel.grid.major.x = element_line(color = "gray95"), 
+        panel.grid.major.y = element_line(color = "gray95"), 
         legend.position = "bottom") +
   scale_y_continuous(expand = expansion(mult = c(0, 0.05)))
+
+
+ggsave("figure5.tiff", figure5, dpi = 300, 
+       path = here("docs", "figures"), width = 5, height = 5)
+
+
+
 ```
+
+```{r}
+
+```
+
+
